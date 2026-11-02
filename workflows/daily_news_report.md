@@ -50,6 +50,9 @@ differences. Articles marked `title_only` are compared on their headlines only.
 - **BNT:** no RSS. We use the monthly sitemap `bntnews.bg/sitemap/sitemap_news_YYYY_M.xml`, which has dates only and no times.
 - **Свободна Европа:** the Bulgarian service has published nothing since 2026-04-02 (empty feeds and sitemaps).
   It is disabled (`enabled: false`). Re-check occasionally.
+- **Капитал, bTV, Mediapool** return **403 from GitHub Actions** (they block data-centre IPs) but work from a
+  home connection. Each has a `fallback:` Google News feed in `sources.yaml`. It's used only when the primary
+  feeds return nothing. In CI these outlets therefore come in as Google News titles; full text is usually blocked too.
 - **Капитал:** partly paywalled, so the analysis often has only the RSS summary.
 - **Nova:** the feed includes hourly "Новините на NOVA" broadcast entries; the prefilter drops them.
 - When a source shows `EMPTY` in the fetch output, check its URL by hand. Sites change feed URLs without notice.
@@ -95,3 +98,6 @@ differences. Articles marked `title_only` are compared on their headlines only.
 ## Lessons learned
 - 2026-11-02: first build. On a typical day there are about 660 articles; 560 survive the prefilter, forming 390 clusters, about 65 of them covered by several outlets.
   Cross-language clustering (EN↔BG) works well with `paraphrase-multilingual-MiniLM-L12-v2` at threshold 0.42.
+- 2026-11-02, first GitHub Actions run (about 9 min, analysis about 3 min): it succeeded, but Капитал, bTV and Mediapool got 403
+  (fixed with the fallback feeds). Claude invented a story id "b01x", which failed the schema; `run_claude.py select` now
+  renumbers ids itself. Google News link decoding works from GitHub's US IPs, unlike from Bulgaria.

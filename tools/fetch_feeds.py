@@ -102,17 +102,24 @@ def from_sitemap(content: bytes) -> list[dict]:
 def fetch_source(src: dict, since: datetime, now: datetime) -> tuple[str, list[dict], list[str]]:
     http = session()
     items, errors = [], []
-    for feed in src["feeds"]:
-        for url in expand_url(feed["url"], now):
-            try:
-                r = http.get(url, timeout=25)
-                r.raise_for_status()
-                if feed["method"] == "sitemap":
-                    items += from_sitemap(r.content)
-                else:
-                    items += from_rss(r.content, feed["method"] == "google_news", src["name"])
-            except Exception as exc:  # one dead feed must not kill the run
-                errors.append(f"{url}: {exc}")
+    # Some BG sites block data-centre IPs (GitHub Actions) with 403; `fallback` feeds
+    # (usually a Google News site: query) are only tried when the primary ones give nothing.
+    for feeds in (src["feeds"], src.get("fallback", [])):
+        if items:
+            break
+        for feed in feeds:
+            for url in expand_url(feed["url"], now):
+                try:
+                    r = http.get(url, timeout=25)
+                    r.raise_for_status()
+                    if feed["method"] == "sitemap":
+                        items += from_sitemap(r.content)
+                    else:
+                        items += from_rss(r.content, feed["method"] == "google_news", src["name"])
+                except Exception as exc:  # one dead feed must not kill the run
+                    errors.append(f"{url}: {exc}")
+    if items and errors and src.get("fallback"):
+        errors.append("-> used fallback feed")
 
     seen, articles = set(), []
     for it in items:

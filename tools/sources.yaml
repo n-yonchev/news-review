@@ -130,6 +130,8 @@ sources:
     max_items: 40
     feeds:
       - {method: rss, url: "https://www.capital.bg/rss/"}
+    fallback:  # site blocks GitHub Actions IPs (403)
+      - {method: google_news, url: "https://news.google.com/rss/search?q=site:capital.bg+when:1d&hl=bg&gl=BG&ceid=BG:bg"}
 
   - id: nova
     name: Нова
@@ -148,6 +150,8 @@ sources:
     max_items: 40
     feeds:
       - {method: rss, url: "https://btvnovinite.bg/lbin/v3/rss.php"}
+    fallback:  # site blocks GitHub Actions IPs (403)
+      - {method: google_news, url: "https://news.google.com/rss/search?q=site:btvnovinite.bg+when:1d&hl=bg&gl=BG&ceid=BG:bg"}
 
   - id: dnevnik
     name: Дневник
@@ -166,6 +170,8 @@ sources:
     max_items: 30
     feeds:
       - {method: rss, url: "https://www.mediapool.bg/rss/"}
+    fallback:  # site blocks GitHub Actions IPs (403)
+      - {method: google_news, url: "https://news.google.com/rss/search?q=site:mediapool.bg+when:1d&hl=bg&gl=BG&ceid=BG:bg"}
 
   - id: bnt
     name: БНТ

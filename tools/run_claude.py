@@ -65,7 +65,13 @@ def select() -> None:
     valid_ids = {c["id"] for c in candidates}
     for s in selection["stories"]:
         s["cluster_ids"] = [c for c in s["cluster_ids"] if c in valid_ids]
-    selection["stories"] = [s for s in selection["stories"] if s["cluster_ids"]]
+    selection["stories"] = [s for s in selection["stories"]
+                            if s["cluster_ids"] and s.get("section") in ("world", "bulgaria")]
+    # Claude sometimes invents ids like "b01x"; renumber deterministically, keeping its order.
+    counters = {"world": 0, "bulgaria": 0}
+    for s in selection["stories"]:
+        counters[s["section"]] += 1
+        s["story_id"] = f"{s['section'][0]}{counters[s['section']]:02d}"
     save_json(TMP / "selection.json", selection)
     print(f"selected {len(selection['stories'])} stories -> .tmp/selection.json")
 
