@@ -10,6 +10,8 @@ Exit code 1 if fewer than --min-stories survive.
 """
 import argparse
 import json
+import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
@@ -19,6 +21,15 @@ from jsonschema import Draft202012Validator
 from common import DATA, TMP, TOOLS, load_json, load_sources, save_json
 
 SOFIA = ZoneInfo("Europe/Sofia")
+# Last line of defence against prompt injection leaking credentials onto the public site.
+TOKEN_RE = re.compile(r"sk-ant-[\w-]{10,}|gh[pousr]_\w{20,}|\b\d{8,10}:[\w-]{30,}|AKIA[0-9A-Z]{16}")
+
+
+def leaks_secret(story: dict) -> bool:
+    text = json.dumps(story, ensure_ascii=False)
+    secrets = [v for k, v in os.environ.items()
+               if len(v) >= 12 and any(w in k.upper() for w in ("TOKEN", "KEY", "SECRET", "PASSWORD"))]
+    return bool(TOKEN_RE.search(text)) or any(s in text for s in secrets)
 
 
 def allowed_urls(story_input: dict) -> set[str]:
@@ -40,6 +51,9 @@ def main() -> None:
         errors = [e.message for e in validator.iter_errors(story)]
         if errors:
             problems.append(f"{path.stem}: schema: {errors[0][:150]}")
+            continue
+        if leaks_secret(story):
+            problems.append(f"{path.stem}: contains a credential-like string - story dropped")
             continue
         ok = allowed_urls(inp)
         bad = [s["url"] for s in story["sources"] if s["url"] not in ok]

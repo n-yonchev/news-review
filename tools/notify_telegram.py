@@ -31,11 +31,15 @@ def main() -> None:
     if url:
         lines.append(f'\n<a href="{escape(url)}">Отвори прегледа / Open the report</a>')
 
-    r = session().post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=20, json={
-        "chat_id": chat, "text": "\n".join(lines), "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    })
-    r.raise_for_status()
+    try:
+        r = session().post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=20, json={
+            "chat_id": chat, "text": "\n".join(lines), "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        })
+    except Exception as exc:  # connection errors include the URL, i.e. the token
+        raise SystemExit(f"telegram request failed: {type(exc).__name__}")
+    if not r.ok:  # don't raise: the exception text would contain the URL with the bot token
+        raise SystemExit(f"telegram error {r.status_code}: {r.text[:200]}")
     print("telegram message sent")
 
 

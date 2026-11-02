@@ -67,6 +67,18 @@ differences. Articles marked `title_only` are compared on their headlines only.
   `tools/prompts/select.md` and write `.tmp/selection.json`, run `extract`, write `.tmp/stories/*.json` per
   `tools/prompts/analyze.md`, then `--from validate`.
 
+## Security (the repo and site are public)
+- Secrets live only in GitHub secrets and the local `.env`, which is gitignored. Never commit them.
+- **Prompt injection:** article text is untrusted. `run_claude.py` runs Claude with **all tools disabled**,
+  in an empty temp directory, with only the Claude auth variables in its environment. So an injected article
+  can't make it read files or tokens.
+- `validate_report.py` drops any story containing a credential-like string or the value of a secret env var.
+  It also rejects any URL that wasn't in the input.
+- The template autoescapes everything, and links must be `http(s)` URLs that came from the feeds (no XSS via the report).
+- `notify_telegram.py` never prints the request URL, because it contains the bot token.
+- The workflow runs only on schedule or by manual dispatch, never on pull requests, so forks can't reach the secrets.
+- Full article texts (`.tmp/`) are never committed. The site only shows short summaries and links.
+
 ## One-time setup (GitHub)
 1. Create a GitHub repo (public: Pages is free only for public repos) and push this folder.
    `.env`, `.tmp/` and credentials are gitignored.

@@ -13,6 +13,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 from concurrent.futures import ThreadPoolExecutor
 
 from common import TMP, TOOLS, load_json, save_json
@@ -20,15 +21,27 @@ from common import TMP, TOOLS, load_json, save_json
 MODEL = os.environ.get("CLAUDE_MODEL", "sonnet")
 CLAUDE = shutil.which("claude") or "claude"
 
+# Prompts contain untrusted article text (prompt-injection risk), so Claude gets no tools:
+# it can only read the prompt and answer. It also runs in an empty directory and
+# without our other secrets in its environment.
+NO_TOOLS = ("Bash,Read,Write,Edit,MultiEdit,Glob,Grep,LS,WebFetch,WebSearch,NotebookEdit,"
+            "NotebookRead,Task,TodoWrite")
+PASS_ENV = ("PATH", "HOME", "USERPROFILE", "APPDATA", "LOCALAPPDATA", "SYSTEMROOT", "TEMP", "TMP",
+            "LANG", "CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY")
+
 
 def ask_claude(prompt: str, timeout: int = 900) -> dict:
     """Send a prompt, return the JSON object Claude answers with. Retries once."""
+    env = {k: v for k, v in os.environ.items() if k in PASS_ENV}
     last_err = None
     for _ in range(2):
-        proc = subprocess.run(
-            [CLAUDE, "-p", "--model", MODEL, "--output-format", "json"],
-            input=prompt, capture_output=True, text=True, encoding="utf-8", timeout=timeout,
-        )
+        with tempfile.TemporaryDirectory() as sandbox:
+            proc = subprocess.run(
+                [CLAUDE, "-p", "--model", MODEL, "--output-format", "json",
+                 "--disallowedTools", NO_TOOLS],
+                input=prompt, capture_output=True, text=True, encoding="utf-8", timeout=timeout,
+                cwd=sandbox, env=env,
+            )
         try:
             envelope = json.loads(proc.stdout)
             if envelope.get("is_error"):
@@ -36,7 +49,7 @@ def ask_claude(prompt: str, timeout: int = 900) -> dict:
             text = envelope["result"]
             return json.loads(text[text.index("{"): text.rindex("}") + 1])
         except (ValueError, KeyError) as exc:
-            last_err = f"{exc} | stderr: {proc.stderr[-500:]} | stdout: {proc.stdout[-500:]}"
+            last_err = f"{str(exc)[:300]} | stderr: {proc.stderr[-300:]}"
     raise RuntimeError(f"Claude call failed twice: {last_err}")
 
 
