@@ -1,0 +1,188 @@
+# News outlets used by the daily report.
+# method: rss | sitemap (Google News sitemap) | google_news (Google News RSS search query)
+# region: world | bg      ownership: public | state-funded | commercial
+# url may contain {year} and {month} (current month; previous month is also fetched in the first days of a month).
+# Verified 2026-11-02 — see workflows/daily_news_report.md "Source quirks" before changing.
+
+sources:
+  # ---------------- World ----------------
+  - id: cnn
+    name: CNN
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 80
+    feeds:
+      - {method: sitemap, url: "https://edition.cnn.com/sitemaps/cnn/news.xml"}   # CNN RSS is dead since 2024
+
+  - id: fox
+    name: Fox News
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 60
+    feeds:
+      - {method: rss, url: "https://moxie.foxnews.com/google-publisher/world.xml"}
+      - {method: rss, url: "https://moxie.foxnews.com/google-publisher/politics.xml"}
+      - {method: rss, url: "https://moxie.foxnews.com/google-publisher/us.xml"}
+
+  - id: bbc
+    name: BBC
+    region: world
+    lang: en
+    ownership: public
+    max_items: 60
+    feeds:
+      - {method: rss, url: "https://feeds.bbci.co.uk/news/world/rss.xml"}
+      - {method: rss, url: "https://feeds.bbci.co.uk/news/business/rss.xml"}
+
+  - id: dw
+    name: DW
+    region: world
+    lang: en
+    ownership: public
+    max_items: 60
+    feeds:
+      - {method: rss, url: "https://rss.dw.com/xml/rss-en-all"}
+
+  - id: reuters
+    name: Reuters
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 60
+    feeds:
+      # reuters.com blocks sitemaps (401) and article fetches; Google News gives titles + links only
+      - {method: google_news, url: "https://news.google.com/rss/search?q=site:reuters.com+when:1d&hl=en-US&gl=US&ceid=US:en"}
+
+  - id: ap
+    name: AP
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 60
+    feeds:
+      # apnews.com sitemap returns 403
+      - {method: google_news, url: "https://news.google.com/rss/search?q=site:apnews.com+when:1d&hl=en-US&gl=US&ceid=US:en"}
+
+  - id: aljazeera
+    name: Al Jazeera
+    region: world
+    lang: en
+    ownership: state-funded
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://www.aljazeera.com/xml/rss/all.xml"}
+
+  - id: guardian
+    name: The Guardian
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 60
+    feeds:
+      - {method: rss, url: "https://www.theguardian.com/world/rss"}
+      - {method: rss, url: "https://www.theguardian.com/business/rss"}
+
+  - id: france24
+    name: France 24
+    region: world
+    lang: en
+    ownership: public
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://www.france24.com/en/rss"}
+
+  - id: euronews
+    name: Euronews
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 50
+    feeds:
+      - {method: rss, url: "https://www.euronews.com/rss?format=mrss&level=theme&name=news"}
+
+  - id: politico_eu
+    name: Politico Europe
+    region: world
+    lang: en
+    ownership: commercial
+    max_items: 30
+    feeds:
+      - {method: rss, url: "https://www.politico.eu/feed/"}
+
+  # ---------------- Bulgaria ----------------
+  - id: svobodna_evropa
+    name: Свободна Европа
+    region: bg
+    lang: bg
+    ownership: state-funded
+    enabled: false   # Bulgarian service has published nothing since 2026-04-02; feeds and sitemaps are empty
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://www.svobodnaevropa.bg/api/zgmpmil-vomx-tpe--_mm"}
+
+  - id: capital
+    name: Капитал
+    region: bg
+    lang: bg
+    ownership: commercial
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://www.capital.bg/rss/"}
+
+  - id: nova
+    name: Нова
+    region: bg
+    lang: bg
+    ownership: commercial
+    max_items: 80
+    feeds:
+      - {method: rss, url: "https://nova.bg/rss/latest"}
+
+  - id: btv
+    name: bTV Новините
+    region: bg
+    lang: bg
+    ownership: commercial
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://btvnovinite.bg/lbin/v3/rss.php"}
+
+  - id: dnevnik
+    name: Дневник
+    region: bg
+    lang: bg
+    ownership: commercial
+    max_items: 40
+    feeds:
+      - {method: rss, url: "https://www.dnevnik.bg/rss/"}
+
+  - id: mediapool
+    name: Mediapool
+    region: bg
+    lang: bg
+    ownership: commercial
+    max_items: 30
+    feeds:
+      - {method: rss, url: "https://www.mediapool.bg/rss/"}
+
+  - id: bnt
+    name: БНТ
+    region: bg
+    lang: bg
+    ownership: public
+    max_items: 80
+    feeds:
+      # no RSS; monthly Google News sitemap (dates only, no times)
+      - {method: sitemap, url: "https://bntnews.bg/sitemap/sitemap_news_{year}_{month}.xml"}
+
+  - id: bnr
+    name: БНР
+    region: bg
+    lang: bg
+    ownership: public
+    max_items: 60
+    feeds:
+      # news moved from bnr.bg to bnrnews.bg in 2026; feed holds the last ~50 items
+      - {method: rss, url: "https://bnrnews.bg/api/rss/main"}

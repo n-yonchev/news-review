@@ -1,0 +1,12 @@
+python-dotenv
+requests
+feedparser
+defusedxml
+googlenewsdecoder
+trafilatura
+pyyaml
+jinja2
+jsonschema
+numpy
+scikit-learn
+sentence-transformers
