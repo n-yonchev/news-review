@@ -7,7 +7,7 @@ the coverage differed. Every item links to the original article. A Telegram mess
 when the site is ready.
 
 ## Schedule & where it runs
-- GitHub Actions (`.github/workflows/daily.yml`), cron `17 4 * * *` = 06:17 Sofia in winter / 07:17 in summer. Kept off `:00` on purpose: GitHub drops/delays top-of-hour scheduled runs under load (the 2026-11-03 04:00 run never fired).
+- GitHub Actions (`.github/workflows/daily.yml`), cron `47 5 * * *` = 07:47 Sofia in winter / 08:47 in summer. Kept off `:00` on purpose: GitHub drops/delays top-of-hour scheduled runs under load (the 2026-11-03 04:00 run never fired).
 - Can also be started by hand: GitHub → Actions → "Daily news report" → Run workflow.
 - The Claude steps use your **Claude subscription** through Claude Code (`CLAUDE_CODE_OAUTH_TOKEN`), not API credits.
 - The site is published to GitHub Pages: `https://<github-user>.github.io/<repo>/`. Each day is also saved to `site/archive/`.

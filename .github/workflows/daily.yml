@@ -2,7 +2,7 @@ name: Daily news report
 
 on:
   schedule:
-    - cron: "17 4 * * *"  # 04:17 UTC = 06:17 Sofia (winter) / 07:17 (summer); off :00 to avoid dropped runs
+    - cron: "47 5 * * *"  # 05:47 UTC = 07:47 Sofia (winter) / 08:47 (summer); off :00 to avoid dropped runs
   workflow_dispatch:
 
 permissions:
