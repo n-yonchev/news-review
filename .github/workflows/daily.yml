@@ -2,7 +2,7 @@ name: Daily news report
 
 on:
   schedule:
-    - cron: "0 4 * * *"   # 04:00 UTC = 06:00 Sofia (winter) / 07:00 (summer)
+    - cron: "17 4 * * *"  # 04:17 UTC = 06:17 Sofia (winter) / 07:17 (summer); off :00 to avoid dropped runs
   workflow_dispatch:
 
 permissions:
