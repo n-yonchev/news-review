@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News Review 2026-11-04</title>
+<style>
+  :root {
+    --bg: #f7f5f0; --paper: #ffffff; --ink: #1c1b19; --muted: #6b675f; --rule: #e3dfd6;
+    --accent: #b3261e; --accent-soft: #f6e3e1; --chip: #efece5; --link: #1d4f91;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131312; --paper: #1c1c1a; --ink: #ecebe7; --muted: #a29e95; --rule: #34332f;
+      --accent: #ff8a80; --accent-soft: #3a2422; --chip: #2a2926; --link: #8ab4f8;
+    }
+  }
+  * { box-sizing: border-box; }
+  /* Language switch is pure CSS (radio + :has) so it works even where scripts are blocked. */
+  html:has(#lang-bg:checked) [lang="en"], html:not(:has(#lang-bg:checked)) [lang="bg"] { display: none; }
+  .lang input { position: absolute; opacity: 0; pointer-events: none; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.55 Georgia, "Times New Roman", serif; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header.top { border-bottom: 3px double var(--ink); padding: 28px 0 14px; }
+  .masthead { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.05; margin: 0; letter-spacing: -0.5px; }
+  .dateline { font: 14px/1.4 system-ui, sans-serif; color: var(--muted); margin-top: 8px; }
+  .lang { display: inline-flex; border: 1px solid var(--ink); border-radius: 999px; overflow: hidden;
+    font: 600 13px system-ui, sans-serif; flex-shrink: 0; margin-left: auto; position: relative; }
+  .lang label { color: var(--ink); padding: 6px 14px; cursor: pointer; user-select: none; }
+  .lang input:checked + label { background: var(--ink); color: var(--bg); }
+  .lang input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: -2px; }
+  nav.sections { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 18px; font: 600 14px system-ui, sans-serif; padding: 10px 0;
+    border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--bg); z-index: 2; }
+  nav.sections a { color: var(--ink); text-decoration: none; }
+  nav.sections a:hover { color: var(--accent); }
+  h2.section { font: 800 13px system-ui, sans-serif; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  .story { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 20px 22px; margin: 0 0 18px; }
+  .story-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 12px system-ui, sans-serif; color: var(--muted); }
+  .num { font-weight: 800; color: var(--ink); }
+  .chip { background: var(--chip); padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: .5px; }
+  .imp i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--rule); margin-right: 2px; }
+  .imp i.on { background: var(--accent); }
+  .count { margin-left: auto; font-weight: 600; }
+  .story h3 { font-size: 23px; line-height: 1.25; margin: 10px 0 8px; }
+  .summary { margin: 0 0 10px; }
+  .facts { margin: 0 0 12px; padding-left: 20px; font-size: 15.5px; }
+  .facts li { margin: 3px 0; }
+  details.compare { background: var(--accent-soft); border-radius: 5px; padding: 10px 14px; margin: 12px 0; }
+  details.compare summary { cursor: pointer; font: 700 14px system-ui, sans-serif; color: var(--accent); }
+  .overview { font-style: italic; margin: 8px 0; }
+  .diff { border-top: 1px solid var(--rule); padding: 8px 0 2px; }
+  .diff p { margin: 4px 0 0; font-size: 15.5px; }
+  .aspect { font: 700 11px system-ui, sans-serif; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); }
+  .who { font: 600 12px system-ui, sans-serif; color: var(--muted); margin-left: 6px; }
+  .sources-label { font: 700 11px system-ui, sans-serif; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 6px 0 4px; }
+  .sources ul { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+  .sources li { padding: 3px 0; overflow-wrap: anywhere; }
+  .outlet { font: 700 12px system-ui, sans-serif; display: inline-block; min-width: 92px; color: var(--ink); }
+  .sources a { color: var(--link); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  table.outlets { width: 100%; border-collapse: collapse; font: 14px system-ui, sans-serif; background: var(--paper); }
+  table.outlets td, table.outlets th { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); }
+  table.outlets td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .zero { color: var(--accent); }
+  footer { font: 13px/1.5 system-ui, sans-serif; color: var(--muted); padding: 28px 0 48px; }
+  footer a { color: var(--link); }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .story { padding: 16px 14px; }
+    .story h3 { font-size: 20px; }
+    .outlet { display: block; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="masthead">
+      <div>
+        <h1><span lang="en">Daily News Review</span><span lang="bg">Дневен новинарски преглед</span></h1>
+        <div class="dateline"><span lang="en">Wednesday, 4 November 2026</span><span lang="bg">сряда, 4 ноември 2026 г.</span> · 742 <span lang="en">articles from</span><span lang="bg">статии от</span> 18 <span lang="en">outlets</span><span lang="bg">медии</span> · 12 <span lang="en">stories compared across outlets</span><span lang="bg">истории със сравнение на отразяването</span></div>
+      </div>
+    </div>
+  </header>
+  <nav class="sections">
+    <a href="#world"><span lang="en">World</span><span lang="bg">Свят</span></a>
+    <a href="#bulgaria"><span lang="en">Bulgaria</span><span lang="bg">България</span></a>
+    <a href="#sources"><span lang="en">Sources</span><span lang="bg">Източници</span></a>
+    <a href="index.html"><span lang="en">Archive</span><span lang="bg">Архив</span></a>
+    <div class="lang" role="radiogroup" aria-label="Language">
+      <input type="radio" name="lang" id="lang-en" value="en" checked><label for="lang-en">EN</label><input type="radio" name="lang" id="lang-bg" value="bg"><label for="lang-bg">BG</label>
+    </div>
+  </nav>
+
+  <h2 class="section" id="world"><span lang="en">World</span><span lang="bg">Свят</span></h2>
+  <article class="story" id="w01">
+  <div class="story-meta">
+    <span class="num">01</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Democrats win the US House and flip the Senate in midterms seen as a rebuke of Trump</span><span lang="bg">Демократите печелят Камарата и вземат Сената на междинните избори в САЩ – вот срещу Тръмп</span></h3>
+  <p class="summary"><span lang="en">Democrats have won control of the US House of Representatives and, according to DW and CNN, the Senate, flipping Republican strongholds such as North Carolina, South Carolina, Kansas, Texas and Iowa. Exit-poll data points to widespread dissatisfaction with President Trump and the economy, with his approval below 40% in the CNN poll. Nova notes that the Senate picture was still not final in its report, while DW says Democrats have crossed the 51-seat line. Trump congratulated the Democrats, saying they &#34;did a good job&#34;, though Nova says he also hinted at using his veto.</span><span lang="bg">Демократите печелят контрола над Камарата на представителите и според DW и CNN – и над Сената, като измъкват от републиканците традиционно техни щати като Северна Каролина, Южна Каролина, Канзас, Тексас и Айова. Данните от допитванията сред гласоподавателите сочат широко недоволство от президента Тръмп и от икономиката – одобрението за него е под 40% по данни на CNN. Нова отбелязва, че в нейния репортаж картината в Сената още не е окончателна, докато DW съобщава, че демократите са преминали прага от 51 места. Тръмп поздрави демократите с думите, че са „свършили добра работа“, но според Нова намекна и че може да използва правото си на вето.</span></p>
+  <ul class="facts">
+    <li><span lang="en">All 435 House seats and 35 of 100 Senate seats were up; DW says Democrats passed 218 House seats and the 51-seat Senate majority line.</span><span lang="bg">На вота бяха всички 435 места в Камарата и 35 от 100-те в Сената; според DW демократите са преминали прага от 218 места в Камарата и 51 в Сената.</span></li><li><span lang="en">Democrats won Senate seats in strongly Republican states including North Carolina, South Carolina, Kansas, Texas and Iowa; Nova also reports Abdul El-Sayed winning in Michigan and Chris Pappas in New Hampshire.</span><span lang="bg">Демократите печелят места в Сената в традиционно републикански щати като Северна Каролина, Южна Каролина, Канзас, Тексас и Айова; Нова съобщава и за победи на Абдул Ел-Сайед в Мичиган и Крис Папас в Ню Хемпшър.</span></li><li><span lang="en">CNN&#39;s Voter Poll shows Trump&#39;s approval below 40%, three-quarters of voters calling economic conditions bad, and most blaming his policies for higher prices.</span><span lang="bg">Допитването CNN Voter Poll показва одобрение за Тръмп под 40%, три четвърти от избирателите определят икономиката като лоша, а повечето обвиняват политиките му за по-високите цени.</span></li><li><span lang="en">DW&#39;s data shows Republicans lost ground among all demographic groups versus 2022, including Latino voters, and most voters worried about democracy backed Democrats.</span><span lang="bg">Данните на DW показват, че републиканците губят подкрепа във всички демографски групи спрямо 2022 г., включително сред латиноамериканците, а повечето избиратели, загрижени за демокрацията, гласуват за демократите.</span></li><li><span lang="en">Trump told Fox News the Democrats &#34;did a good job&#34; and said he would work with them.</span><span lang="bg">Тръмп заяви пред „Фокс нюз“, че демократите са „свършили добра работа“, и че би работил с тях.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets agree on a Democratic victory, but they differ in timing, what they emphasise (pre-vote analysis, results, voter data) and how settled they say the Senate result is.</span><span lang="bg">Всички медии са единодушни за победата на демократите, но се различават по времето на публикуване, по акцентите (анализ преди вота, резултати, данни за избирателите) и по това доколко окончателен определят изхода в Сената.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Euronews · CNN</span>
+      <p><span lang="en">Euronews&#39;s piece was published on election day and frames the Senate as an open fight (&#34;razor&#39;s edge&#34;) with Democrats&#39; House win near-certain. CNN&#39;s piece, published that evening, presents Democratic control of both chambers as already delivered, speaking of a &#34;blue wave&#34;.</span><span lang="bg">Материалът на Euronews е публикуван в деня на вота и представя Сената като открита битка („на ръба“), като победата на демократите в Камарата е почти сигурна. Материалът на CNN, излязъл вечерта, вече представя контрола на демократите над двете камари като факт и говори за „синя вълна“.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · DW · Нова</span>
+      <p><span lang="en">CNN and DW focus on voter data: CNN on Trump&#39;s approval, the economy and shifts among women, young people and independents; DW on demographic splits, the economy, immigration, democracy and the Iran war. Nova stresses individual results and firsts, such as El-Sayed as the first Muslim senator and Pappas as the first openly gay man elected to the Senate.</span><span lang="bg">CNN и DW акцентират върху данните за избирателите: CNN – върху одобрението за Тръмп, икономиката и промените сред жените, младите и независимите; DW – върху демографските разриви, икономиката, имиграцията, демокрацията и войната с Иран. Нова наблюдава конкретните резултати и „първите“, като Ел-Сайед като първи мюсюлмански сенатор и Папас като първия открито хомосексуален мъж в Сената.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">Нова · DW · CNN</span>
+      <p><span lang="en">On the Senate, DW says Democrats have crossed the 51-seat majority line and CNN says they won control of both chambers, while Nova says it is still unclear whether Democrats will secure a Senate majority and that several key races were still being tracked.</span><span lang="bg">За Сената DW съобщава, че демократите са преминали мажоритарния праг от 51 места, а CNN – че са спечелили контрола над двете камари, докато Нова пише, че все още не е ясно дали ще осигурят мнозинство в Сената и че няколко ключови надпреварни още се проследяват.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">Нова · CNN · DW</span>
+      <p><span lang="en">Nova quotes politicians directly: House Democratic leader Hakeem Jeffries, Abdul El-Sayed, and Trump&#39;s congratulations and remark that he was not on the ballot. CNN and DW rely on survey data and quote no politicians in the visible text.</span><span lang="bg">Нова цитира политици пряко: лидера на демократите в Камарата Хаким Джефрис, Абдул Ел-Сайед, както и поздрава на Тръмп и забележката му, че не е бил в бюлетината. CNN и DW се позовават на данни от допитвания и в видимия текст не цитират политици.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">Капитал · bTV Новините</span>
+      <p><span lang="en">Only headlines are available for the two Bulgarian outlets. Capital&#39;s is evaluative, calling the result a &#34;blow for Trump&#34; and a &#34;convincing&#34; win; bTV&#39;s is a neutral tag-page label.</span><span lang="bg">За двете български медии има само заглавия. Заглавието на „Капитал“ е оценъчно – „удар за Тръмп“ и „убедителна“ победа, а това на bTV е неутрално име на тематична страница.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/03/the-senate-on-a-razors-edge-the-races-that-will-decide-americas-midterms" target="_blank" rel="noopener" title="The Senate on a razor’s edge: The races that will decide America&#39;s midterms"><span lang="en">The Senate on a razor&#39;s edge: the races that will decide America&#39;s midterms</span><span lang="bg">Сенатът на ръба: надпреварите, които ще решат междинните избори в САЩ</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/04/558059/%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%82%D0%B5-%D0%BF%D0%B5%D1%87%D0%B5%D0%BB%D1%8F%D1%82-%D0%B8-%D0%B4%D0%B2%D0%B5%D1%82%D0%B5-%D0%BA%D0%B0%D0%BC%D0%B0%D1%80%D0%B8-%D0%BD%D0%B0-%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BD%D0%B3%D1%80%D0%B5%D1%81-%D1%81%D0%BE%D1%87%D0%B0%D1%82-%D0%BF%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%82%D0%B5/" target="_blank" rel="noopener" title="Демократите печелят и двете камари на американския Конгрес, сочат прогнозите"><span lang="en">Democrats win both chambers of the US Congress, projections show</span><span lang="bg">Демократите печелят и двете камари на американския Конгрес, сочат прогнозите</span></a></li>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/03/politics/exit-polls-2026-midterms-vis" target="_blank" rel="noopener" title="An electorate unhappy with Trump and the economy hands Congress to Democrats, CNN Voter Poll shows"><span lang="en">An electorate unhappy with Trump and the economy hands Congress to Democrats, CNN Voter Poll shows</span><span lang="bg">Недоволни от Тръмп и икономиката избиратели дават Конгреса на демократите, показва допитването на CNN</span></a></li>
+      
+      <li><span class="outlet">Капитал</span>
+        <a href="https://www.capital.bg/politika_i_ikonomika/sviat/2026/11/04/4975888_demokratite_pecheliat_ubeditelno_izborite_v_sasht/" target="_blank" rel="noopener" title="Удар за Тръмп: демократите печелят убедително изборите в САЩ"><span lang="en">Blow for Trump: Democrats win US elections convincingly</span><span lang="bg">Удар за Тръмп: демократите печелят убедително изборите в САЩ</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/us-midterm-election-results-democrats-flip-house-and-senate-here-s-what-else-the-data-tells-us/a-79841886?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="US midterm election results: Democrats flip House and Senate. Here&#39;s what else the data tells us"><span lang="en">US midterm results: Democrats flip House and Senate; what else the data tells us</span><span lang="bg">Резултати от междинните избори в САЩ: демократите вземат Камарата и Сената – какво още показват данните</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/tag/?tag=%D0%BF%D0%BE%D0%B1%D0%B5%D0%B4%D0%B0%20%D0%B7%D0%B0%20%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%82%D0%B5&amp;o=date" target="_blank" rel="noopener" title="Новини за „победа за демократите“"><span lang="en">News on the &#34;Democrats&#39; victory&#34;</span><span lang="bg">Новини за „победа за демократите“</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w02">
+  <div class="story-meta">
+    <span class="num">02</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Democrats flip Senate seats and governorships, including in Texas, in US midterms</span><span lang="bg">Демократите печелят сенатски места и губернаторски постове, сред които в Тексас, на междинните избори в САЩ</span></h3>
+  <p class="summary"><span lang="en">Democrats made a series of upset wins in the US midterm elections, taking seats and governorships in states long held by Republicans. In Texas, James Talarico beat Republican Ken Paxton for the Senate, the first Democratic Senate win there since 1988, while Gina Hinojosa defeated incumbent Gov. Greg Abbott to become the state&#39;s first Latina governor. Outlets also report Democratic wins in South Carolina, North Carolina, Michigan, New Hampshire, Georgia, Ohio, Iowa, New Mexico and Wisconsin. Nova reports Democrats won control of both chambers of Congress, and BBC says the Texas result helped solidify their takeover of Congress. Analysts cite high prices, inflation and dissatisfaction with the direction of the country, and President Trump blamed Abbott for his own loss.</span><span lang="bg">Демократите постигнаха поредица от изненадващи победи на междинните избори в САЩ, като взеха сенатски места и губернаторски постове в щати с дългогодишно републиканско надмощие. В Тексас Джеймс Таларико победи републиканеца Кен Пакстън в битката за Сената – първият демократ, спечелил сенаторско място там от 1988 г., а Джина Инохоса надви действащия губернатор Грег Абът и става първата латиноамериканка начело на щата. Медиите съобщават и за демократични победи в Южна Каролина, Северна Каролина, Мичиган, Ню Хемпшир, Джорджия, Охайо, Айова, Ню Мексико и Уисконсин. Нова съобщава, че демократите печелят и двете камари на Конгреса, а BBC посочва, че резултатът в Тексас помага да се затвърди завземането на Конгреса от тях. Анализатори сочат като причини високите цени, инфлацията и недоволството от посоката на страната, а президентът Тръмп обвини Абът за собственото му поражение.</span></p>
+  <ul class="facts">
+    <li><span lang="en">James Talarico defeated Ken Paxton in the Texas Senate race, the first Democratic Senate win in Texas since 1988; BBC calls it the most expensive Senate race in history, with over half a billion dollars spent.</span><span lang="bg">Джеймс Таларико победи Кен Пакстън в сенатската надпревара в Тексас – първата демократична сенатска победа в щата от 1988 г.; BBC я определя като най-скъпата сенатска кампания в историята с над половин милиард долара разходи.</span></li><li><span lang="en">Gina Hinojosa beat three-term Republican Gov. Greg Abbott, ending a 36-year Democratic losing streak in Texas governor races (per Fox News) and becoming the first Latina governor of the state.</span><span lang="bg">Джина Инохоса победи тримандатния републикански губернатор Грег Абът, слагайки край на 36-годишна серия от демократични загуби на губернаторските избори в Тексас (по данни на Fox News), и става първата латиноамериканка губернатор на щата.</span></li><li><span lang="en">Abdul El-Sayed won in Michigan to become the first Muslim elected to the US Senate; Chris Pappas became the first openly gay man elected to the Senate, according to Nova.</span><span lang="bg">Абдул Ел-Сайед спечели в Мичиган и става първият мюсюлманин, избран в Сената на САЩ; според Нова Крис Папас ще бъде първият открито гей мъж в Сената.</span></li><li><span lang="en">Other Democratic wins reported by Nova include Annie Andrews in South Carolina, Roy Cooper in North Carolina and governors Keisha Lance Bottoms (Georgia), Amy Acton (Ohio), Rob Sand (Iowa), Deb Haaland (New Mexico) and David Crowley (Wisconsin).</span><span lang="bg">Сред другите демократични победи, посочени от Нова, са Ани Андрюс в Южна Каролина, Рой Купър в Северна Каролина и губернаторите Кийша Ланс Ботъмс (Джорджия), Ейми Актън (Охайо), Роб Санд (Айова), Деб Хааланд (Ню Мексико) и Дейвид Кроули (Уисконсин).</span></li><li><span lang="en">Trump blamed Abbott on Truth Social, saying he would not have lost had he not become a &#34;RINO&#34; in the last six months.</span><span lang="bg">Тръмп обвини Абът в Truth Social, като написа, че нямаше да загуби, ако не се беше превърнал в „RINO“ през последните шест месеца.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets report the Democratic wins as historic upsets, but they focus on different races: Fox News on the Texas governor&#39;s race, BBC and Euronews on the Texas Senate race, Nova on a roundup of new senators and governors, and Dnevnik on the Michigan Senate win. Mediapool&#39;s headline suggests a profile of Talarico, but only the headline was available.</span><span lang="bg">Всички медии отразяват демократичните победи като исторически изненади, но се фокусират върху различни надпревари: Fox News – губернаторската в Тексас, BBC и Euronews – сенатската в Тексас, Нова – обзор на новите сенатори и губернатори, а Дневник – победата в Мичиган. Заглавието на Mediapool загатва за профил на Таларико, но е налично само то.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Fox News · BBC</span>
+      <p><span lang="en">Fox News frames the Texas result around Hinojosa&#39;s &#39;stunning&#39; upset of Abbott and the end of a 36-year Democratic losing streak, while BBC leads with Talarico&#39;s Senate win and presents the Abbott loss as a further historic victory.</span><span lang="bg">Fox News поставя в центъра изненадващата победа на Инохоса над Абът и края на 36-годишната серия от демократични загуби, докато BBC започва с победата на Таларико за Сената и представя загубата на Абът като допълнителна историческа победа.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">BBC · Euronews · Fox News</span>
+      <p><span lang="en">BBC gives the most background: record spending, Elon Musk&#39;s $158m super PAC contribution, Paxton&#39;s scandals and impeachment, the Bush family&#39;s backing for Talarico, and Hispanic voters&#39; shift against Trump over immigration and prices. Euronews is much shorter and focuses on Talarico&#39;s &#39;politics of love&#39; and his speech, while Fox News covers Hinojosa&#39;s and Abbott&#39;s platforms.</span><span lang="bg">BBC дава най-много контекст: рекордните разходи, 158 млн. долара на Илон Мъск в подкрепа на Пакстън, скандалите и импийчмънта на Пакстън, подкрепата на семейство Буш за Таларико и обрата сред испаноезичните избиратели срещу Тръмп заради имиграцията и цените. Euronews е по-кратък и се фокусира върху „политиката на любовта“ на Таларико и речта му, а Fox News представя програмите на Инохоса и Абът.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">BBC · Euronews · Fox News</span>
+      <p><span lang="en">BBC quotes Talarico and a political scientist who called the outcome a &#39;bloodbath&#39; for Republicans; Euronews quotes only Talarico&#39;s &#39;Goliath&#39; speech; Fox News quotes Hinojosa, Abbott&#39;s concession and Trump&#39;s attack on Abbott. BBC also cites Trump&#39;s Truth Social post.</span><span lang="bg">BBC цитира Таларико и политолог, определил резултата като „кървава баня“ за републиканците; Euronews цитира само речта на Таларико за „Голиат“; Fox News цитира Инохоса, оттеглянето на Абът и атаката на Тръмп срещу него. BBC също споменава поста на Тръмп в Truth Social.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Нова · Дневник</span>
+      <p><span lang="en">Nova emphasises the &#39;firsts&#39; (first Muslim, first openly gay man, first Native American woman governor) and the national implications for Trump, citing inflation and prices; Dnevnik&#39;s summary covers only El-Sayed&#39;s Michigan win as the first Muslim senator.</span><span lang="bg">Нова акцентира върху „първите“ (първи мюсюлманин, първи открито гей мъж, първа жена от коренното население губернатор) и националните последици за Тръмп, като посочва инфлацията и цените; резюмето на Дневник се занимава единствено с победата на Ел-Саид в Мичиган като първи мюсюлманин в Сената.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">BBC · Euronews · Fox News</span>
+      <p><span lang="en">The outlets differ on the Democratic droughts: Euronews calls Talarico&#39;s win the first statewide Democratic victory in over 30 years, BBC says Abbott&#39;s loss was the first Democratic governor win since the 1990s, and Fox cites a 36-year losing streak in governor races.</span><span lang="bg">Медиите се различават по сроковете на демократичните суши: Euronews нарича победата на Таларико първа общодържавна демократична победа от над 30 години, BBC казва, че загубата на Абът е първата демократична победа за губернатор от 90-те години, а Fox цитира 36-годишна серия от загуби на губернаторски избори.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Fox News</span>
+        <a href="https://www.foxnews.com/politics/democrat-gina-hinojosa-stuns-abbott-makes-history-first-latina-texas-governor" target="_blank" rel="noopener" title="Democrat Gina Hinojosa stuns Abbott, makes history as first Latina Texas governor"><span lang="en">Democrat Gina Hinojosa stuns Abbott, makes history as first Latina Texas governor</span><span lang="bg">Демократката Джина Инохоса изненада Абът и влиза в историята като първата латиноамериканка губернатор на Тексас</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/04/558076/%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%B0%D0%B4%D0%B8-%D0%B8-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8-%D0%BF%D0%BE%D0%B1%D0%B5%D0%B4%D0%B8-%D0%BD%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D0%B8%D0%BD%D0%BD%D0%B8%D1%82%D0%B5-%D0%B8%D0%B7%D0%B1%D0%BE%D1%80%D0%B8-%D0%B2-%D1%81%D0%B0%D1%89-%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5-%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8-%D1%81%D0%B5%D0%BD%D0%B0%D1%82%D0%BE%D1%80%D0%B8-%D1%81-%D0%BD%D0%B0%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%82%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8/" target="_blank" rel="noopener" title="Изненади и исторически победи на междинните избори в САЩ: Новите американски сенатори с най-интересните истории (ВИДЕО+СНИМКИ)"><span lang="en">Surprises and historic wins in the US midterms: the new American senators with the most interesting stories</span><span lang="bg">Изненади и исторически победи на междинните избори в САЩ: Новите американски сенатори с най-интересните истории (ВИДЕО+СНИМКИ)</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/c6n8dnn09jg7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="James Talarico becomes first Democrat to win Texas Senate seat since 1988"><span lang="en">James Talarico becomes first Democrat to win Texas Senate seat since 1988</span><span lang="bg">Джеймс Таларико става първият демократ, спечелил сенатско място в Тексас от 1988 г.</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/04/4976112_za_pruv_put_v_senata_na_sasht_vliza_mjusjulmanin/?ref=rss" target="_blank" rel="noopener" title="За пръв път в Сената на САЩ влиза мюсюлманин"><span lang="en">For the first time a Muslim enters the US Senate</span><span lang="bg">За пръв път в Сената на САЩ влиза мюсюлманин</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/04/we-defeated-goliath-talarico-says-after-historic-texas-senate-win" target="_blank" rel="noopener" title="‘We defeated Goliath’: Talarico says after historic Texas Senate win"><span lang="en">&#39;We defeated Goliath&#39;: Talarico says after historic Texas Senate win</span><span lang="bg">„Победихме Голиат“: Таларико след историческата си победа в Сената в Тексас</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/svyat/koi-e-demokratat-dzheims-talariko-slozhil-krai-na-republikanskoto-gospodstvo-v-shtata-teksas/" target="_blank" rel="noopener" title="Кой е демократът Джеймс Таларико, сложил край на републиканското господство в щата Тексас"><span lang="en">Who is Democrat James Talarico, who ended Republican dominance in Texas</span><span lang="bg">Кой е демократът Джеймс Таларико, сложил край на републиканското господство в щата Тексас</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w04">
+  <div class="story-meta">
+    <span class="num">03</span>
+    <span class="chip"><span lang="en">Conflict</span><span lang="bg">Конфликт</span></span>
+    <span class="imp" title="importance 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">US strikes Iran&#39;s Qeshm Island, Trump says military aid to Israel will end, and tankers ablaze near Hormuz as midterms are held</span><span lang="bg">САЩ удариха иранския остров Кешм, Тръмп обяви край на военната помощ за Израел, а танкери горят край Ормуз в деня на междинните избори</span></h3>
+  <p class="summary"><span lang="en">The US carried out limited strikes on Iran&#39;s Qeshm Island in the Strait of Hormuz, which it called defensive, hours after Vice President JD Vance voiced optimism about a diplomatic deal; Israel said it took no part. On midterm election day Trump told Fox News that the US would stop giving Israel about $4 billion a year in military aid, a claim criticised by Israeli opposition leader Gadi Eisenkot. Iran&#39;s Revolutionary Guards later said four oil tankers were ablaze after hitting mines near the strait. Democrats then won control of both chambers of Congress, and Iran&#39;s chief negotiator said Americans had voted &#39;no to war&#39;.</span><span lang="bg">САЩ нанесоха ограничени удари по иранския остров Кешм в Ормузкия проток, които определиха като отбранителни, часове след като вицепрезидентът Джей Ди Ванс изрази оптимизъм за сделка; Израел заяви, че не е участвал. В деня на междинните избори Тръмп каза пред Fox News, че САЩ ще спрат да дават на Израел около 4 млрд. долара военна помощ годишно, което беше разкритикувано от израелския опозиционен лидер Гади Айзенкот. По-късно Корпусът на гвардейците на Ислямската революция съобщи, че четири петролни танкера горят след сблъсък с мини край пролива. Демократите спечелиха контрола над двете камари на Конгреса, а главният ирански преговарящ заяви, че американците са гласували &#34;не на войната&#34;.</span></p>
+  <ul class="facts">
+    <li><span lang="en">US Central Command confirmed limited strikes on Qeshm Island; the US described them as defensive, aimed at missile batteries used against US planes, and Israel&#39;s military said it was not involved.</span><span lang="bg">Централното командване на САЩ потвърди ограничени удари по остров Кешм; САЩ ги определиха като отбранителни, насочени срещу ракетни батареи, използвани срещу американски самолети, а израелската армия заяви, че не е участвала.</span></li><li><span lang="en">Trump said on Fox News that the US would stop providing Israel around $4 billion a year in military aid, while continuing to sell it arms; the current 10-year agreement runs until 2028.</span><span lang="bg">Тръмп заяви пред Fox News, че САЩ ще спрат да предоставят на Израел около 4 млрд. долара военна помощ годишно, но ще продължат да му продават оръжие; действащото 10-годишно споразумение е до 2028 г.</span></li><li><span lang="en">Iran&#39;s Revolutionary Guards said four oil tankers were destroyed and still burning after hitting mines on a banned route south of the Strait of Hormuz, and that two other ships were detained.</span><span lang="bg">Иранските Революционни гвардейци съобщиха, че четири петролни танкера са унищожени и все още горят след сблъсък с мини на забранен маршрут южно от Ормузкия проток, а други два кораба са задържани.</span></li><li><span lang="en">Iran has offered to lift the Hormuz blockade within two days of the US lifting economic restrictions, but rejects upfront nuclear concessions; Qatar says its mediation continues.</span><span lang="bg">Иран предлага да вдигне блокадата на Ормуз в рамките на два дни след отпадане на американските икономически ограничения, но отказва предварителни ядрени отстъпки; Катар заяви, че посредничеството продължава.</span></li><li><span lang="en">Democrats won both chambers of Congress in the midterms; Trump acknowledged the war and petrol prices probably hurt his party.</span><span lang="bg">Демократите спечелиха и двете камари на Конгреса на междинните избори; Тръмп признá, че войната и цените на бензина вероятно са навредили на партията му.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The outlets cover different parts of a fast-moving story: the Qeshm strikes (Guardian, БНР), the Israel aid announcement (Euronews, DW), the tanker incident (Нова) and the election aftermath (Al Jazeera). They differ mainly in what they lead with, how much context they give and whose voices they quote.</span><span lang="bg">Изданията отразяват различни части от динамично развиваща се история: ударите по Кешм (Гардиън, БНР), обявяването на края на помощта за Израел (Евронюз, ДВ), инцидента с танкерите (Нова) и последиците от изборите (Ал Джазира). Разликите са най-вече в водещия акцент, обема на контекста и цитираните гласове.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian · БНР</span>
+      <p><span lang="en">The Guardian frames the Qeshm strikes through diplomacy and the midterms, devoting most space to Iranian statements, the seven conditions and the Qatari mediation. БНР, citing AFP, is brief and leads with Israel&#39;s non-involvement, relying on anonymous US officials and the Wall Street Journal.</span><span lang="bg">Гардиън поставя ударите по Кешм в рамката на дипломацията и изборите и отделя най-много място на иранските изявления, седемте условия и катарското посредничество. БНР, позовавайки се на АФП, е кратка и поставя начело неучастието на Израел, като се опира на анонимни американски официални лица и „Уолстрийт джърнъл&#34;.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">DW · Euronews</span>
+      <p><span lang="en">DW gives far more background on the aid decision: Council on Foreign Relations totals, Netanyahu&#39;s earlier remarks on dependency, and polling showing falling US support for Israel. Euronews is shorter, adding a note that the US has no election-day silence period.</span><span lang="bg">ДВ дава много повече контекст за решението за помощта: данни на Съвета по външни отношения, по-ранни думи на Нетаняху за зависимостта и допитвания за намаляваща подкрепа за Израел в САЩ. Евронюз е по-кратък и добавя бележка, че в САЩ няма изборно мълчание.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">DW · Euronews</span>
+      <p><span lang="en">Both quote Trump and Israeli opposition leader Eisenkot, but only DW adds an outside expert (Jon Alterman of CSIS) questioning the timing; Euronews instead quotes Iranian chief negotiator Qalibaf.</span><span lang="bg">И двете цитират Тръмп и опозиционния лидер Айзенкот, но само ДВ добавя външен експерт (Джон Алтерман от CSIS), който поставя под въпрос времето на обявяването; Евронюз вместо това цитира главния иранския преговарящ Калибаф.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Нова · The Guardian · Euronews</span>
+      <p><span lang="en">Нова reports the tanker incident solely as an Iranian Revolutionary Guards claim in a very short item, with no US or independent confirmation. The Guardian and Euronews give US descriptions of the strikes as defensive alongside Iranian statements.</span><span lang="bg">Нова отразява инцидента с танкерите изцяло като твърдение на иранските Революционни гвардейци в много кратка новина, без американско или независимо потвърждение. Гардиън и Евронюз привеждат американското определение на ударите като отбранителни наред с иранските изявления.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">Al Jazeera</span>
+      <p><span lang="en">Al Jazeera, state-funded, treats the election result as a major Democratic victory and a &#39;stinging rebuke&#39; of Trump, collecting reactions from world leaders, with Iranian voices given first.</span><span lang="bg">Ал Джазира, държавно финансирана, представя изборния резултат като голяма победа на демократите и „силно порицание&#34; за Тръмп и събира реакции от световни лидери, като иранските гласове са поставени първи.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/world/2026/nov/03/us-strikes-irans-qeshm-island" target="_blank" rel="noopener" title="US strikes Iran’s Qeshm Island as Vance voices optimism about a deal"><span lang="en">US strikes Iran&#39;s Qeshm Island as Vance voices optimism about a deal</span><span lang="bg">САЩ удариха иранския остров Кешм, докато Ванс изразява оптимизъм за сделка</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/552674/izrael-ne-e-uchastval-us-udarite-po-iranski-ostrov" target="_blank" rel="noopener" title="Израел не е участвал в US ударите по ирански остров"><span lang="en">Israel did not take part in US strikes on Iranian island</span><span lang="bg">Израел не е участвал в US ударите по ирански остров</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/03/trump-says-us-will-end-military-aid-to-israel-as-americans-vote-in-midterms" target="_blank" rel="noopener" title="Trump says US will end military aid to Israel as Americans vote in midterms"><span lang="en">Trump says US will end military aid to Israel as Americans vote in midterms</span><span lang="bg">Тръмп: САЩ ще прекратят военната помощ за Израел, докато американците гласуват на междинните избори</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/04/558070/%D1%87%D0%B5%D1%82%D0%B8%D1%80%D0%B8-%D1%82%D0%B0%D0%BD%D0%BA%D0%B5%D1%80%D0%B0-%D1%81%D0%B5-%D0%B7%D0%B0%D0%BF%D0%B0%D0%BB%D0%B8%D1%85%D0%B0-%D1%81%D0%BB%D0%B5%D0%B4-%D1%81%D0%B1%D0%BB%D1%8A%D1%81%D1%8A%D0%BA-%D1%81-%D0%BC%D0%B8%D0%BD%D0%B8-%D0%BA%D1%80%D0%B0%D0%B9-%D0%BE%D1%80%D0%BC%D1%83%D0%B7%D0%BA%D0%B8%D1%8F-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA/" target="_blank" rel="noopener" title="Четири танкера се запалиха след сблъсък с мини край Ормузкия проток"><span lang="en">Four tankers catch fire after hitting mines near the Strait of Hormuz</span><span lang="bg">Четири танкера се запалиха след сблъсък с мини край Ормузкия проток</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/us-to-cut-nearly-4-billion-in-israel-military-aid-trump-says/a-79848860?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="US to cut nearly $4 billion in Israel military aid, Trump says"><span lang="en">US to cut nearly $4 billion in Israel military aid, Trump says</span><span lang="bg">САЩ ще съкратят почти 4 млрд. долара военна помощ за Израел, заяви Тръмп</span></a></li>
+      
+      <li><span class="outlet">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/11/4/seismic-shift-world-reacts-to-us-midterm-election-results?traffic_source=rss" target="_blank" rel="noopener" title="‘Seismic shift’: World reacts to US midterm election results"><span lang="en">&#39;Seismic shift&#39;: World reacts to US midterm election results</span><span lang="bg">„Сеизмична промяна&#34;: светът реагира на резултатите от междинните избори в САЩ</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w03">
+  <div class="story-meta">
+    <span class="num">04</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Democrats win House in midterms; Jeffries on track to be first Black speaker amid wave of historic firsts and ballot-measure results</span><span lang="bg">Демократите печелят Камарата на представителите на междинните избори; Джефрис е на път да стане първият чернокож спикер</span></h3>
+  <p class="summary"><span lang="en">Democrats won a large House majority in the US midterm elections on Tuesday, putting Hakeem Jeffries on a clear path to be elected speaker in January and become the first Black speaker in US history. The night also produced several electoral firsts, including Keisha Lance Bottoms in Georgia, Deb Haaland in New Mexico and Chris Pappas in New Hampshire. In state ballot measures, voters backed abortion rights and pushed back on President Donald Trump&#39;s redistricting efforts, according to France 24. Outlets described the results as a rebuke of Trump&#39;s second term.</span><span lang="bg">Демократите спечелиха убедително мнозинство в Камарата на представителите на междинните избори във вторник, което поставя Хакийм Джефрис на сигурен път към избирането му за спикер през януари и към това да стане първият чернокож спикер в историята на САЩ. Вечерта донесе и редица исторически първи постижения, сред които на Кийшa ЛансБотъмс в Джорджия, Деб Хааланд в Ню Мексико и Крис Папас в Ню Хампшър. При щатските референдуми гласоподавателите подкрепиха правото на аборт и отхвърлиха усилията на президента Доналд Тръмп за прекрояване на избирателните райони, съобщава Франс прес 24. Медиите определиха резултата като укор към втория мандат на Тръмп.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Jeffries is expected to be elected speaker in January, which would make him the first Black speaker of the House.</span><span lang="bg">Очаква се Джефрис да бъде избран за спикер през януари и така да стане първият чернокож председател на Камарата.</span></li><li><span lang="en">Keisha Lance Bottoms won Georgia&#39;s governorship, becoming the first Black woman elected governor of any US state.</span><span lang="bg">Кийша Ланс Ботъмс спечели губернаторския пост в Джорджия и стана първата чернокожа жена, избрана за губернатор на щат в САЩ.</span></li><li><span lang="en">Deb Haaland became the first Native American woman elected governor (New Mexico), and Chris Pappas will be the first openly gay man in the US Senate.</span><span lang="bg">Деб Хааланд стана първата жена индианка, избрана за губернатор (Ню Мексико), а Крис Папас ще е първият открито гей мъж в Сената на САЩ.</span></li><li><span lang="en">Voters in several states backed abortion rights and rejected Trump&#39;s redistricting efforts across 145 ballot questions.</span><span lang="bg">Избиратели в няколко щата подкрепиха правото на аборт и отхвърлиха опитите на Тръмп за прекрояване на райони в рамките на 145 референдумни въпроса.</span></li><li><span lang="en">Jeffries&#39;s agenda reportedly includes a higher minimum wage, Supreme Court ethics rules, AI regulation and an aggressive oversight agenda, while he also faces tensions with the party&#39;s left and with long-serving members.</span><span lang="bg">Дневният ред на Джефрис според съобщенията включва по-висока минимална заплата, етични правила за Върховния съд, регулиране на изкуствения интелект и активен надзор над администрацията, като той е изправен пред напрежение с лявото крило и с дългогодишни членове на партията.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The outlets cover different facets of the same election: CNN and Reuters focus on Jeffries, Euronews on identity milestones, and France 24 and Mediapool on ballot measures. Only CNN and Euronews provide full text; the others are judged on headlines or a short summary.</span><span lang="bg">Медиите разглеждат различни страни на едни и същи избори: CNN и Ройтерс се фокусират върху Джефрис, Евронюз върху историческите първи постижения, а Франс 24 и Медиапул – върху референдумите. Само CNN и Евронюз са с пълен текст; останалите са оценени по заглавия или кратко резюме.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · Euronews</span>
+      <p><span lang="en">CNN centres on Jeffries&#39;s route to the speakership and the challenges of governing, while Euronews leads with the governors and senators who won historic firsts and mentions Jeffries only briefly as a prospective first Black speaker.</span><span lang="bg">CNN се фокусира върху пътя на Джефрис към поста и предизвикателствата пред управлението, докато Евроюз започва с губернаторите и сенаторите с исторически първи постижения и само бегло споменава Джефрис като бъдещ първи чернокож спикер.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · Euronews</span>
+      <p><span lang="en">CNN draws on Democratic lawmakers (Cleaver, Crow), anonymous party officials and Jeffries himself; Euronews quotes a civic-engagement advocate (State Voices&#39; Bill Shiebler) and candidates such as Pappas.</span><span lang="bg">CNN цитира демократични конгресмени (Клийвър, Кроу), анонимни партийни източници и самия Джефрис; Евроюз цитира представител на гражданска организация (Бил Шийблър от State Voices) и кандидати като Папас.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">CNN · Euronews</span>
+      <p><span lang="en">CNN is analytical, noting Jeffries&#39;s tensions with the party&#39;s left and cautious reputation alongside ambition; Euronews is more celebratory, framing the night as a &#39;rebuke against hate and division&#39; and a sign of multiracial democracy working.</span><span lang="bg">CNN е аналитична и отбелязва напреженията с лявото крило и предпазливата репутация на Джефрис наред с амбициите му; Евроюз е по-празничен и представя вечерта като „укор срещу омразата и разделението“ и знак за работеща мултирасова демокрация.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">France 24 · Mediapool</span>
+      <p><span lang="en">Both headline the ballot measures as a test of Trump&#39;s priorities, with voters rejecting his redistricting push and backing abortion rights; Mediapool&#39;s text was not available, so only its headline is compared.</span><span lang="bg">И двете заглавия представят референдумите като проверка на приоритетите на Тръмп, при която избирателите отхвърлят прекрояването на райони и подкрепят правото на аборт; текстът на Медиапул не е наличен, затова е сравнено само заглавието.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/03/politics/hakeem-jeffries-house-speaker-democrats" target="_blank" rel="noopener" title="Hakeem Jeffries, on track to make House speaker history, sees ‘mandate for dramatic change’"><span lang="en">Hakeem Jeffries, on track to make House speaker history, sees ‘mandate for dramatic change’</span><span lang="bg">Хакийм Джефрис, на път да влезе в историята като спикер, вижда „мандат за драматична промяна“</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/svyat/izbiratelite-v-sasht-podkrepiha-pravoto-na-abort-i-othvarliha-initsiativi-na-tramp-za-prekroyavane-na-izbiratelnite-raioni/" target="_blank" rel="noopener" title="Избирателите в САЩ подкрепиха правото на аборт и отхвърлиха инициативи на Тръмп за прекрояване на избирателните райони"><span lang="en">US voters backed abortion rights and rejected Trump&#39;s redistricting initiatives</span><span lang="bg">Избирателите в САЩ подкрепиха правото на аборт и отхвърлиха инициативи на Тръмп за прекрояване на избирателните райони</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/04/historic-leadership-firsts-for-minorities-across-us-in-midterm-vote" target="_blank" rel="noopener" title="Historic leadership firsts for minorities across US in midterm vote"><span lang="en">Historic leadership firsts for minorities across US in midterm vote</span><span lang="bg">Исторически първи постижения за малцинствата в САЩ на междинните избори</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/americas/20261104-us-voters-back-abortion-rights-and-reject-trump-s-gerrymandering-in-state-ballot-measures" target="_blank" rel="noopener" title="US voters back abortion rights and reject Trump&#39;s gerrymandering in state ballot measures"><span lang="en">US voters back abortion rights and reject Trump&#39;s gerrymandering in state ballot measures</span><span lang="bg">Американските избиратели подкрепят правото на аборт и отхвърлят опитите на Тръмп за „джерimandering“ в щатски референдуми</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/midterms-trump-election-2026-democracy-economy-congress-young-voters-688773185f71690b00847726efbf045a" target="_blank" rel="noopener" title="What motivated voters in the 2026 midterm elections, according to The AP Voter Poll"><span lang="en">What motivated voters in the 2026 midterm elections, according to The AP Voter Poll</span><span lang="bg">Какво мотивира избирателите на междинните избори през 2026 г. според допитването на АП</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/legal/government/hakeem-jeffries-poised-become-speaker-us-house-representatives-2026-11-04/" target="_blank" rel="noopener" title="Hakeem Jeffries poised to become speaker of US House of Representatives"><span lang="en">Hakeem Jeffries poised to become speaker of US House of Representatives</span><span lang="bg">Хакийм Джефрис е на път да стане спикер на Камарата на представителите на САЩ</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w06">
+  <div class="story-meta">
+    <span class="num">05</span>
+    <span class="chip"><span lang="en">Diplomacy</span><span lang="bg">Дипломация</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Zelensky in Berlin as EU prepares talks on Ukraine support ahead of US-led Abu Dhabi negotiations; Russian strikes hit power grid</span><span lang="bg">Зеленски в Берлин, ЕС организира разговори за подкрепата за Украйна преди преговорите в Абу Даби; руски удари по енергийната мрежа</span></h3>
+  <p class="summary"><span lang="en">Ukrainian President Volodymyr Zelensky visited Berlin on 3 November, where Chancellor Friedrich Merz said he saw no sign Russia was serious about a ceasefire, and both insisted Europe must have a say in any peace deal. On 4 November the European Commission was to host talks with US, Ukrainian, NATO and European representatives on Ukraine&#39;s support, security guarantees and reconstruction, followed by NATO-hosted talks on Thursday. US-hosted talks with Ukrainian and Russian delegations are planned in Abu Dhabi on 10–11 November. Meanwhile Russian strikes hit power stations in the Kyiv and Zhytomyr regions and disrupted water and power in Kyiv, after a deadly strike on a village in the south that Zelensky said killed at least 33 people.</span><span lang="bg">Украинският президент Володимир Зеленски посети Берлин на 3 ноември, където канцлерът Фридрих Мерц заяви, че не вижда признаци Русия да е сериозна относно прекратяване на огъня, а двамата подчертаха, че Европа трябва да има думата във всяко мирно споразумение. На 4 ноември Европейската комисия трябваше да е домакин на разговори с представители на САЩ, Украйна, НАТО и европейските съюзници за подкрепата за Киев, гаранциите за сигурност и възстановяването. В четвъртък разговорите продължават под егидата на НАТО. На 10 и 11 ноември САЩ ще съберат украински и руски делегации в Абу Даби. Междувременно руски удари засегнаха електроцентрали в Киевска и Житомирска област и нарушиха водо- и електроснабдяването в Киев, след смъртоносен удар по село на юг, при който според Зеленски са загинали поне 33 души.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Merz, speaking beside Zelensky in Berlin, said he had seen no sign Russia was seriously engaging on a ceasefire; he said Germany would soon deliver new air defence and energy aid.</span><span lang="bg">Мерц заяви в Берлин до Зеленски, че не вижда признаци Русия сериозно да се ангажира с прекратяване на огъня; според него Германия скоро ще достави нова помощ за противовъздушна отбрана и енергетика.</span></li><li><span lang="en">US-hosted talks with Ukrainian and Russian delegations are set for Abu Dhabi on 10–11 November, announced by envoy Steve Witkoff; Germany expects European representatives to attend but probably without a seat at the table.</span><span lang="bg">Преговори с украински и руски делегации под егидата на САЩ са насрочени за 10–11 ноември в Абу Даби, според обявеното от пратеника Стив Уиткоф; Германия очаква европейски представители да присъстват, но вероятно без място на масата.</span></li><li><span lang="en">The European Commission was to host talks with the US, Ukraine, NATO, France, Germany, Britain and the World Bank on winter support, security guarantees and reconstruction; NATO-hosted talks follow on Thursday.</span><span lang="bg">Европейската комисия трябваше да е домакин на разговори със САЩ, Украйна, НАТО, Франция, Германия, Великобритания и Световната банка за подкрепата през зимата, гаранциите за сигурност и възстановяването; в четвъртък следват разговори под егидата на НАТО.</span></li><li><span lang="en">Zelensky said at least 33 people were killed in Russian strikes on a school used as an aid distribution centre in a frontline village; a strike on a hospital in Kharkiv injured at least 73, according to regional prosecutors.</span><span lang="bg">Зеленски заяви, че при руски удари по училище, използвано като център за раздаване на помощи в село на фронтовата линия, са загинали поне 33 души; при удар по болница в Харков са ранени поне 73 души според регионалната прокуратура.</span></li><li><span lang="en">Overnight Russian attacks hit power stations in Kyiv and Zhytomyr regions and a cargo vessel near Odesa.</span><span lang="bg">При нощни руски атаки са ударени електроцентрали в Киевска и Житомирска област, както и товарен кораб край Одеса.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Outlets covered different parts of the story: DW and BNR the Berlin visit, Guardian and Nova the EU-hosted talks, and Reuters and AP (headlines only) the strikes on energy infrastructure. The facts they report are consistent, but framing, emphasis and sourcing differ.</span><span lang="bg">Медиите разглеждат различни части от историята: DW и БНР – посещението в Берлин, Guardian и Нова – разговорите под егидата на ЕС, а Reuters и AP (само заглавия) – ударите по енергийната инфраструктура. Фактите са съвместими, но акцентите, рамкирането и цитираните източници се различават.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">DW · БНР</span>
+      <p><span lang="en">DW&#39;s headline centres on Merz&#39;s scepticism about Russia&#39;s seriousness, while BNR&#39;s headline neutrally notes only that Zelensky is visiting Berlin.</span><span lang="bg">Заглавието на DW акцентира върху скептицизма на Мерц за сериозността на Русия, докато това на БНР неутрално съобщава само, че Зеленски е на посещение в Берлин.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">DW · БНР</span>
+      <p><span lang="en">DW gives detailed space to the civilian toll (33 killed, Kharkiv hospital), German aid pledges and the heavy security operation in Berlin; BNR, citing AFP, is brief, quoting Zelensky&#39;s post on X and stressing Germany&#39;s role as a key supporter.</span><span lang="bg">DW отделя подробно място на жертвите сред цивилните (33 загинали, болницата в Харков), германските обещания за помощ и мерките за сигурност в Берлин; БНР, позовавайки се на АФП, е кратка, цитира публикация на Зеленски в X и подчертава ролята на Германия като основен поддръжник.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian · Нова</span>
+      <p><span lang="en">The Guardian frames Brussels as &#39;quietly getting on&#39; with leading support talks and mentions the previous night&#39;s strikes, while Nova presents the meeting as new peace talks and highlights the NATO talks and the 10–11 November Abu Dhabi dates.</span><span lang="bg">The Guardian представя Брюксел като „тихо“ водещ разговорите за подкрепа и споменава нощните удари, докато Нова ги определя като нови мирни преговори и подчертава срещата в НАТО и датите 10–11 ноември в Абу Даби.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">DW · The Guardian · БНР</span>
+      <p><span lang="en">DW quotes Merz and Zelensky directly; the Guardian&#39;s live blog quotes mostly European politicians reacting to the US midterms (Tusk, Babiš, Pistorius), with the Kremlin&#39;s Peskov also quoted, and the Ukraine item is a small part of a wider blog; BNR quotes only Zelensky&#39;s X post.</span><span lang="bg">DW цитира директно Мерц и Зеленски; живият блог на Guardian цитира предимно европейски политици за междинните избори в САЩ (Туск, Бабиш, Пистористус), както и Песков от Кремъл, а темата за Украйна е малка част от по-широк блог; БНР цитира само публикацията на Зеленски в X.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/ukraine-war-merz-doubts-russia-is-serious-about-a-truce/a-79836026?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Ukraine war: Merz doubts Russia is serious about a truce"><span lang="en">Ukraine war: Merz doubts Russia is serious about a truce</span><span lang="bg">Войната в Украйна: Мерц се съмнява, че Русия е сериозна относно примирие</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/552741/volodimir-zelenski-e-na-poseshtenie-v-berlin" target="_blank" rel="noopener" title="Володимир Зеленски е на посещение в Берлин"><span lang="en">Volodymyr Zelensky is on a visit to Berlin</span><span lang="bg">Володимир Зеленски е на посещение в Берлин</span></a></li>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener" title="EU to lead talks on support for Ukraine with US, Nato, partners – Europe live"><span lang="en">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</span><span lang="bg">ЕС ще ръководи разговорите за подкрепа за Украйна със САЩ, НАТО и партньори – Europe live</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/04/558062/%D0%BD%D0%BE%D0%B2%D0%B8-%D0%BF%D1%80%D0%B5%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8-%D0%B7%D0%B0-%D0%BC%D0%B8%D1%80-%D0%B2-%D1%83%D0%BA%D1%80%D0%B0%D0%B9%D0%BD%D0%B0-%D0%B5%D0%BA-%D1%81%D1%8A%D0%B1%D0%B8%D1%80%D0%B0-%D1%81%D0%B0%D1%89-%D0%BA%D0%B8%D0%B5%D0%B2-%D0%B8-%D0%BD%D0%B0%D1%82%D0%BE/" target="_blank" rel="noopener" title="Нови преговори за мир в Украйна: ЕК събира САЩ, Киев и НАТО"><span lang="en">New peace talks on Ukraine: European Commission brings together US, Kyiv and NATO</span><span lang="bg">Нови преговори за мир в Украйна: ЕК събира САЩ, Киев и НАТО</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/europe/russia-hits-power-stations-ukraines-regions-kyiv-zhytomyr-2026-11-04/" target="_blank" rel="noopener" title="Russia hits power stations in Ukraine&#39;s regions of Kyiv, Zhytomyr"><span lang="en">Russia hits power stations in Ukraine&#39;s regions of Kyiv, Zhytomyr</span><span lang="bg">Русия удря електроцентрали в Киевска и Житомирска област на Украйна</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/ukraine-russia-war-kyiv-airstrike-water-37dc5e85a5c8c135996bc2720e0674d9" target="_blank" rel="noopener" title="Russian strikes disrupt water and power in Kyiv as rescuers still search for survivors in the south"><span lang="en">Russian strikes disrupt water and power in Kyiv as rescuers still search for survivors in the south</span><span lang="bg">Руски удари нарушават водо- и електроснабдяването в Киев, а спасителите все още търсят оцелели на юг</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w07">
+  <div class="story-meta">
+    <span class="num">06</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Israel&#39;s election committee certifies results, finds no fraud, rejecting Netanyahu&#39;s claims</span><span lang="bg">Централната избирателна комисия на Израел потвърди резултатите и не откри измами, отхвърляйки твърденията на Нетаняху</span></h3>
+  <p class="summary"><span lang="en">Israel&#39;s Central Elections Committee certified the results of the October 27 election on Wednesday, saying its review found no irregularities that compromised the vote&#39;s integrity. This rebuffed claims by Prime Minister Benjamin Netanyahu and his allies that Arab-led parties had &#34;stolen&#34; the election. Netanyahu&#39;s bloc won 53 seats and Gadi Eisenkot&#39;s opposition bloc 48, with Ra&#39;am and the Joint List taking a record 19, so neither side has the 61 seats needed for a majority. President Isaac Herzog received the results and began consultations with party leaders before choosing who will try to form a government.</span><span lang="bg">Централната избирателна комисия на Израел потвърди в сряда резултатите от изборите на 27 октомври, като заяви, че проверката ѝ не е открила нарушения, които да поставят под съмнение почтеността на вота. Това опровергава твърденията на премиера Бенямин Нетаняху и съюзниците му, че арабските партии са „откраднали“ изборите. Блокът на Нетаняху получава 53 места, а опозиционният блок на Гади Айзенкот – 48, като „Раам“ и Обединената листа печелят рекордните 19, така че нито една от страните няма нужните 61 мандата за мнозинство. Президентът Ицхак Херцог получи резултатите и започна консултации с лидерите на партиите, преди да определи кой да се опита да състави правителство.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The committee reviewed 9,069 polling stations and found no irregularities affecting the integrity or outcome of the vote.</span><span lang="bg">Комисията е проверила 9069 избирателни секции и не е открила нарушения, засягащи почтеността или изхода от вота.</span></li><li><span lang="en">Final tally: Netanyahu&#39;s bloc 53 seats, Eisenkot&#39;s bloc 48, Ra&#39;am and Joint List a combined 19; 61 of 120 seats are needed to govern.</span><span lang="bg">Окончателно разпределение: блокът на Нетаняху – 53 места, блокът на Айзенкот – 48, „Раам“ и Обединената листа заедно – 19; за управление са нужни 61 от 120 места.</span></li><li><span lang="en">Herzog holds two days of consultations, then gives a candidate 28 days to form a government, with a possible 14-day extension.</span><span lang="bg">Херцог провежда двудневни консултации, след което дава на избран кандидат 28 дни за съставяне на правителство, с възможно удължаване с 14 дни.</span></li><li><span lang="en">A separate Shin Bet investigation into alleged foreign interference is ongoing; the attorney general said she blocked its request to interrogate four Arab politicians for lack of evidence.</span><span lang="bg">Отделно разследване на Шин Бет за твърдяна чужда намеса продължава; главният прокурор заяви, че е блокирала искането за разпит на четирима арабски политици поради липса на доказателства.</span></li><li><span lang="en">If no government can be formed, Israel would hold another election early next year.</span><span lang="bg">Ако не бъде съставено правителство, Израел ще има нови избори в началото на следващата година.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Euronews, Al Jazeera, The Guardian and AP lead with the committee&#39;s rejection of the fraud claims, while Fox News frames the story around coalition-building and Netanyahu&#39;s prospects. Al Jazeera and The Guardian give the most detail on the Shin Bet dispute and the political conflict around certification. The Капитал piece is an interview seen by headline only.</span><span lang="bg">Euronews, Al Jazeera, The Guardian и AP поставят в центъра отхвърлянето на твърденията за измами от комисията, докато Fox News рамкира темата през коалиционните преговори и шансовете на Нетаняху. Al Jazeera и The Guardian дават най-много подробности за спора около Шин Бет и политическия конфликт около удостоверяването. Материалът на „Капитал“ е интервю, видимо само по заглавие.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Fox News · Al Jazeera · Euronews · The Guardian · AP</span>
+      <p><span lang="en">Fox News&#39;s headline and lead focus on the coalition showdown and Netanyahu&#39;s hold on power, and the excerpt seen does not mention the fraud claims or the certification. The other outlets headline the committee&#39;s rejection of fraud claims as a blow to Netanyahu.</span><span lang="bg">Заглавието и въведението на Fox News са фокусирани върху коалиционния сблъсък и задържането на Нетаняху на власт, а видимият откъс не споменава нито твърденията за измами, нито удостоверяването. Останалите издания поставят в заглавието отхвърлянето на твърденията за измами като удар по Нетаняху.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">Fox News · The Guardian · Al Jazeera</span>
+      <p><span lang="en">Fox News relies on commentators and analysts (Amir Oren, Dan Diker, Dov Lipman) and a Joint List source, plus party confirmations of whom they will recommend. The Guardian quotes Eisenkot, the attorney general, Herzog, and Arab politician Ahmad Tibi. Al Jazeera quotes Herzog, Justice Sohlberg and Ben-Gvir.</span><span lang="bg">Fox News разчита на коментатори и анализатори (Амир Орен, Дан Дикър, Дов Липман), източник от Обединената листа и потвърждения от партиите за кого ще препоръчат. The Guardian цитира Айзенкот, главния прокурор, Херцог и арабския политик Ахмад Тиби. Al Jazeera цитира Херцог, съдия Солберг и Бен-Гвир.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">The Guardian · Al Jazeera · Euronews</span>
+      <p><span lang="en">The Guardian is the most openly critical of Netanyahu, stating in its own voice that he presided over a &#34;racist campaign&#34; and that the fraud accusations were unfounded, and it carries Eisenkot&#39;s &#34;pogrom against democracy&#34; charge. Al Jazeera and Euronews call the claims &#34;without evidence&#34; or &#34;unsubstantiated&#34; in a more restrained way.</span><span lang="bg">The Guardian е най-откровено критичен към Нетаняху: със собствен глас твърди, че той е оглавил „расистка кампания“ и че обвиненията в измами са неоснователни, и предава обвинението на Айзенкот за „погром срещу демокрацията“. Al Jazeera и Euronews определят твърденията като „без доказателства“ или „неподкрепени“ по-сдържано.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Al Jazeera · The Guardian · Euronews</span>
+      <p><span lang="en">Al Jazeera gives the most detail on the certification: the 9,069 polling stations reviewed, the presidium vote, Ben-Gvir&#39;s and Likud&#39;s reactions and a Shin Bet foreign-funding claim. The Guardian puts the attorney general&#39;s blocking of the Shin Bet interrogations near the top. Euronews is shorter and mentions the Shin Bet probe only briefly.</span><span lang="bg">Al Jazeera дава най-много подробности за удостоверяването: 9069 проверени секции, гласуването в президиума, реакциите на Бен-Гвир и Likud и твърдение на Шин Бет за чуждестранно финансиране. The Guardian изнася близо до началото блокирането от главния прокурор на разпитите на Шин Бет. Euronews е по-кратък и само бегло споменава разследването на Шин Бет.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Fox News</span>
+        <a href="https://www.foxnews.com/world/netanyahu-faces-coalition-showdown-rivals-maneuver-form-israels-next-government" target="_blank" rel="noopener" title="Netanyahu faces coalition showdown as rivals maneuver to form Israel&#39;s next government"><span lang="en">Netanyahu faces coalition showdown as rivals maneuver to form Israel&#39;s next government</span><span lang="bg">Нетаняху е изправен пред коалиционен сблъсък, докато съперниците му се опитват да сформират следващото правителство</span></a></li>
+      
+      <li><span class="outlet">Капитал</span>
+        <a href="https://www.capital.bg/politika_i_ikonomika/sviat/2026/11/04/4975886_intervju_daniul_liivi_netaniahu_moje_da_izpolzva/" target="_blank" rel="noopener" title="Интервю | Даниъл Лийви: Нетаняху може да използва извънредна ситуация, за да оглави правителство на националното единство"><span lang="en">Interview | Daniel Levy: Netanyahu may use an emergency situation to lead a national unity government</span><span lang="bg">Интервю | Даниъл Лийви: Нетаняху може да използва извънредна ситуация, за да оглави правителство на националното единство</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/04/israels-election-commission-says-no-fraud-found-in-last-weeks-vote" target="_blank" rel="noopener" title="Israel&#39;s election commission says no fraud found in last week&#39;s vote"><span lang="en">Israel&#39;s election commission says no fraud found in last week&#39;s vote</span><span lang="bg">Избирателната комисия на Израел: не са открити измами при вота миналата седмица</span></a></li>
+      
+      <li><span class="outlet">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/11/4/israel-vote-results-confirmed-as-election-commission-rejects-fraud-claims?traffic_source=rss" target="_blank" rel="noopener" title="Israel vote results confirmed as election commission rejects fraud claims"><span lang="en">Israel vote results confirmed as election commission rejects fraud claims</span><span lang="bg">Резултатите от вота в Израел са потвърдени, а комисията отхвърля твърденията за измами</span></a></li>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener" title="Israel’s election commission rejects Netanyahu claims of voting fraud"><span lang="en">Israel&#39;s election commission rejects Netanyahu claims of voting fraud</span><span lang="bg">Избирателната комисия на Израел отхвърля твърденията на Нетаняху за изборни измами</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/israel-election-netanyahu-57aefc6424da937ad2842f6d762631ae" target="_blank" rel="noopener" title="Israel’s president accepts certified election results in a blow to Netanyahu&#39;s claim of vote fraud"><span lang="en">Israel&#39;s president accepts certified election results in a blow to Netanyahu&#39;s claim of vote fraud</span><span lang="bg">Президентът на Израел прие потвърдените резултати от изборите, удар по твърденията на Нетаняху за измама</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w08">
+  <div class="story-meta">
+    <span class="num">07</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">5 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Spanish transport minister Óscar Puente resigns after deadly high-speed train crash</span><span lang="bg">Испанският министър на транспорта Оскар Пуенте подаде оставка след смъртоносната влакова катастрофа</span></h3>
+  <p class="summary"><span lang="en">Spain&#39;s Transport Minister Óscar Puente announced his resignation to parliament on Tuesday, six days after a high-speed train collision near Urda in Toledo province killed 69 people. A Renfe train hit a stationary Iryo train during an automated safety system failure that had halted traffic on the line. It was Spain&#39;s second deadly rail disaster in under a year, after the January Adamuz crash, and Puente said no transport minister could stay on after two accidents of such severity. He will also not stand in the general election on 29 November, and Economy Minister Carlos Cuerpo will run the ministry until then.</span><span lang="bg">Министърът на транспорта на Испания Оскар Пуенте обяви във вторник пред парламента оставката си шест дни след сблъсъка на високоскоростни влакове край Урда в провинция Толедо, при който загинаха 69 души. Влак на Renfe удари стоящ влак на Iryo по време на срив в автоматичната система за безопасност, спряла движението по линията. Това е втората смъртоносна жп катастрофа в страната за по-малко от година след януарската край Адамус, а Пуенте заяви, че министър на транспорта не може да остане на поста си след две толкова тежки злополуки. Той няма да се кандидатира и на общите избори на 29 ноември, а дотогава министерството ще ръководи министърът на икономиката Карлос Куерпо.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The crash on 28 October near Urda, Toledo province, killed 69 people; CNN reports more than 200 injured.</span><span lang="bg">Катастрофата на 28 октомври край Урда, провинция Толедо, отне живота на 69 души; според CNN са ранени над 200.</span></li><li><span lang="en">A Renfe train carrying 397 passengers hit a stationary Iryo train carrying 147 after a control centre allowed it to proceed despite a halt caused by a safety system failure.</span><span lang="bg">Влак на Renfe с 397 пътници се блъсна в стоящ влак на Iryo със 147 пътници, след като контролният център му е позволил да продължи въпреки спирането заради срив в системата за безопасност.</span></li><li><span lang="en">Puente is also withdrawing from the candidate lists for the 29 November early general election.</span><span lang="bg">Пуенте се оттегля и от кандидатските листи за предсрочните общи избори на 29 ноември.</span></li><li><span lang="en">The government announced new rail safety measures, including control-centre alert software, an AI oversight agent and a second-operator confirmation requirement.</span><span lang="bg">Правителството обяви нови мерки за безопасност на жп мрежата, включително софтуер за предупреждения в контролните центрове, агент с изкуствен интелект за надзор и изискване за потвърждение от втори оператор.</span></li><li><span lang="en">Prime Minister Pedro Sánchez named Economy Minister Carlos Cuerpo to run the Transport Ministry until the election.</span><span lang="bg">Премиерът Педро Санчес определи министъра на икономиката Карлос Куерпо да ръководи Министерството на транспорта до изборите.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The outlets agree on the core facts: Puente&#39;s resignation, the 69 deaths, the second major crash within a year and the 29 November election. They differ mainly in focus, background and in some figures. bTV can be compared on its headline only.</span><span lang="bg">Изданията са единодушни по основните факти: оставката на Пуенте, 69-те жертви, втората голяма катастрофа за по-малко от година и изборите на 29 ноември. Разликите са главно във фокуса, контекста и някои числа. bTV може да се сравни само по заглавието.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">DW · CNN · BBC · Politico Europe · bTV Новините</span>
+      <p><span lang="en">DW&#39;s headline says Puente &#39;offers&#39; his resignation, while CNN, BBC and bTV report that he resigned. CNN stresses &#39;two deadly crashes in one year&#39;, BBC the &#39;days after&#39; timing, and Politico shifts the subject to the successor, Cuerpo, taking over the ministry. bTV leads with the 69 victims.</span><span lang="bg">Заглавието на DW казва, че Пуенте „предлага“ оставка, докато CNN, BBC и bTV съобщават, че е подал оставка. CNN наблягат на „две смъртоносни катастрофи за година“, BBC – на броените дни след инцидента, а Politico измества фокуса към наследника – Куерпо, който поема министерството. bTV започва с 69-те жертви.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">DW · CNN · BBC</span>
+      <p><span lang="en">The January crash toll differs: DW and BBC say 46 dead, while CNN says at least 41. CNN also gives the number injured (more than 200) and BBC says &#39;dozens&#39;; DW gives no figure. BBC says the January crash was on the same line, while CNN places it in Adamuz and DW in Andalusia.</span><span lang="bg">Данните за януарската катастрофа се различават: DW и BBC посочват 46 загинали, а CNN – най-малко 41. CNN дава и броя на ранените (над 200), BBC пише за „десетки“, а DW не посочва число. BBC твърди, че януарската катастрофа е на същата линия, докато CNN я свързва с Адамус, а DW – с Андалусия.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">BBC · DW · CNN</span>
+      <p><span lang="en">BBC gives the most space to the leaked control-centre audio recordings and the political dilemma, including opposition criticism and the surprise of the resignation. DW highlights the new safety measures, such as the AI oversight agent, and the union anger over blame placed on one operator. CNN focuses on the protests outside the ministry and Sánchez&#39;s reaction.</span><span lang="bg">BBC отделя най-много място на изтеклите аудиозаписи от контролния център и на политическата дилема, включително критиките на опозицията и изненадата от оставката. DW подчертава новите мерки за безопасност, като агента с изкуствен интелект, и недоволството на синдикатите от стоварването на вината върху един оператор. CNN се фокусира върху протестите пред министерството и реакцията на Санчес.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">CNN · BBC · Politico Europe</span>
+      <p><span lang="en">CNN explains that Sánchez called the election early after corruption scandals and housing controversy. BBC says many observers see the crash as a major electoral setback for the government and names the PP and Vox as the main opposition. Politico gives background on Cuerpo&#39;s career as a technocrat.</span><span lang="bg">CNN обяснява, че Санчес е свикал предсрочните избори след корупционни скандали и спор за жилищните цени. BBC пише, че много наблюдатели виждат в катастрофата сериозен електорален удар за правителството, и посочва ПП и Vox като основна опозиция. Politico дава биографична справка за Куерпо като технократ.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · BBC · Politico Europe</span>
+      <p><span lang="en">CNN, BBC and Politico all quote Sánchez praising Puente&#39;s &#39;dignity&#39;, but only CNN quotes Puente&#39;s earlier remark that the train was authorised to proceed &#39;under inexplicable circumstances&#39;, and only BBC quotes the audio of drivers and controllers.</span><span lang="bg">CNN, BBC и Politico цитират Санчес, който хвали „достойнството“ на Пуенте, но само CNN цитира по-ранните думи на Пуенте, че влакът е получил разрешение да продължи „при необясними обстоятелства“, а само BBC цитира записите на разговорите между машинисти и диспечери.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/spain-transport-minister-offers-resignation-in-wake-of-train-accident/a-79848097?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Spain transport minister offers resignation in wake of train accident"><span lang="en">Spain transport minister offers resignation in wake of train accident</span><span lang="bg">Испанският министър на транспорта предлага оставка след влаковата катастрофа</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/svetut/sled-vlakovata-katastrofa-s-69-zhertvi.html" target="_blank" rel="noopener" title="След влаковата катастрофа с 69 жертви: Министърът на транспорта на Испания подаде оставка"><span lang="en">After the train crash with 69 victims: Spain&#39;s transport minister resigns</span><span lang="bg">След влаковата катастрофа с 69 жертви: Министърът на транспорта на Испания подаде оставка</span></a></li>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/03/americas/spain-transport-minister-resigns-intl-latam" target="_blank" rel="noopener" title="Spanish transport minister resigns after two deadly train crashes in one year"><span lang="en">Spanish transport minister resigns after two deadly train crashes in one year</span><span lang="bg">Испанският министър на транспорта подаде оставка след две смъртоносни влакови катастрофи за една година</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Spanish transport minister resigns days after deadly train crash"><span lang="en">Spanish transport minister resigns days after deadly train crash</span><span lang="bg">Испанският министър на транспорта подаде оставка броени дни след смъртоносната влакова катастрофа</span></a></li>
+      
+      <li><span class="outlet">Politico Europe</span>
+        <a href="https://www.politico.eu/article/spanish-economy-minister-takes-over-transport-ministry-after-deadly-crash/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" title="Spanish economy minister takes over transport ministry after deadly crash"><span lang="en">Spanish economy minister takes over transport ministry after deadly crash</span><span lang="bg">Министърът на икономиката поема транспортното министерство след смъртоносната катастрофа</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w10">
+  <div class="story-meta">
+    <span class="num">08</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Euro zone inflation rises to 4%, a three-year high, with Bulgaria second-highest</span><span lang="bg">Инфлацията в еврозоната се ускори до 4% – тригодишен връх, България е втора по ръст</span></h3>
+  <p class="summary"><span lang="en">Euro zone annual inflation accelerated to 4% in October from 3.8% in September, a three-year high, according to Eurostat&#39;s flash estimate. Energy prices, up 20.8% year on year, drove the increase. The figure is far above the European Central Bank&#39;s 2% medium-term target, keeping alive the possibility of another interest rate rise at its December meeting. Bulgaria&#39;s harmonised inflation rose to 6% from 5.6%, the second-largest increase in the euro area after Lithuania.</span><span lang="bg">Годишната инфлация в еврозоната се е ускорила до 4% през октомври от 3,8% през септември – тригодишен връх, показва експресната оценка на Евростат. Ръстът е воден от енергийните цени, които скачат с 20,8% на годишна база. Равнището е далеч над средносрочната цел на ЕЦБ от 2%, което поддържа вероятността от ново повишение на лихвите на декемврийското заседание. Хармонизираната инфлация в България се ускорява до 6% от 5,6%, второто най-голямо повишение в еврозоната след Литва.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Euro zone annual inflation was 4% in October versus 3.8% in September, the highest since September 2023.</span><span lang="bg">Годишната инфлация в еврозоната е 4% през октомври при 3,8% през септември – най-високата от септември 2023 г.</span></li><li><span lang="en">Energy prices rose 20.8% year on year (18.9% in September); services rose 3.3%, food, alcohol and tobacco 1.6%, and non-energy industrial goods 1.2%.</span><span lang="bg">Енергийните цени растат с 20,8% на годишна база (18,9% през септември); услугите – с 3,3%, храните, алкохолът и тютюневите изделия – с 1,6%, а неенергийните промишлени стоки – с 1,2%.</span></li><li><span lang="en">Core inflation (excluding food and energy) stood at 2.5% year on year, up for a second month in a row.</span><span lang="bg">Основната инфлация (без храни и енергия) е 2,5% на годишна база и се повишава за втори пореден месец.</span></li><li><span lang="en">Bulgaria&#39;s harmonised inflation reached 6% from 5.6%; only Lithuania&#39;s rose slightly more, to 6.1%.</span><span lang="bg">Хармонизираната инфлация в България достига 6% от 5,6%; само в Литва тя нараства малко повече – до 6,1%.</span></li><li><span lang="en">Month on month, prices rose 0.4% in the euro area and 0.8% in Bulgaria.</span><span lang="bg">На месечна база цените растат с 0,4% в еврозоната и с 0,8% в България.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only Reuters&#39; headline is available, so the comparison is limited to headline framing. Both outlets report the same core development, but they differ in focus.</span><span lang="bg">На разположение е само заглавието на Reuters, затова сравнението се ограничава до рамкирането в заглавията. И двата медии отразяват едно и също събитие, но с различен фокус.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Reuters · БНР</span>
+      <p><span lang="en">Reuters&#39; headline presents the euro-area-wide trend, stressing that inflation hit a three-year high. БНР&#39;s headline puts Bulgaria in the foreground, highlighting that its inflation is the second highest in the euro zone.</span><span lang="bg">Заглавието на Reuters представя тенденцията в цялата еврозона и подчертава тригодишния връх. Заглавието на БНР поставя България на преден план и изтъква, че инфлацията у нас е втората най-висока в еврозоната.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Reuters · БНР</span>
+      <p><span lang="en">From the headline alone, Reuters addresses an international audience with the aggregate figure, while БНР, a public broadcaster, targets a domestic audience and its body text leads with the euro-area figure before turning to Bulgaria, adding detail on energy prices and the ECB&#39;s possible December rate move.</span><span lang="bg">От заглавието Reuters се обръща към международна аудитория с общия показател, докато БНР, като обществен медия, е насочен към българската аудитория; в текста обаче първо дава данните за еврозоната и след това за България, с подробности за енергийните цени и възможното декемврийско решение на ЕЦБ.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/business/euro-zone-inflation-rises-three-year-high-2026-11-04/" target="_blank" rel="noopener" title="Euro zone inflation rises to three-year high"><span lang="en">Euro zone inflation rises to three-year high</span><span lang="bg">Инфлацията в еврозоната се покачва до тригодишен връх</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/553230/godishnata-inflatsiya-u-nas-e-vtorata-nay-visoka-v-evrozonata-prez-oktomvri" target="_blank" rel="noopener" title="Годишната инфлация у нас е втората най-висока в еврозоната през октомври"><span lang="en">Annual inflation in Bulgaria is the second highest in the euro zone in October</span><span lang="bg">Годишната инфлация у нас е втората най-висока в еврозоната през октомври</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w12">
+  <div class="story-meta">
+    <span class="num">09</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">South Africans vote in local elections seen as a test for the ANC</span><span lang="bg">Южноафриканците гласуват на местни избори, които са тест за АНК</span></h3>
+  <p class="summary"><span lang="en">South Africans voted on Wednesday in municipal elections that will decide control of the country&#39;s largest cities. The governing African National Congress (ANC) is widely expected to lose further support, with polls putting it at around 30%, down from 45.6% in 2021. Voters are angry over water outages, power cuts and crumbling infrastructure, and fragmented results are likely to produce more coalition-run councils. The electoral commission has a week to announce final results, after which parties have two weeks to form councils and elect mayors.</span><span lang="bg">Южноафриканците гласуваха в сряда на местни избори, които ще решат кой ще управлява най-големите градове в страната. Очаква се управляващият Африкански национален конгрес (АНК) да загуби още подкрепа – анкетите го отчитат около 30% при 45,6% през 2021 г. Избирателите са недоволни от спирането на водата и тока и от западащата инфраструктура, а разпокъсаните резултати вероятно ще доведат до повече общини с коалиционно управление. Избирателната комисия има седмица да обяви окончателните резултати, след което партиите разполагат с две седмици да сформират съвети и да изберат кметове.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Polls, including Ipsos, put ANC support at about 30%, down from 45.6% in the 2021 local elections.</span><span lang="bg">Анкети, включително на Ipsos, поставят подкрепата за АНК около 30% при 45,6% на местните избори през 2021 г.</span></li><li><span lang="en">Water supply failures hit Johannesburg and Tshwane; reports cite hundreds of people sickened by contaminated water in Tshwane (more than 400 per DW, more than 800 per the Guardian).</span><span lang="bg">Проблеми с водоснабдяването засягат Йоханесбург и Тшване; съобщава се за стотици болни от замърсена вода в Тшване (над 400 според DW, над 800 според The Guardian).</span></li><li><span lang="en">The Democratic Alliance leads polls in Gauteng&#39;s three metros, while Jacob Zuma&#39;s MK party is polling above 40% in eThekwini (Durban), according to the Guardian.</span><span lang="bg">Демократичният алианс води в анкетите в трите метрополии на Гаутенг, а партията МК на Джейкъб Зума е над 40% в eThekwini (Дърбан), според The Guardian.</span></li><li><span lang="en">The IEC is investigating more than 700 disinformation complaints, according to DW.</span><span lang="bg">Избирателната комисия (IEC) разследва над 700 сигнала за дезинформация, според DW.</span></li><li><span lang="en">Mayors are not directly elected; voters choose councillors and parties.</span><span lang="bg">Кметовете не се избират пряко – гражданите гласуват за общински съветници и партии.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All three outlets frame the vote as a referendum on the ANC amid service-delivery failures, but they differ in format and focus: DW is an explainer on issues, the Guardian is a party-by-party political analysis of the metros, and the BBC is a ground-level feature on townships and governance.</span><span lang="bg">И трите медии представят вота като референдум за АНК на фона на проваленото предоставяне на услуги, но се различават по формат и фокус: DW дава обяснителен материал по темите, The Guardian – политически анализ по партии и метрополии, а BBC – репортаж от кварталите и за управлението.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">DW · The Guardian · BBC</span>
+      <p><span lang="en">DW&#39;s explainer is organised around issues (water, ANC decline, migration, disinformation); the Guardian concentrates on coalition arithmetic and rival parties (DA, ActionSA, MK) city by city; the BBC concentrates on township conditions and municipal audit failures.</span><span lang="bg">Материалът на DW е структуриран по теми (вода, спад на АНК, миграция, дезинформация); The Guardian се фокусира върху коалиционната аритметика и съперниците (ДА, ActionSA, МК) град по град; BBC – върху условията в кварталите и одиторските констатации за общините.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">DW · BBC · The Guardian</span>
+      <p><span lang="en">DW and BBC quote ordinary residents and analysts (DW also a water NGO and a digital analysis firm); the BBC also quotes President Ramaphosa denying a downward spiral and the auditor-general. The Guardian quotes no individuals, relying on polls and South African media reports.</span><span lang="bg">DW и BBC цитират обикновени жители и анализатори (DW – още неправителствена организация за водите и фирма за дигитален анализ); BBC цитира и президента Рамафоса, който отрича упадък, и главния одитор. The Guardian не цитира конкретни лица и се позовава на анкети и южноафрикански медии.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">DW · The Guardian · BBC</span>
+      <p><span lang="en">Only DW covers migration as a campaign issue and election disinformation; only the Guardian details Zuma&#39;s MK party, Helen Zille&#39;s campaign and mayoral turnover; only the BBC gives the ANC&#39;s long-term decline from 70% in 2004 and the audit record.</span><span lang="bg">Само DW разглежда миграцията като предизборна тема и дезинформацията; само The Guardian разказва подробно за МК на Зума, кампанията на Хелън Зиле и честата смяна на кметове; само BBC дава дългосрочния спад на АНК от 70% през 2004 г. и одиторските данни.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">DW · The Guardian</span>
+      <p><span lang="en">The outlets give different figures for people sickened by contaminated water in Tshwane: more than 400 (DW) versus more than 800 in Bronkhorstspruit (Guardian). They also differ on party numbers: BBC says over 500 parties contest the election, while DW cites 69–75 in individual metros.</span><span lang="bg">Медиите дават различни данни за заболелите от замърсена вода в Тшване: над 400 (DW) срещу над 800 в Бронкхорстспрейт (The Guardian). Различават се и по броя на партиите: BBC съобщава за над 500 участващи партии, а DW – 69–75 в отделните метрополии.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/why-south-africa-s-local-elections-matter/a-79842695?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Why South Africa&#39;s local elections matter"><span lang="en">Why South Africa&#39;s local elections matter</span><span lang="bg">Защо местните избори в Южна Африка са важни</span></a></li>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/world/2026/nov/04/anc-south-africa-local-elections-water-outages-power-cuts" target="_blank" rel="noopener" title="ANC faces anger over poor services as South Africans vote in local elections"><span lang="en">ANC faces anger over poor services as South Africans vote in local elections</span><span lang="bg">АНК е изправен пред гнева заради лошите услуги, докато южноафриканците гласуват на местните избори</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/cr4g1x6l77xyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="ANC under pressure to reverse South Africa decline"><span lang="en">ANC under pressure to reverse South Africa decline</span><span lang="bg">АНК е под натиск да обърне упадъка на Южна Африка</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/south-africans-vote-in-local-elections-in-test-for-anc/a-79851651?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="South Africans vote in local elections in test for ANC"><span lang="en">South Africans vote in local elections in test for ANC</span><span lang="bg">Южноафриканците гласуват на местни избори като тест за АНК</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w05">
+  <div class="story-meta">
+    <span class="num">10</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Markets react to Democratic midterm sweep: dollar falls, gold and bonds rally, tariff uncertainty persists</span><span lang="bg">Пазарите реагират на победата на демократите: доларът пада, златото и облигациите поскъпват, несигурността около митата остава</span></h3>
+  <p class="summary"><span lang="en">Democrats won both the Senate and the House in the US midterm elections, and markets moved on the news. The dollar weakened, gold and US Treasuries rallied, and European bank and clean-energy shares rose, while big US tech stocks and Tesla and SpaceX slid on fears of tougher AI regulation. Analysts described the overall impact as mild or limited so far. In Germany, business leaders called for stable US trade policy, and one economist warned that uncertainty over Trump&#39;s tariffs remains high.</span><span lang="bg">Демократите спечелиха и Сената, и Камарата на представителите на междинните избори в САЩ, а пазарите реагираха. Доларът отслабна, златото и държавните облигации на САЩ поскъпнаха, а акциите на европейски банки и компании за чиста енергия вдигнаха, докато големите американски технологични компании, Tesla и SpaceX поевтиняха заради опасения от по-строги правила за изкуствения интелект. Анализаторите определят ефекта засега като слаб или ограничен. В Германия бизнесът призова за стабилна търговска политика на САЩ, а икономист предупреди, че несигурността около митата на Тръмп остава висока.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The dollar index fell about 0.36% to around 101.50, briefly touching its lowest since late September, according to BNR.</span><span lang="bg">Индексът на долара се понижи с около 0,36% до near 101,50 пункта и за кратко достигна най-ниското си ниво от края на септември, според БНР.</span></li><li><span lang="en">Gold rose 2–3%, to around $4,000–4,046 an ounce, as Treasury yields fell.</span><span lang="bg">Златото поскъпна с 2–3% до около 4000–4046 долара за унция, а доходността на американските облигации спадна.</span></li><li><span lang="en">In Europe, bank stocks rose 2.8%, and Ørsted, Vestas and Nordex gained 5–7.4%; defence stocks fell.</span><span lang="bg">В Европа акциите на банките се покачиха с 2,8%, а Ørsted, Vestas и Nordex поскъпнаха с 5–7,4%; акциите на оръжейните компании спаднаха.</span></li><li><span lang="en">Nasdaq 100 futures briefly dropped over 2% before recovering most of the loss.</span><span lang="bg">Фючърсите на Nasdaq 100 за кратко паднаха с над 2%, но възстановиха голяма част от загубата.</span></li><li><span lang="en">Helena Melnikov of the DIHK said German business wants stability and &#34;no more zigzagging&#34; in US trade policy.</span><span lang="bg">Хелена Мелников от DIHK заяви, че германският бизнес очаква стабилност и „край на зигзагите“ в търговската политика на САЩ.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The Guardian and BNR both report the same market moves (weaker dollar, stronger gold and bonds, tech wobble), while DW looks at the political fallout for German trade rather than at markets. The Guardian is richer in sector detail and expert voices.</span><span lang="bg">The Guardian и БНР отразяват едни и същи пазарни движения (по-слаб долар, по-скъпо злато и облигации, колебание при технологичните акции), докато DW се фокусира върху политическите последици за германската търговия, а не върху пазарите. The Guardian дава повече секторни детайли и експертни гледни точки.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian · БНР</span>
+      <p><span lang="en">The Guardian focuses on European equities (banks, clean energy, defence) and sector winners and losers, while BNR centres on currencies, US futures and Treasury yields with exact figures.</span><span lang="bg">The Guardian се фокусира върху европейските акции (банки, чиста енергия, отбрана) и победителите и губещите по сектори, докато БНР поставя акцент върху валутите, американските фючърси и доходността по облигациите с точни данни.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">The Guardian · DW · БНР</span>
+      <p><span lang="en">The Guardian quotes market analysts (XTB, Amundi, ActivTrades, Deutsche Bank); DW quotes the DIHK chief, ZEW and Ifo experts; BNR cites no named individuals, only Tradeweb data.</span><span lang="bg">The Guardian цитира пазарни анализатори (XTB, Amundi, ActivTrades, Deutsche Bank); DW цитира шефа на DIHK и експерти от ZEW и Ifo; БНР не цитира named лица, а само данни на Tradeweb.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">The Guardian · БНР</span>
+      <p><span lang="en">The Guardian stresses a mild impact and &#39;repositioning&#39;, while BNR&#39;s headline stresses a fall in both the dollar and shares and ends by noting that Trump would likely veto AI curbs, limiting market effects.</span><span lang="bg">The Guardian подчертава слабия ефект и „преразпределение на позиции“, докато заглавието на БНР акцентира върху спад на долара и акциите, а текстът завършва с извода, че Тръмп вероятно ще наложи вето на ограничения за ИИ, което ограничава пазарния ефект.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">DW · The Guardian</span>
+      <p><span lang="en">DW frames the result through tariff unpredictability and notes Democrats are unlikely to bring a return to free trade; The Guardian adds Iran and debt-ceiling risks via Deutsche Bank.</span><span lang="bg">DW разглежда резултата през призмата на непредвидимите мита и отбелязва, че демократите едва ли ще върнат свободната търговия; The Guardian добавя рисковете около Иран и тавана на дълга чрез Deutsche Bank.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/business/live/2026/nov/04/dollar-falls-while-gold-us-treasury-bonds-rally-markets-react-democrats-midterm-election-victory-marks-spencer-latest-live-updates" target="_blank" rel="noopener" title="Dollar falls while gold and US Treasury bonds rally as markets react to Democrats’ midterm election victory – business live"><span lang="en">Dollar falls while gold and US Treasury bonds rally as markets react to Democrats’ midterm election victory</span><span lang="bg">Доларът пада, а златото и американските облигации поскъпват при реакцията на пазарите на победата на демократите</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/553080/spad-na-dolara-i-na-aktsiite-sled-sinyata-valna-na-mezhdinnite-izbori-v-sasht" target="_blank" rel="noopener" title="Спад на долара и на акциите след синята вълна на междинните избори в САЩ"><span lang="en">Dollar and shares fall after the blue wave in the US midterms</span><span lang="bg">Спад на долара и на акциите след синята вълна на междинните избори в САЩ</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/germany-news-commerce-chief-calls-for-stable-us-trade-relations-after-midterms-warning-that-uncertainty-over-trump-s-tariff-policies-remains/live-79854127?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Germany news: Commerce chief calls for stable US trade relations after midterms, warning that uncertainty over Trump&#39;s tariff policies remains"><span lang="en">Germany news: Commerce chief calls for stable US trade relations after midterms, warning that uncertainty over Trump&#39;s tariff policies remains</span><span lang="bg">Новини от Германия: Търговската камара призовава за стабилни търговски отношения със САЩ след изборите, предупреждавайки, че несигурността около митата остава</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w11">
+  <div class="story-meta">
+    <span class="num">11</span>
+    <span class="chip"><span lang="en">Justice</span><span lang="bg">Правосъдие</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Ukraine&#39;s anti-corruption bodies say senior security officials covered up call-centre fraud</span><span lang="bg">Украинските антикорупционни органи: висши служители по сигурността са прикривали измама с колцентрове</span></h3>
+  <p class="summary"><span lang="en">Ukrainian anti-corruption investigators say senior security and law-enforcement officials covered up a large-scale fraud scheme involving call centres. The scheme is at the centre of a widening new investigation. One outlet reports that the officials allegedly took bribes to conceal the fraud. The available text of the articles is very limited, so further details are not clear from the sources.</span><span lang="bg">Украинските антикорупционни разследващи органи съобщават, че висши служители по сигурността и правоприлагането са прикривали мащабна измама с колцентрове. Схемата е в центъра на разрастващо се ново разследване. Според едно от изданията длъжностните лица са взимали подкупи, за да укрият измамите. Наличният текст на материалите е силно ограничен, затова подробности не са ясни от източниците.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Ukrainian anti-corruption investigative bodies made the announcement on 4 November 2026.</span><span lang="bg">Украинските антикорупционни разследващи органи направиха съобщението на 4 ноември 2026 г.</span></li><li><span lang="en">The case concerns a large-scale fraud involving call centres.</span><span lang="bg">Случаят касае мащабна измама с колцентрове.</span></li><li><span lang="en">Senior security and law-enforcement officials are accused of covering up the fraud.</span><span lang="bg">Висши служители по сигурността и правоприлагането са обвинени, че са я прикривали.</span></li><li><span lang="en">Mediapool&#39;s headline says the officials took bribes to conceal the fraud.</span><span lang="bg">Заглавието на Mediapool твърди, че длъжностните лица са взимали подкупи, за да прикрият измамите.</span></li><li><span lang="en">The investigation is described as widening.</span><span lang="bg">Разследването е описано като разрастващо се.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Coverage appears broadly consistent, but only one article has any body text (a summary from Дневник), and the other two are headlines only, so the comparison is limited to headline framing and what Дневник&#39;s summary shows.</span><span lang="bg">Отразяването изглежда общо взето еднопосочно, но само една публикация има текст (резюмето на Дневник), а другите две са само заглавия, затова сравнението се ограничава до рамкирането в заглавията и видимото в резюмето на Дневник.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Reuters · Дневник · Mediapool</span>
+      <p><span lang="en">Reuters casts the anti-graft police as the actor (&#39;target senior officials&#39;), Дневник frames the story as the agencies investigating security-service personnel, and Mediapool puts the officials&#39; alleged conduct (taking bribes) at the centre.</span><span lang="bg">Reuters поставя антикорупционната полиция като действащо лице („взима на прицел висши служители“), Дневник представя историята като разследване на кадри на службите, а Mediapool поставя в центъра предполагаемото поведение на служителите – вземането на подкупи.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Mediapool · Дневник</span>
+      <p><span lang="en">Only Mediapool&#39;s headline mentions bribery as the motive for the cover-up; Дневник&#39;s visible summary speaks of covering up a large-scale fraud and a widening probe, without mentioning bribes in the visible text.</span><span lang="bg">Само заглавието на Mediapool споменава подкупите като мотив за прикриването; видимото резюме на Дневник говори за прикриване на мащабна измама и разрастващо се разследване, без да споменава подкупи.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">Reuters · Mediapool</span>
+      <p><span lang="en">Reuters&#39;s headline does not mention call centres, and Mediapool&#39;s does not either; only Дневник names the call-centre scheme in its headline.</span><span lang="bg">Заглавията на Reuters и Mediapool не споменават колцентровете; само Дневник назовава схемата с колцентрове в заглавието си.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/ukraines-anti-graft-police-target-senior-officials-major-fraud-probe-2026-11-04/" target="_blank" rel="noopener" title="Ukraine&#39;s anti-graft police target senior officials in major fraud probe"><span lang="en">Ukraine&#39;s anti-graft police target senior officials in major fraud probe</span><span lang="bg">Украинската антикорупционна полиция взима на прицел висши служители в голямо разследване за измама</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/04/4976210_antikorupcionnite_organi_na_ukraina_razsledvat_i_kadri/?ref=rss" target="_blank" rel="noopener" title="Антикорупционните органи на Украйна разследват и кадри на службите за измамата с колцентрове"><span lang="en">Ukraine&#39;s anti-corruption bodies are also investigating security service personnel over the call-centre fraud</span><span lang="bg">Антикорупционните органи на Украйна разследват и кадри на службите за измамата с колцентрове</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/svyat/ukrainskite-sluzhbi-za-borba-s-koruptsiyata-obyaviha-che-visshi-darzhavni-sluzhiteli-sa-vzimali-podkupi-za-da-prikriyat-izmami/" target="_blank" rel="noopener" title="Украинските служби за борба с корупцията обявиха, че висши държавни служители са взимали подкупи, за да прикрият измами"><span lang="en">Ukrainian anti-corruption services announced that senior state officials took bribes to cover up fraud</span><span lang="bg">Украинските служби за борба с корупцията обявиха, че висши държавни служители са взимали подкупи, за да прикрият измами</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w13">
+  <div class="story-meta">
+    <span class="num">12</span>
+    <span class="chip"><span lang="en">Science &amp; tech</span><span lang="bg">Наука и технологии</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">NASA&#39;s Swift observatory expected to re-enter Earth&#39;s atmosphere after failed rescue</span><span lang="bg">Обсерваторията „Суифт“ на НАСА се очаква да навлезе в атмосферата след неуспешен опит за спасяване</span></h3>
+  <p class="summary"><span lang="en">NASA&#39;s Neil Gehrels Swift Observatory, launched in November 2004 to study gamma-ray bursts, is expected to re-enter the atmosphere and largely burn up on 4 November. A rescue mission launched in July by Katalyst Space Technologies, using a spacecraft called LINK, failed after LINK spun out of control. Increased solar activity had enlarged atmospheric drag and hastened the telescope&#39;s descent. NASA says some fragments may reach the ground within a band around the equator, but the risk of harm to anyone is low.</span><span lang="bg">Обсерваторията „Нийл Герелс Суифт“ на НАСА, изстреляна през ноември 2004 г. за изучаване на гама-избухвания, се очаква да навлезе в атмосферата и в по-голямата си част да изгори на 4 ноември. Спасителна мисия, пусната през юли от Katalyst Space Technologies със апарата LINK, се провали, след като LINK започна да се върти неконтролируемо. Засилената слънчева активност е увеличила атмосферното съпротивление и е ускорила спускането на телескопа. НАСА съобщава, че някои фрагменти може да достигнат земята в пояс около екватора, но рискът за хората е нисък.</span></p>
+  <ul class="facts">
+    <li><span lang="en">NASA puts the risk of harm to anyone on Earth at about 1 in 2,100 (CNN).</span><span lang="bg">НАСА оценява риска някой да пострада на около 1 към 2100 (CNN).</span></li><li><span lang="en">Debris could fall between roughly 20.6° south and 20.6° north latitude, covering parts of Central and South America, Central Africa, southern India, Southeast Asia, northern Australia and open ocean.</span><span lang="bg">Отломки може да паднат между около 20,6° south и 20,6° north ширина, което обхваща части от Централна и Южна Америка, Централна Африка, Южна Индия, Югоизточна Азия, Северна Австралия и океани.</span></li><li><span lang="en">The exact re-entry time is uncertain: Aerospace Corporation estimated 5:19 a.m. ET and the US Space Force 7:42 a.m. ET, each give or take two hours (CNN).</span><span lang="bg">Точният час на навлизане е неясен: Aerospace Corporation прогнозира 5:19 ч. източно време, а Космическите сили на САЩ – 7:42 ч., и двете с отклонение от около два часа (CNN).</span></li><li><span lang="en">The July rescue attempt with the LINK spacecraft failed; the observatory stopped collecting science data and Penn State sent a final command on 20 October.</span><span lang="bg">Юлският опит за спасяване с апарата LINK се провали; обсерваторията спря да събира научни данни, а екипът от Penn State изпрати последна команда на 20 октомври.</span></li><li><span lang="en">NASA has asked commercial firms how they could extend the life of the Hubble Space Telescope (CNN).</span><span lang="bg">НАСА е поискала от търговски компании предложения как да удължат живота на телескопа „Хъбъл“ (CNN).</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Both outlets report the same core event, but CNN gives a detailed, risk-focused explainer with NASA and expert voices, while BNT offers a shorter wire-based account relayed from Reuters.</span><span lang="bg">И двата медия съобщават за едно и също събитие, но CNN предлага подробен обяснителен материал с акцент върху риска и с цитати от НАСА и експерти, а БНТ дава по-кратък текст по Ройтерс.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · БНТ</span>
+      <p><span lang="en">CNN foregrounds the debris risk, with the 1-in-2,100 figure, the latitude band and a comparison with current safety standards. BNT only says harm to populated areas is unlikely.</span><span lang="bg">CNN поставя на преден план риска от отломки – с вероятността 1 към 2100, географския пояс и сравнение със съвременните стандарти за безопасност. БНТ само отбелязва, че е малко вероятно да бъдат засегнати населени места.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">CNN · БНТ</span>
+      <p><span lang="en">The outlets differ on re-entry timing and weight. CNN cites estimates of 5:19 a.m. ET and 7:42 a.m. ET, each give or take two hours, and a weight of 3,200 pounds. BNT cites a NASA forecast of about 3:30 a.m. EST with a possible deviation of 11 hours and a weight of about 1,452 kg, which is consistent with the 3,200 lb figure.</span><span lang="bg">Медиите се различават по часа на навлизане и теглото. CNN цитира прогнози за 5:19 и 7:42 ч. източно време с отклонение от два часа и тегло 3200 паунда. БНТ посочва прогноза на НАСА за около 3:30 ч. с възможно отклонение от 11 часа и тегло около 1452 кг, което съответства на 3200 паунда.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">CNN · БНТ</span>
+      <p><span lang="en">CNN explains the role of solar activity in the orbital decay, the Penn State shutdown command and the Hubble rescue solicitation. BNT instead stresses the $500 million cost and the possible military relevance of satellite-servicing technology.</span><span lang="bg">CNN обяснява ролята на слънчевата активност за снижаването на орбитата, командата на Penn State и търсенето на решение за „Хъбъл“. БНТ пък изтъква цената от 500 млн. долара и възможното военно приложение на технологията за обслужване на спътници.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · БНТ</span>
+      <p><span lang="en">CNN quotes a NASA statement and an Aerospace Corporation spokesperson. BNT attributes its information to Reuters and quotes no one directly.</span><span lang="bg">CNN цитира изявление на НАСА и говорител на Aerospace Corporation. БНТ се позовава на Ройтерс и не цитира пряко никого.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/04/science/nasa-swift-observatory-reentry-deorbit" target="_blank" rel="noopener" title="A 3,200-pound NASA observatory is careening back toward Earth. Here’s what to know"><span lang="en">A 3,200-pound NASA observatory is careening back toward Earth. Here’s what to know</span><span lang="bg">Обсерватория на НАСА с тегло 3200 паунда се носи към Земята. Какво да знаем</span></a></li>
+      
+      <li><span class="outlet">БНТ</span>
+        <a href="https://bntnews.bg/news/teleskopat-suift-na-nasa-se-nasochva-kam-zemyata-sled-neuspeshen-opit-da-bade-spasen-1420576news.html" target="_blank" rel="noopener" title="Телескопът „Суифт“ на НАСА се насочва към Земята след неуспешен опит да бъде спасен"><span lang="en">NASA&#39;s Swift telescope heads toward Earth after failed rescue attempt</span><span lang="bg">Телескопът „Суифт“ на НАСА се насочва към Земята след неуспешен опит да бъде спасен</span></a></li>
+      
+    </ul>
+  </div>
+</article>
+
+  <h2 class="section" id="bulgaria"><span lang="en">Bulgaria</span><span lang="bg">България</span></h2>
+  
+
+  <h2 class="section" id="sources"><span lang="en">Outlets scanned</span><span lang="bg">Проверени медии</span></h2>
+  <table class="outlets">
+    <tr><th><span lang="en">outlet</span><span lang="bg">медия</span></th><th><span lang="en">Region</span><span lang="bg">Регион</span></th><th><span lang="en">Ownership</span><span lang="bg">Собственост</span></th><th><span lang="en">Articles</span><span lang="bg">Статии</span></th></tr>
+    
+    <tr><td>CNN</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">80</td></tr>
+    
+    <tr><td>Fox News</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">39</td></tr>
+    
+    <tr><td>BBC</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">34</td></tr>
+    
+    <tr><td>DW</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">24</td></tr>
+    
+    <tr><td>Reuters</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">60</td></tr>
+    
+    <tr><td>AP</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">60</td></tr>
+    
+    <tr><td>Al Jazeera</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">state-funded</span><span lang="bg">държавно финансирана</span></td><td class="n ">25</td></tr>
+    
+    <tr><td>The Guardian</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">32</td></tr>
+    
+    <tr><td>France 24</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">24</td></tr>
+    
+    <tr><td>Euronews</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">27</td></tr>
+    
+    <tr><td>Politico Europe</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">10</td></tr>
+    
+    <tr><td>Капитал</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">40</td></tr>
+    
+    <tr><td>Нова</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">57</td></tr>
+    
+    <tr><td>bTV Новините</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">40</td></tr>
+    
+    <tr><td>Дневник</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">30</td></tr>
+    
+    <tr><td>Mediapool</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">30</td></tr>
+    
+    <tr><td>БНТ</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">80</td></tr>
+    
+    <tr><td>БНР</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">50</td></tr>
+    
+  </table>
+
+  <footer><span lang="en">Articles from the last 24 hours are collected from public RSS feeds and sitemaps, grouped into stories by meaning, ranked by how many outlets cover them, and analysed by Claude. Summaries can contain mistakes — follow the links for the original reporting.</span><span lang="bg">Статиите от последните 24 часа се събират от публични RSS канали и карти на сайтовете, групират се в истории по смисъл, подреждат се според броя медии, които ги отразяват, и се анализират от Claude. Резюметата може да съдържат грешки — следвайте връзките към оригиналните публикации.</span><br><span lang="en">Generated</span><span lang="bg">Генериран</span> 2026-11-04T15:23+02:00</footer>
+</div>
+<script>
+  // Optional: remember the chosen language. The switch itself needs no script.
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    if (saved === "bg" || saved === "en") document.getElementById("lang-" + saved).checked = true;
+    document.documentElement.lang = document.getElementById("lang-bg").checked ? "bg" : "en";
+    document.querySelectorAll(".lang input").forEach(function (r) {
+      r.addEventListener("change", function () {
+        document.documentElement.lang = r.value;
+        try { localStorage.setItem("lang", r.value); } catch (e) {}
+      });
+    });
+  })();
+</script>
+</body>
+</html>
