@@ -1,54 +1,6 @@
 {
   "stories": [
     {
-      "date": "2026-11-04",
-      "title_en": "Democrats win the US House and flip the Senate in midterms seen as a rebuke of Trump"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Democrats flip Senate seats and governorships, including in Texas, in US midterms"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Democrats win House in midterms; Jeffries on track to be first Black speaker amid wave of historic firsts and ballot-measure results"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "US strikes Iran's Qeshm Island, Trump says military aid to Israel will end, and tankers ablaze near Hormuz as midterms are held"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Markets react to Democratic midterm sweep: dollar falls, gold and bonds rally, tariff uncertainty persists"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Zelensky in Berlin as EU prepares talks on Ukraine support ahead of US-led Abu Dhabi negotiations; Russian strikes hit power grid"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Israel's election committee certifies results, finds no fraud, rejecting Netanyahu's claims"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Spanish transport minister Óscar Puente resigns after deadly high-speed train crash"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Euro zone inflation rises to 4%, a three-year high, with Bulgaria second-highest"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "Ukraine's anti-corruption bodies say senior security officials covered up call-centre fraud"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "South Africans vote in local elections seen as a test for the ANC"
-    },
-    {
-      "date": "2026-11-04",
-      "title_en": "NASA's Swift observatory expected to re-enter Earth's atmosphere after failed rescue"
-    },
-    {
       "date": "2026-11-05",
       "title_en": "Opposition criticises government over venue for presenting 2027 budget, pension dispute and closure of Dossiers Commission"
     },
@@ -703,6 +655,110 @@
     {
       "date": "2026-11-11",
       "title_en": "European Commission proposes new rules against manipulative online shopping practices"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Trakia motorway pile-up death toll rises to 12 as authorities cite road-safety measures"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Parliament passes tax package and budget-related laws at first reading"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Bulgargaz seeks 14% natural gas price increase for December"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Prosecutors send Blagomir Kotsev to trial over legal-services contract signed as Varna regional governor"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Parliament clashes over proposed changes to the Personal Assistance Act"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Defence minister: Bulgaria failed to use most of the technology transfer in the F-16 deal"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Second suspect charged as accomplice in the murder of Plovdiv businessman Iliyan Filipov"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Part of ceiling collapses at Sofia metro station, station closed for three hours"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Court returns Varna Lake pollution case to prosecutors for a third time"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Kaufland Bulgaria chief vows to fight €75 million competition regulator fine"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Nvidia CEO Jensen Huang reportedly resigns as board weighs his future after affair reports"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Spain holds first general strike in 14 years over housing costs"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "US envoys meet Putin in Moscow after Abu Dhabi talks as Russia and Ukraine trade strikes; Zelensky reports Starshield throttling"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Israeli strike on Nasser hospital in Gaza kills six, including a surgeon"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Democrat Scott Colom wins Mississippi Senate seat, giving Democrats control of both chambers"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "European leaders gather in Dublin as debate grows over Europe's seat at Ukraine peace talks"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Brooklyn building collapse kills at least eight"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Tanker explosions in Strait of Hormuz amid Iran–US standoff"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Russian officer killed by car bomb in St Petersburg"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Xi says Taiwan's 'complete reunification' with China is inevitable"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Hoax bomb-threat emails hit thousands of schools in Italy, Scotland and Northern Ireland"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "European stocks hit record highs as Nvidia CEO turmoil weighs on US futures"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Trump threatens to double tariffs on Mexico unless it stops migrant caravans"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Indonesian Vice President Gibran Rakabuming Raka resigns after court ruling on his education credentials"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "France signals it may back Spain's Pablo Hernández de Cos to succeed Lagarde at the ECB"
+    },
+    {
+      "date": "2026-11-12",
+      "title_en": "Kenya discharges last Ebola patient as Congo outbreak continues"
     }
   ]
 }
