@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News Review 2026-11-14</title>
+<style>
+  :root {
+    --bg: #f7f5f0; --paper: #ffffff; --ink: #1c1b19; --muted: #6b675f; --rule: #e3dfd6;
+    --accent: #b3261e; --accent-soft: #f6e3e1; --chip: #efece5; --link: #1d4f91;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131312; --paper: #1c1c1a; --ink: #ecebe7; --muted: #a29e95; --rule: #34332f;
+      --accent: #ff8a80; --accent-soft: #3a2422; --chip: #2a2926; --link: #8ab4f8;
+    }
+  }
+  * { box-sizing: border-box; }
+  /* Language switch is pure CSS (radio + :has) so it works even where scripts are blocked. */
+  html:has(#lang-bg:checked) [lang="en"], html:not(:has(#lang-bg:checked)) [lang="bg"] { display: none; }
+  .lang input { position: absolute; opacity: 0; pointer-events: none; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.55 Georgia, "Times New Roman", serif; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header.top { border-bottom: 3px double var(--ink); padding: 28px 0 14px; }
+  .masthead { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.05; margin: 0; letter-spacing: -0.5px; }
+  .dateline { font: 14px/1.4 system-ui, sans-serif; color: var(--muted); margin-top: 8px; }
+  .lang { display: inline-flex; border: 1px solid var(--ink); border-radius: 999px; overflow: hidden;
+    font: 600 13px system-ui, sans-serif; flex-shrink: 0; margin-left: auto; position: relative; }
+  .lang label { color: var(--ink); padding: 6px 14px; cursor: pointer; user-select: none; }
+  .lang input:checked + label { background: var(--ink); color: var(--bg); }
+  .lang input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: -2px; }
+  nav.sections { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 18px; font: 600 14px system-ui, sans-serif; padding: 10px 0;
+    border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--bg); z-index: 2; }
+  nav.sections a { color: var(--ink); text-decoration: none; }
+  nav.sections a:hover { color: var(--accent); }
+  h2.section { font: 800 13px system-ui, sans-serif; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  .story { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 20px 22px; margin: 0 0 18px; }
+  .story-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 12px system-ui, sans-serif; color: var(--muted); }
+  .num { font-weight: 800; color: var(--ink); }
+  .chip { background: var(--chip); padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: .5px; }
+  .imp i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--rule); margin-right: 2px; }
+  .imp i.on { background: var(--accent); }
+  .count { margin-left: auto; font-weight: 600; }
+  .story h3 { font-size: 23px; line-height: 1.25; margin: 10px 0 8px; }
+  .summary { margin: 0 0 10px; }
+  .facts { margin: 0 0 12px; padding-left: 20px; font-size: 15.5px; }
+  .facts li { margin: 3px 0; }
+  details.compare { background: var(--accent-soft); border-radius: 5px; padding: 10px 14px; margin: 12px 0; }
+  details.compare summary { cursor: pointer; font: 700 14px system-ui, sans-serif; color: var(--accent); }
+  .overview { font-style: italic; margin: 8px 0; }
+  .diff { border-top: 1px solid var(--rule); padding: 8px 0 2px; }
+  .diff p { margin: 4px 0 0; font-size: 15.5px; }
+  .aspect { font: 700 11px system-ui, sans-serif; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); }
+  .who { font: 600 12px system-ui, sans-serif; color: var(--muted); margin-left: 6px; }
+  .sources-label { font: 700 11px system-ui, sans-serif; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 6px 0 4px; }
+  .sources ul { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+  .sources li { padding: 3px 0; overflow-wrap: anywhere; }
+  .outlet { font: 700 12px system-ui, sans-serif; display: inline-block; min-width: 92px; color: var(--ink); }
+  .sources a { color: var(--link); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  table.outlets { width: 100%; border-collapse: collapse; font: 14px system-ui, sans-serif; background: var(--paper); }
+  table.outlets td, table.outlets th { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); }
+  table.outlets td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .zero { color: var(--accent); }
+  footer { font: 13px/1.5 system-ui, sans-serif; color: var(--muted); padding: 28px 0 48px; }
+  footer a { color: var(--link); }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .story { padding: 16px 14px; }
+    .story h3 { font-size: 20px; }
+    .outlet { display: block; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="masthead">
+      <div>
+        <h1><span lang="en">Daily News Review</span><span lang="bg">Дневен новинарски преглед</span></h1>
+        <div class="dateline"><span lang="en">Saturday, 14 November 2026</span><span lang="bg">събота, 14 ноември 2026 г.</span> · 610 <span lang="en">articles from</span><span lang="bg">статии от</span> 18 <span lang="en">outlets</span><span lang="bg">медии</span> · 18 <span lang="en">stories compared across outlets</span><span lang="bg">истории със сравнение на отразяването</span></div>
+      </div>
+    </div>
+  </header>
+  <nav class="sections">
+    <a href="#world"><span lang="en">World</span><span lang="bg">Свят</span></a>
+    <a href="#bulgaria"><span lang="en">Bulgaria</span><span lang="bg">България</span></a>
+    <a href="#sources"><span lang="en">Sources</span><span lang="bg">Източници</span></a>
+    <a href="index.html"><span lang="en">Archive</span><span lang="bg">Архив</span></a>
+    <div class="lang" role="radiogroup" aria-label="Language">
+      <input type="radio" name="lang" id="lang-en" value="en" checked><label for="lang-en">EN</label><input type="radio" name="lang" id="lang-bg" value="bg"><label for="lang-bg">BG</label>
+    </div>
+  </nav>
+
+  <h2 class="section" id="world"><span lang="en">World</span><span lang="bg">Свят</span></h2>
+  <article class="story" id="w01">
+  <div class="story-meta">
+    <span class="num">01</span>
+    <span class="chip"><span lang="en">Diplomacy</span><span lang="bg">Дипломация</span></span>
+    <span class="imp" title="importance 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Trump, Xi and Putin to hold first-ever trilateral meeting in Shenzhen next week</span><span lang="bg">Тръмп, Си Дзинпин и Путин ще проведат първата си тристранна среща в Шънджън следващата седмица</span></h3>
+  <p class="summary"><span lang="en">The White House announced on Friday that President Donald Trump will meet Chinese leader Xi Jinping and Russian President Vladimir Putin on the sidelines of the APEC summit in Shenzhen, the first meeting of its kind. It is reportedly scheduled for Thursday, 19 November. Trump plans to raise nuclear arms reductions and the war against Iran, but a senior US official said no agreement is expected and that Ukraine is not expected to be discussed. Beijing and Moscow have not officially confirmed the meeting, and China has long resisted trilateral nuclear talks. The last US-Russia nuclear treaty, New START, expired in February.</span><span lang="bg">Белият дом обяви в петък, че президентът Доналд Тръмп ще се срещне с китайския лидер Си Дзинпин и руския президент Владимир Путин в рамките на срещата на върха на АТИС в Шънджън – първа по рода си. Според съобщенията тя е насрочена за четвъртък, 19 ноември. Тръмп смята да повдигне темите за съкращаване на ядрените оръжия и за войната срещу Иран, но високопоставен американски представител заяви, че не се очаква споразумение, нито да се обсъжда Украйна. Пекин и Москва не са потвърдили официално срещата, а Китай отдавна се противопоставя на тристранни ядрени преговори. Последният ядрен договор между САЩ и Русия – Нов СТАРТ – изтече през февруари.</span></p>
+  <ul class="facts">
+    <li><span lang="en">It would be the first trilateral meeting of the US, Chinese and Russian leaders, held on the sidelines of the APEC forum in Shenzhen.</span><span lang="bg">Това ще е първата тристранна среща на лидерите на САЩ, Китай и Русия, в рамките на форума АТИС в Шънджън.</span></li><li><span lang="en">A senior US official said: &#34;We do not expect to get to any kind of agreement&#34;; the talks are described as a starting point.</span><span lang="bg">Високопоставен американски представител заяви: „Не очакваме да стигнем до каквото и да било споразумение“; разговорът е описан като начало.</span></li><li><span lang="en">Trump is expected to raise the war against Iran but not Ukraine, and no separate bilateral meeting with Putin is planned.</span><span lang="bg">Очаква се Тръмп да повдигне войната срещу Иран, но не и Украйна; не се предвижда отделна двустранна среща с Путин.</span></li><li><span lang="en">Beijing and Moscow have not confirmed the meeting; China argues Russia and the US, with larger arsenals, should negotiate directly.</span><span lang="bg">Пекин и Москва не са потвърдили срещата; Китай твърди, че Русия и САЩ, с по-големите си арсенали, трябва да преговарят пряко.</span></li><li><span lang="en">Elon Musk is expected to travel with Trump but not to attend the trilateral meeting.</span><span lang="bg">Очаква се Илон Мъск да придружи Тръмп, но да не участва в тристранната среща.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets report the same core announcement and the low expectations for any deal. They differ mainly in which angle they lead with and how much background they add; Mediapool and Нова give the most context, while France 24 and Дневник were only seen as summaries.</span><span lang="bg">Всички медии съобщават за едно и също – обявената среща и ниските очаквания за споразумение. Разликите са в водещия ъгъл и в обема на контекста: най-много добавят Mediapool и Нова, а France 24 и Дневник са видени само като резюмета.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">CNN · DW · Дневник</span>
+      <p><span lang="en">CNN and DW headline the nuclear non-proliferation/arms agenda, while Дневник leads with what the meeting will not cover – Ukraine.</span><span lang="bg">CNN и DW поставят в заглавието ядрената тема, а Дневник акцентира върху това, което няма да бъде обсъждано – Украйна.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">Mediapool · Нова</span>
+      <p><span lang="en">Mediapool adds, citing the Wall Street Journal, that the idea came from Putin, who reportedly wants a deal ending the Ukraine war on terms favourable to Moscow, and that the US and China disagree over the meeting&#39;s format. Нова instead stresses that Trump&#39;s insistence on nuclear talks has irritated China, which hosts a summit focused on trade.</span><span lang="bg">Mediapool, позовавайки се на „Уолстрийт джърнал“, добавя, че идеята е на Путин, който уж иска споразумение за край на войната в Украйна при изгодни за Москва условия, и че САЩ и Китай спорят за формата на срещата. Нова пък подчертава, че настояването на Тръмп за ядрени преговори е подразнило Китай, домакин на форум, фокусиран върху търговията.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">DW · France 24</span>
+      <p><span lang="en">DW quotes China&#39;s Foreign Ministry from October rejecting trilateral nuclear talks and notes Chinese state media mention only bilateral talks with Xi; France 24 uniquely cites Zelensky warning of a Yalta-like &#34;redistribution of spheres of influence&#34;.</span><span lang="bg">DW цитира китайското външно министерство от октомври, отхвърлящо тристранни ядрени преговори, и отбелязва, че китайските държавни медии споменават само двустранни разговори; France 24 единствена цитира Зеленски, предупредил за „преразпределение на сферите на влияние“ по модела на Ялта.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">CNN · Нова · Mediapool</span>
+      <p><span lang="en">CNN does not mention that Ukraine is not expected on the agenda, which the Bulgarian outlets and DW report; Нова alone adds details such as the Alice Huang spy matter and no planned contact with North Korea, and Mediapool alone gives the 19 November date explicitly.</span><span lang="bg">CNN не споменава, че Украйна не се очаква в дневния ред, което отбелязват българските медии и DW; само Нова добавя подробности като случая с предполагаемата шпионка Алис Хуан и липсата на планове за контакт със Северна Корея, а само Mediapool посочва изрично датата 19 ноември.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/politics/trump-putin-xi-meeting" target="_blank" rel="noopener" title="Trump to meet with China’s Xi and Russia’s Putin at historic trilateral sit-down on nuclear non-proliferation"><span lang="en">Trump to meet Xi and Putin at historic trilateral sit-down on nuclear non-proliferation</span><span lang="bg">Тръмп ще се срещне със Си и Путин на историческа тристранна среща за ядрената неразпространение</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559201/%D1%82%D1%80%D1%8A%D0%BC%D0%BF-%D1%89%D0%B5-%D1%81%D0%B5-%D1%81%D1%80%D0%B5%D1%89%D0%BD%D0%B5-%D1%81-%D0%BF%D1%83%D1%82%D0%B8%D0%BD-%D0%B8-%D1%81%D0%B8-%D0%B4%D0%B7%D0%B8%D0%BD%D0%BF%D0%B8%D0%BD-%D1%81%D0%BB%D0%B5%D0%B4%D0%B2%D0%B0%D1%89%D0%B0%D1%82%D0%B0-%D1%81%D0%B5%D0%B4%D0%BC%D0%B8%D1%86%D0%B0/" target="_blank" rel="noopener" title="Тръмп ще се срещне с Путин и Си Дзинпин следващата седмица"><span lang="en">Trump to meet Putin and Xi Jinping next week</span><span lang="bg">Тръмп ще се срещне с Путин и Си Дзинпин следващата седмица</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/trump-to-meet-xi-putin-for-three-way-huddle-on-nuclear-arms-talks/a-79946408?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Trump to meet Xi, Putin for three-way huddle on nuclear arms talks"><span lang="en">Trump to meet Xi, Putin for three-way huddle on nuclear arms talks</span><span lang="bg">Тръмп ще се срещне със Си и Путин на тристранна среща за ядрените оръжия</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/svyat/beliyat-dom-sreshtata-mezhdu-tramp-putin-i-si-shte-e-na-19-noemvri/" target="_blank" rel="noopener" title="Белият дом: Срещата между Тръмп, Путин и Си ще е на 19 ноември"><span lang="en">White House: Trump-Putin-Xi meeting will be on 19 November</span><span lang="bg">Белият дом: Срещата между Тръмп, Путин и Си ще е на 19 ноември</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/asia-pacific/20261114-china-to-host-first-ever-trilateral-meeting-between-trump-xi-and-putin-next-week-us-says" target="_blank" rel="noopener" title="China to host first-ever trilateral meeting between Trump, Xi and Putin next week"><span lang="en">China to host first-ever trilateral meeting between Trump, Xi and Putin next week</span><span lang="bg">Китай ще бъде домакин на първата тристранна среща между Тръмп, Си и Путин следващата седмица</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/14/4979919_sreshta_trump-putin-si_shte_ima_no_ne_i_za_ukraina/?ref=rss" target="_blank" rel="noopener" title="Среща Тръмп-Путин-Си ще има, но не и за Украйна"><span lang="en">Trump-Putin-Xi meeting will happen, but not about Ukraine</span><span lang="bg">Среща Тръмп-Путин-Си ще има, но не и за Украйна</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w02">
+  <div class="story-meta">
+    <span class="num">02</span>
+    <span class="chip"><span lang="en">Diplomacy</span><span lang="bg">Дипломация</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">9 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">US reportedly floats Donbas-for-NATO idea as Europe agrees a united line for Ukraine peace talks</span><span lang="bg">САЩ са подхвърлили идея за Донбас в замяна на НАТО, докато Европа излиза с единна позиция в преговорите за Украйна</span></h3>
+  <p class="summary"><span lang="en">Ukrainian President Volodymyr Zelensky said the US asked whether Ukraine would withdraw its troops from Donbas in exchange for NATO membership, which he said was the first time such an option had been raised. The comments followed talks in Moscow between Vladimir Putin and US envoys Steve Witkoff and Jared Kushner, after which Witkoff indicated Russia had accepted European participation in the next round. The Kremlin said no final decision on a European role had been taken and that Europe must first show willingness to help the peace process. On Friday EU leaders said Europe would be represented by EU institutions and the E5 countries (France, Germany, Italy, Poland and the UK). Moscow meanwhile revived its demands for a new European security architecture.</span><span lang="bg">Украинският президент Володимир Зеленски заяви, че САЩ са попитали дали Украйна би изтеглила войските си от Донбас в замяна на членство в НАТО, като според него това се случва за първи път. Изявлението последва преговорите в Москва между Владимир Путин и американските пратеници Стив Уиткоф и Джаред Къшнър, след които Уиткоф даде да се разбере, че Русия е приела европейско участие в следващия кръг. Кремъл обаче съобщи, че окончателно решение за ролята на Европа не е взето и че тя първо трябва да покаже готовност да съдейства за мирния процес. В петък лидерите на ЕС обявиха, че Европа ще бъде представлявана от институциите на ЕС и от групата E5 – Франция, Германия, Италия, Полша и Великобритания. Москва междувременно възобнови исканията си за нова архитектура на сигурността в Европа.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Zelensky said the US asked whether Ukraine would pull troops out of Donbas in return for NATO membership, the first time this was raised.</span><span lang="bg">Зеленски заяви, че САЩ са попитали дали Украйна би изтеглила войските си от Донбас в замяна на членство в НАТО – за първи път.</span></li><li><span lang="en">European Council President António Costa said Europe would be represented by the EU institutions and the E5: France, Germany, Italy, Poland and the UK.</span><span lang="bg">Председателят на Европейския съвет Антонио Коща заяви, че Европа ще бъде представлявана от институциите на ЕС и от E5: Франция, Германия, Италия, Полша и Великобритания.</span></li><li><span lang="en">Kremlin spokesman Dmitry Peskov said a decision on European participation had not been made and depends on Europe&#39;s intentions.</span><span lang="bg">Говорителят на Кремъл Дмитрий Песков заяви, че решение за европейско участие не е взето и зависи от намеренията на Европа.</span></li><li><span lang="en">Putin&#39;s aide Yuri Ushakov said Moscow may add &#34;new considerations&#34; to its demands; the Kremlin has revived its 2021 draft treaties on European security.</span><span lang="bg">Помощникът на Путин Юрий Ушаков заяви, че Москва може да добави „нови съображения“ към исканията си; Кремъл възроди проектодоговорите си от 2021 г. за сигурността в Европа.</span></li><li><span lang="en">EU foreign policy chief Kaja Kallas called Russia&#39;s push for a new security architecture a &#34;trap&#34; meant to shift attention from a ceasefire.</span><span lang="bg">Външнополитическата говорителка на ЕС Кая Калас определи руския натиск за нова архитектура на сигурността като „капан“, целящ да отклони вниманието от прекратяването на огъня.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Outlets covered different facets of one diplomatic moment: the Donbas-for-NATO idea, Europe&#39;s seat at the table and Russia&#39;s hardened demands. Only some texts were available in full, so the comparison is limited, and Dnevnik and bTV are judged on a summary and a headline only.</span><span lang="bg">Изданията поставят акцент върху различни страни на един и същ дипломатически момент: идеята за Донбас срещу НАТО, мястото на Европа на масата и ужесточените руски искания. Само част от текстовете са достъпни изцяло, затова сравнението е ограничено, а Дневник и bTV са оценени само по резюме и заглавие.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">BBC · CNN</span>
+      <p><span lang="en">BBC&#39;s analysis frames Putin as the actor, &#34;uncompromising&#34; and raising demands. CNN leads with a European gain (a seat at the table) while adding that Putin is &#34;playing for time&#34;.</span><span lang="bg">Анализът на BBC представя Путин като действащо лице – „непреклонен“, който вдига исканията си. CNN поставя начело успеха на Европа (място на масата), като добавя, че Путин „печели време“.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">BBC · CNN</span>
+      <p><span lang="en">BBC gives the historical background of Russia&#39;s December 2021 draft treaties and the invasion that followed, plus Russian pressure on its economy and refineries. CNN stresses that Europe was sidelined for nearly two years and the difficulty of Europe speaking with one voice, citing Kushner.</span><span lang="bg">BBC дава историческия контекст на руските проектодоговори от декември 2021 г. и последвалата инвазия, както и натиска върху руската икономика и рафинериите. CNN набляга на близо двегодишното изолиране на Европа и трудността тя да говори с един глас, като цитира Къшнър.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">BBC · CNN</span>
+      <p><span lang="en">BBC quotes Kallas, Peskov, Ushakov and the Russian paper Komsomolskaya Pravda. CNN quotes Witkoff, Zelensky, Kallas, Kushner, Ushakov and Putin directly.</span><span lang="bg">BBC цитира Калас, Песков, Ушаков и руския вестник „Комсомолская правда“. CNN цитира директно Уиткоф, Зеленски, Калас, Къшнър, Ушаков и Путин.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Дневник · Mediapool · Politico Europe · bTV Новините</span>
+      <p><span lang="en">Dnevnik (summary) leads with Zelensky&#39;s claim of the first US openness to Ukrainian NATO membership. Politico Europe and bTV focus on Europe&#39;s difficulty finding a single negotiator. Mediapool&#39;s article is about Russian strikes in Zaporizhzhia and Kherson, citing local Ukrainian officials, with no diplomatic angle.</span><span lang="bg">Дневник (по резюмето) поставя начело думите на Зеленски за първо американско допускане на членство на Украйна в НАТО. Politico Europe и bTV акцентират върху трудността Европа да намери един преговарящ. Статията на Mediapool е за руските удари в Запорожка и Херсонска област с цитати от местни украински служители, без дипломатически ъгъл.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/cq39glwprknjo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Rosenberg: Uncompromising Putin ups demands for peace with Ukraine"><span lang="en">Rosenberg: Uncompromising Putin ups demands for peace with Ukraine</span><span lang="bg">Розенберг: Непреклонният Путин вдига исканията си за мир с Украйна</span></a></li>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/europe/russia-ukraine-us-europe-peace-talks-putin-intl" target="_blank" rel="noopener" title="Europe and Ukraine get a boost in peace talks, but Putin is playing for time"><span lang="en">Europe and Ukraine get a boost in peace talks, but Putin is playing for time</span><span lang="bg">Европа и Украйна получават тласък в мирните преговори, но Путин печели време</span></a></li>
+      
+      <li><span class="outlet">Politico Europe</span>
+        <a href="https://www.politico.eu/article/why-europe-failed-to-find-a-superhero-to-take-on-vladimir-putin/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" title="Why Europe failed to find a superhero to take on Putin"><span lang="en">Why Europe failed to find a superhero to take on Putin</span><span lang="bg">Защо Европа не успя да намери супергерой, който да се изправи срещу Путин</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/svetut/zashto-evropa-ne-uspja-da-nameri-supergeroj-kojto-da-se-izpravi-sreshtu-vladimir-putin.html" target="_blank" rel="noopener" title="Защо Европа не успя да намери супергерой, който да се изправи срещу Владимир Путин?"><span lang="en">Why Europe failed to find a superhero to take on Vladimir Putin</span><span lang="bg">Защо Европа не успя да намери супергерой, който да се изправи срещу Владимир Путин?</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/burzi-novini/2026/11/14/4979954_za_pruv_put_sasht_sa_dopusnali_chlenstvo_na_ukraina_v/?ref=rss" target="_blank" rel="noopener" title="За пръв път САЩ са допуснали членство на Украйна в НАТО, съобщи Зеленски"><span lang="en">For the first time the US has admitted Ukraine&#39;s NATO membership, Zelensky says</span><span lang="bg">За пръв път САЩ са допуснали членство на Украйна в НАТО, съобщи Зеленски</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/voina-v-ukraina/nai-malko-petima-ubiti-i-nad-60-raneni-pri-ruski-udari-v-ukraina/" target="_blank" rel="noopener" title="Най-малко петима убити и над 60 ранени при руски удари в Украйна"><span lang="en">At least five killed and over 60 wounded in Russian strikes in Ukraine</span><span lang="bg">Най-малко петима убити и над 60 ранени при руски удари в Украйна</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/europe/20261114-us-negotiators-suggest-ukraine-cedes-territory-in-exchange-for-nato-membership" target="_blank" rel="noopener" title="US proposed Ukraine cedes Donbas in exchange for joining NATO, Zelensky says"><span lang="en">US proposed Ukraine cedes Donbas in exchange for joining NATO, Zelensky says</span><span lang="bg">САЩ са предложили Украйна да отстъпи Донбас в замяна на членство в НАТО, заяви Зеленски</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/14/us-floats-ukraine-ceding-land-to-russia-in-exchange-for-nato-membership-zelenskyy" target="_blank" rel="noopener" title="US floats Ukraine ceding land to Russia in exchange for NATO membership: Zelenskyy"><span lang="en">US floats Ukraine ceding land to Russia in exchange for NATO membership: Zelenskyy</span><span lang="bg">САЩ подхвърлят идея Украйна да отстъпи земя на Русия в замяна на членство в НАТО: Зеленски</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/europes-security-cannot-be-part-ukraine-peace-talks-eu-leaders-say-2026-11-13/" target="_blank" rel="noopener" title="EU settles on five-nation group to speak for Europe at Ukraine peace talks"><span lang="en">EU settles on five-nation group to speak for Europe at Ukraine peace talks</span><span lang="bg">ЕС се спря на група от пет държави, която да говори от името на Европа в мирните преговори за Украйна</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w03">
+  <div class="story-meta">
+    <span class="num">03</span>
+    <span class="chip"><span lang="en">Disaster</span><span lang="bg">Бедствие</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">US halts all flights for over four hours after air traffic control communications failure</span><span lang="bg">САЩ спряха всички полети за над четири часа заради срив в комуникациите на въздушното движение</span></h3>
+  <p class="summary"><span lang="en">The US Federal Aviation Administration ordered a nationwide ground stop on Friday, citing &#34;extraordinary circumstances&#34; and safety after a telecommunications failure affecting air traffic control centers. Transportation Secretary Sean Duffy blamed old routers and switches that were overloaded with data and gave inconsistent readings. The order was lifted at 8:15 p.m. ET after more than four hours, but thousands of flights were delayed or canceled and the backlog is expected to last into the weekend. Officials said there was no sign of a cyberattack and no link to this week&#39;s Microsoft outage, and they called for funds to modernize the system.</span><span lang="bg">Федералната авиационна администрация на САЩ (FAA) разпореди в петък спиране на всички излитания в страната заради „извънредни обстоятелства“ и съображения за безопасност след срив в телекомуникациите, засегнал центровете за управление на въздушното движение. Министърът на транспорта Шон Дъфи обвини стари рутери и суичове, които са се претоварили с данни и са давали противоречиви показания. Забраната беше вдигната в 20:15 ч. източноамериканско време, след повече от четири часа, но хиляди полети бяха забавени или отменени и последиците се очакват да продължат през уикенда. Властите заявиха, че няма данни за кибератака и връзка със срива на Microsoft от тази седмица, и поискаха средства за модернизиране на системата.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The ground stop lasted more than four hours and was lifted at 8:15 p.m. ET; more than 3,500 aircraft were airborne when it was issued, according to CNN.</span><span lang="bg">Спирането продължи над четири часа и беше вдигнато в 20:15 ч. източноамериканско време; според CNN над 3500 самолета са били във въздуха при издаването му.</span></li><li><span lang="en">Duffy said &#34;incredibly old&#34; routers and switches overloaded with data and produced inconsistent readings; Homeland Security Secretary Markwayne Mullin said new FAA technology added to an existing framework overwhelmed the older system.</span><span lang="bg">Дъфи заяви, че „невероятно стари“ рутери и суичове са се претоварили с данни и са давали противоречиви показания; министърът на вътрешната сигурност Маркуейн Мълин обясни, че нова технология на FAA, добавена към съществуваща рамка, е претоварила по-старата система.</span></li><li><span lang="en">Mullin said there was no indication of a cyberattack and no connection to the Microsoft outage, and that the public was never in danger.</span><span lang="bg">Мълин заяви, че няма данни за кибератака или връзка със срива на Microsoft и че обществото никога не е било в опасност.</span></li><li><span lang="en">According to FlightAware, as cited by CNN and DW, more than 15,000 US flights were delayed or canceled on Friday; DW reports over 4,500 cancellations. Flights to and from Europe and Canada were also disrupted.</span><span lang="bg">Според FlightAware, цитирана от CNN и DW, над 15 000 полета в САЩ са били забавени или отменени в петък; DW съобщава за над 4500 отмени. Засегнати бяха и полетите към и от Европа и Канада.</span></li><li><span lang="en">Duffy had asked Congress for $30 billion a day earlier (per DW), and Mullin said a full overhaul could cost about $50 billion (per CNN); officials said Thanksgiving travel should not be affected.</span><span lang="bg">Ден по-рано Дъфи е поискал от Конгреса 30 млрд. долара (според DW), а Мълин заяви, че цялостното обновяване може да струва около 50 млрд. (според CNN); властите посочиха, че пътуванията за Деня на благодарността не би трябвало да бъдат засегнати.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets agree on the core facts: a nationwide FAA ground stop over a communications failure, later lifted. They differ in emphasis and detail. CNN focuses on traveler disruption and practical advice, DW on the official explanation and funding request, and Nova on the historical comparison and personal accounts. Several outlets are visible only by headline or summary.</span><span lang="bg">Всички медии са единни за основните факти: национално спиране на полетите от FAA заради комуникационен срив, по-късно вдигнато. Различават се по акцентите и детайлите. CNN се фокусира върху пътниците и практическите съвети, DW – върху официалното обяснение и искането за средства, а Нова – върху историческото сравнение и личните свидетелства. Няколко медии са видими само по заглавие или резюме.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · DW · Нова</span>
+      <p><span lang="en">CNN gives most space to the traveler fallout (stranded passengers, European airport cancellations, refund rights and expert advice). DW leads with the lifting of the order and Duffy&#39;s &#34;legacy network&#34; explanation, while Nova opens with the restoration of traffic and the scale of the stoppage.</span><span lang="bg">CNN отделя най-много място на последиците за пътниците (блокирани хора, отменени полети в европейски летища, права за възстановяване на сумите и съвети от експерти). DW започва с вдигането на забраната и обяснението на Дъфи за „наследената мрежа“, а Нова – с възстановяването на трафика и мащаба на спирането.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">Нова · DW · CNN</span>
+      <p><span lang="en">Nova calls it the biggest US air shutdown since 9/11 and quotes Mullin saying &#34;this is not another 9/11&#34;; DW notes the first nationwide ground stop since January 2023 and, before that, after 9/11. CNN&#39;s visible text does not make a historical comparison. Nova also adds that floppy disks are still used and are due to be retired by 2028.</span><span lang="bg">Нова го определя като най-мащабното спиране след 11 септември и цитира Мълин: „Това не е поредният 11 септември“; DW отбелязва, че това е първото национално спиране от януари 2023 г., а преди това – след 11 септември. Във видимия текст на CNN няма историческо сравнение. Нова добавя и че още се използват флопи дискове, които трябва да бъдат изведени от употреба до 2028 г.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">CNN · DW · Нова</span>
+      <p><span lang="en">Figures differ: CNN reports over 15,000 flights delayed or canceled on Friday, DW over 4,500 canceled and over 10,000 delayed, and Nova over 7,000 affected. The funding figures also differ: DW cites a $30 billion request, Nova says Duffy asked for at least $50 billion, and CNN attributes the $50 billion overhaul estimate to Mullin.</span><span lang="bg">Данните се разминават: CNN съобщава за над 15 000 забавени или отменени полета в петък, DW – над 4500 отменени и над 10 000 забавени, а Нова – над 7000 засегнати. Различават се и сумите за финансиране: DW цитира искане за 30 млрд. долара, Нова твърди, че Дъфи е поискал поне 50 млрд., а CNN приписва оценката от 50 млрд. на Мълин.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · Нова</span>
+      <p><span lang="en">CNN quotes consumer-rights and travel experts (Going.com, AirHelp), while Nova quotes ordinary passengers, including a Bulgarian traveler heading to San Diego, giving the story a local angle for its audience.</span><span lang="bg">CNN цитира експерти по правата на пътниците и пътуванията (Going.com, AirHelp), докато Нова цитира обикновени пътници, сред които български пътник към Сан Диего, което придава местен ъгъл за аудиторията ѝ.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">France 24 · bTV Новините · Дневник</span>
+      <p><span lang="en">By headline, France 24 stresses a &#34;communication issue&#34; and the FAA as actor, bTV simply says the FAA halted all flights, and Dnevnik stresses a &#34;complete breakdown&#34; and slow resumption, a somewhat more dramatic wording.</span><span lang="bg">По заглавия France 24 подчертава „комуникационен проблем“ и FAA като действащо лице, bTV просто съобщава, че FAA е спряла всички полети, а Дневник наблягa на „пълен срив“ и бавното възобновяване – малко по-драматична формулировка.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/us/faa-nationwide-ground-stop" target="_blank" rel="noopener" title="FAA issues nationwide ground stop for all flights due to ‘extraordinary circumstances’ and safety"><span lang="en">FAA issues nationwide ground stop for all flights due to &#39;extraordinary circumstances&#39; and safety</span><span lang="bg">FAA спира всички полети в страната заради „извънредни обстоятелства“ и безопасност</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/svetut/federalnata-aviacionna-administracija-sprja-vsichki-poleti-v-sasht.html" target="_blank" rel="noopener" title="Федералната авиационна администрация спря всички полети в САЩ"><span lang="en">Federal Aviation Administration halts all flights in the US</span><span lang="bg">Федералната авиационна администрация спря всички полети в САЩ</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/americas/20261113-us-flight-authority-orders-national-ground-stop-over-air-traffic-control-communication-issue" target="_blank" rel="noopener" title="🔴 US flight authority orders national ground stop over air traffic control &#39;communication issue&#39;"><span lang="en">US flight authority orders national ground stop over air traffic control &#39;communication issue&#39;</span><span lang="bg">Американската авиационна власт нареди national спиране на полетите заради „комуникационен проблем“ в управлението на въздушното движение</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559200/%D1%81%D0%B0%D1%89-%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B8%D1%85%D0%B0-%D0%BE%D1%82%D0%BD%D0%BE%D0%B2%D0%BE-%D0%B2%D1%8A%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D0%BE%D1%82%D0%BE-%D1%81%D0%B8-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE/" target="_blank" rel="noopener" title="САЩ отвориха отново въздушното си пространство"><span lang="en">US reopens its airspace</span><span lang="bg">САЩ отвориха отново въздушното си пространство</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/us-lifts-nationwide-ground-stop-for-airports-hours-after-halting-all-departures/a-79945062?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="US lifts nationwide ground stop for airports hours after halting all departures"><span lang="en">US lifts nationwide ground stop for airports hours after halting all departures</span><span lang="bg">САЩ вдигнаха националната забрана за излитания часове след спирането на всички полети</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/14/4979926_v_sasht_bavno_vuzobnoviavat_poletite_sled_pulen_sriv_v/?ref=rss" target="_blank" rel="noopener" title="В САЩ бавно възобновяват полетите след пълен срив в мрежата за въздушно движение"><span lang="en">Flights slowly resume in the US after complete breakdown of air traffic network</span><span lang="bg">В САЩ бавно възобновяват полетите след пълен срив в мрежата за въздушно движение</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w04">
+  <div class="story-meta">
+    <span class="num">04</span>
+    <span class="chip"><span lang="en">Science &amp; tech</span><span lang="bg">Наука и технологии</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">8 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Microsoft 365 global outage lasts more than 24 hours before services are fully restored</span><span lang="bg">Глобален срив на Microsoft 365 продължи над 24 часа, преди услугите да бъдат напълно възстановени</span></h3>
+  <p class="summary"><span lang="en">A widespread outage of Microsoft 365 services, including Outlook, Teams and Copilot, began on Thursday evening and disrupted businesses, governments, schools, courts and healthcare systems in at least 74 countries. Microsoft apologised, said the problem was technical and not a cyber-attack or caused by AI agents, and attributed it to an issue during an earlier network capacity upgrade that surfaced after a recent network change. The company restored services gradually to ensure stability. On Saturday morning it confirmed that all services had recovered after more than 24 hours of disruption, and it plans to publish a full incident report.</span><span lang="bg">Мащабен срив на услугите на Microsoft 365, включително Outlook, Teams и Copilot, започна в четвъртък вечерта и наруши работата на фирми, правителства, училища, съдилища и здравни системи в поне 74 държави. Microsoft се извини и заяви, че проблемът е технически и не е свързан с кибератака или с ИИ агенти, като го отдаде на проблем при по-ранно надграждане на мрежовия капацитет, проявил се след скорошна промяна в мрежата. Компанията възстановяваше услугите постепенно, за да гарантира стабилност. В събота сутринта тя потвърди, че всички услуги са възстановени след над 24 часа смущения, и планира да публикува пълен доклад за инцидента.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Down Detector showed nearly 130,000 problem reports in 74 countries, affecting Word, Excel, PowerPoint, Outlook, Teams, SharePoint, OneDrive and Copilot.</span><span lang="bg">Down Detector отчете близо 130 000 сигнала за проблеми в 74 държави, засегнали Word, Excel, PowerPoint, Outlook, Teams, SharePoint, OneDrive и Copilot.</span></li><li><span lang="en">Microsoft said the cause was a problem during an earlier network capacity upgrade that appeared after a recent network change, and was not a cyber-attack or related to AI agents.</span><span lang="bg">Microsoft заяви, че причината е проблем при по-ранно надграждане на мрежовия капацитет, проявил се след скорошна промяна в мрежата, а не кибератака или ИИ агенти.</span></li><li><span lang="en">Microsoft extended the Outlook email timeout window to 48 hours to protect delayed messages.</span><span lang="bg">Microsoft удължи срока за изчакване на имейлите в Outlook до 48 часа, за да защити забавените съобщения.</span></li><li><span lang="en">Police forces, GP surgeries, schools, courts, US congressional offices and Australian government agencies were among those affected; OpenAI and Anthropic connectors to Microsoft 365 also had problems.</span><span lang="bg">Сред засегнатите бяха полицейски управления, личен лекари, училища, съдилища, офиси на американския Конгрес и австралийски правителствени агенции; конекторите на OpenAI и Anthropic към Microsoft 365 също имаха проблеми.</span></li><li><span lang="en">On Saturday morning Microsoft confirmed all services had recovered, and said it would publish a full incident report after analysis.</span><span lang="bg">В събота сутринта Microsoft потвърди, че всички услуги са възстановени, и заяви, че след анализ ще публикува пълен доклад за инцидента.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets relay Microsoft&#39;s statement that the cause was technical, not a cyber-attack, and that restoration was gradual. They differ mainly in depth: The Guardian and BBC give wide impact and expert context, while the Bulgarian outlets and France 24 mostly repeat the company&#39;s statement or a short summary.</span><span lang="bg">Всички медии предават позицията на Microsoft, че причината е техническа, а не кибератака, и че възстановяването е постепенно. Разликите са най-вече в дълбочината: The Guardian и BBC дават широк обхват на последиците и експертен контекст, докато българските медии и France 24 основно преповтарят изявлението на компанията или кратко резюме.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian · BBC</span>
+      <p><span lang="en">The Guardian lists concrete impacts by country (US House, Tampa, a Colorado sheriff, Australian agencies, Indian airlines, Japanese firms) and the market and financial angle (Microsoft shares down 1.1%, billions in costs in Australia). BBC is built as an explainer on why the outage lasted so long and whether emails will be lost, focusing on the 48-hour timeout window.</span><span lang="bg">The Guardian изброява конкретни последици по държави (Камарата на представителите на САЩ, Тампа, шериф в Колорадо, австралийски агенции, индийски авиокомпании, японски фирми) и финансовия ъгъл (спад от 1,1% на акциите на Microsoft, милиарди разходи в Австралия). BBC е структурирана като обяснение защо сривът продължава толкова дълго и ще бъдат ли загубени имейли, с акцент върху 48-часовия срок за изчакване.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">The Guardian · BBC</span>
+      <p><span lang="en">Both quote outside experts, but different ones: The Guardian quotes RMIT&#39;s Mark Gregory on a likely network-layer misconfiguration, while BBC quotes Reading&#39;s James Ferryman on servers being swamped, plus Gergely Orosz and Troy Hunt on the scale and significance.</span><span lang="bg">И двете цитират външни експерти, но различни: The Guardian цитира Марк Грегъри от RMIT за вероятна misconfiguration в мрежовия слой, а BBC – Джеймс Ферimpман от Университета в Рединг за претоварени сървъри, както и Гергели Ороз и Трой Хънт за мащаба и значението.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">The Guardian · BBC</span>
+      <p><span lang="en">The outlets differ in describing the cause and duration: The Guardian says Microsoft suggested server configuration settings problems and puts the outage at roughly 18 hours before recovery began, while BBC reports the company&#39;s attribution to an earlier network capacity upgrade and says it had lasted more than 20 hours.</span><span lang="bg">Медиите се различават в описанието на причината и продължителността: The Guardian пише, че Microsoft е подсказала проблеми с настройките на сървърите, и определя срива на около 18 часа до началото на възстановяването, докато BBC съобщава за причина в по-ранно надграждане на мрежовия капацитет и че сривът е траел над 20 часа.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">БНР · Нова · France 24</span>
+      <p><span lang="en">БНР, Нова and France 24 lead with Microsoft&#39;s resolution or apology and recovery, with БНР and Нова relaying the company statement almost entirely; France 24 frames the end of a &#39;crippling&#39; outage and notes the US homeland security chief saw &#39;no Microsoft link&#39; to an air traffic stoppage. Капитал, by contrast, leads with the scale (&#39;over 70 countries&#39;).</span><span lang="bg">БНР, Нова и France 24 поставят начело решаването на проблема или извинението и възстановяването, като БНР и Нова почти изцяло предават изявлението на компанията; France 24 очертава края на „парализиращ“ срив и отбелязва, че шефът на американската вътрешна сигурност не вижда „връзка с Microsoft“ със спирането на въздушния трафик. Капитал, напротив, започва с мащаба („над 70 страни“).</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/technology/2026/nov/13/microsoft-outage-outlook-teams-word-excel-reports" target="_blank" rel="noopener" title="Microsoft outage: company scrambles to fix global issue that took down Outlook and Teams"><span lang="en">Microsoft outage: company scrambles to fix global issue that took down Outlook and Teams</span><span lang="bg">Срив на Microsoft: компанията бърза да отстрани глобален проблем, блокирал Outlook и Teams</span></a></li>
+      
+      <li><span class="outlet">Капитал</span>
+        <a href="https://www.capital.bg/biznes/tehnologii_i_nauka/2026/11/13/4979776_masov_sriv_na_uslugite_na_microsoft_zasegna_nad_70/?ref=rss" target="_blank" rel="noopener" title="Масов срив на услугите на Microsoft засегна над 70 страни"><span lang="en">Mass outage of Microsoft services affected over 70 countries</span><span lang="bg">Масов срив на услугите на Microsoft засегна над 70 страни</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Why is Microsoft&#39;s outage lasting so long and will emails be lost?"><span lang="en">Why is Microsoft&#39;s outage lasting so long and will emails be lost?</span><span lang="bg">Защо сривът на Microsoft продължава толкова дълго и ще бъдат ли загубени имейли?</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/558080/microsoft-problemat-s-prekasvaneto-na-uslugite-e-otstranen" target="_blank" rel="noopener" title="Microsoft: Проблемът с прекъсването на услугите е отстранен"><span lang="en">Microsoft: The problem causing the service disruption has been fixed</span><span lang="bg">Microsoft: Проблемът с прекъсването на услугите е отстранен</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/technology/20261114-microsoft-says-consumer-products-fully-recovered-business-services-improving" target="_blank" rel="noopener" title="Microsoft says all services &#39;fully recovered&#39; after global outage"><span lang="en">Microsoft says all services &#39;fully recovered&#39; after global outage</span><span lang="bg">Microsoft: всички услуги са „напълно възстановени“ след глобалния срив</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559202/microsoft-%D0%B8%D0%B7%D1%80%D0%B0%D0%B7%D0%B8-%D0%B4%D1%8A%D0%BB%D0%B1%D0%BE%D0%BA%D0%BE-%D1%81%D1%8A%D0%B6%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0-%D0%B3%D0%BB%D0%BE%D0%B1%D0%B0%D0%BB%D0%BD%D0%BE%D1%82%D0%BE-%D0%BF%D1%80%D0%B5%D0%BA%D1%8A%D1%81%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%B8-%D1%81%D1%8A%D0%BE%D0%B1%D1%89%D0%B8-%D1%87%D0%B5-%D0%BF%D1%80%D0%B8%D1%87%D0%B8%D0%BD%D0%B0%D1%82%D0%B0-%D0%B5-%D0%BE%D1%82%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B0/" target="_blank" rel="noopener" title="Microsoft изрази дълбоко съжаление за глобалното прекъсване на услуги и съобщи, че причината е отстранена"><span lang="en">Microsoft expressed deep regret for the global service disruption and said the cause has been fixed</span><span lang="bg">Microsoft изрази дълбоко съжаление за глобалното прекъсване на услуги и съобщи, че причината е отстранена</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/technology/microsoft-says-consumer-products-services-recovered-still-monitoring-enterprise-2026-11-14/" target="_blank" rel="noopener" title="Microsoft says consumer products services recovered; still monitoring enterprise services"><span lang="en">Microsoft says consumer products services recovered; still monitoring enterprise services</span><span lang="bg">Microsoft: услугите за потребители са възстановени, наблюдението на корпоративните продължава</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/microsoft-outage-outlook-email-365-recover-ca395c0f1e51af784b6d70afb6554f6a" target="_blank" rel="noopener" title="Microsoft says services fully restored after hourslong global outage"><span lang="en">Microsoft says services fully restored after hourslong global outage</span><span lang="bg">Microsoft: услугите са напълно възстановени след многочасов глобален срив</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w06">
+  <div class="story-meta">
+    <span class="num">05</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Bessent blames Lutnick&#39;s Commerce Department over Nvidia chip exports after Huang&#39;s ouster</span><span lang="bg">Бесънт обвини министерството на търговията на Лътник за износа на чипове на Nvidia след оставката на Хуанг</span></h3>
+  <p class="summary"><span lang="en">US Treasury Secretary Scott Bessent publicly blamed Commerce Secretary Howard Lutnick&#39;s department for not placing Singapore-based Megaspeed on the export blacklist, as the fallout from Nvidia CEO Jensen Huang&#39;s resignation reaches Trump&#39;s cabinet. Huang left Nvidia after reports of affairs, including one with Megaspeed executive Alice Huang, who is suspected of Chinese intelligence links. CNN and the Guardian report that White House officials are discussing whether Lutnick should be dismissed, while the White House says Trump has complete confidence in him. Lawmakers from both parties are demanding testimony and investigations, and Lutnick is due to appear before the Senate Banking Committee next month.</span><span lang="bg">Министърът на финансите на САЩ Скот Бесънт публично обвини министерството на търговията на Хауърд Лътник, че не е включило сингапурската компания Megaspeed в списъка с износни ограничения, докато последиците от оставката на изпълнителния директор на Nvidia Дженсън Хуанг достигат до кабинета на Тръмп. Хуанг напусна Nvidia след публикации за извънбрачни връзки, сред които и с ръководителка на Megaspeed – Алис Хуанг, заподозряна във връзки с китайското разузнаване. По данни на CNN и Guardian в Белия дом обсъждат дали Лътник да бъде уволнен, а официално Белият дом заявява, че Тръмп му има пълно доверие. Законодатели от двете партии искат изслушвания и разследвания, а Лътник трябва да се яви пред банковата комисия на Сената следващия месец.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Bessent told CNBC that several agencies had favored putting Megaspeed on the entity list for months, but &#34;Commerce has the pen.&#34;</span><span lang="bg">Бесънт заяви пред CNBC, че няколко ведомства от месеци подкрепят включването на Megaspeed в списъка, но „пишещата ръка е на търговското министерство“.</span></li><li><span lang="en">Jensen Huang resigned as Nvidia CEO on Thursday; CFO Colette Kress is interim chief.</span><span lang="bg">Дженсън Хуанг подаде оставка като изпълнителен директор на Nvidia в четвъртък; временно компанията се ръководи от финансовия директор Колет Кръс.</span></li><li><span lang="en">The White House said Trump &#34;maintains complete confidence&#34; in Lutnick, while advisers reportedly discuss his possible dismissal.</span><span lang="bg">Белият дом заяви, че Тръмп „запазва пълно доверие“ в Лътник, докато съветници според съобщения обсъждат възможно уволнение.</span></li><li><span lang="en">Senate Banking Committee chair Tim Scott has asked both Lutnick and Huang to appear; Lutnick is due to testify in December.</span><span lang="bg">Председателят на банковата комисия на Сената Тим Скот поиска от Лътник и Хуанг да се явят пред комисията; Лътник трябва да даде показания през декември.</span></li><li><span lang="en">Congressional Democrats have opened investigations into how Nvidia was allowed to sell advanced chips to Chinese firms.</span><span lang="bg">Демократи в Конгреса започнаха разследвания как на Nvidia е било позволено да продава напреднали чипове на китайски компании.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The four English-language outlets with full or headline text agree on the core event, Bessent blaming Commerce. They differ in what they stress: CNN on the internal fight and Lutnick&#39;s possible ouster, the Guardian on congressional and geopolitical fallout, the BBC on Bessent&#39;s criticism of Nvidia and past rivalry. Reuters and Дневник cover different angles of the wider saga.</span><span lang="bg">Четирите англоезични медии с пълен текст или заглавие са единодушни за основното събитие – Бесънт обвинява търговското министерство. Разликите са в акцентите: CNN поставя вътрешната борба и възможното отстраняване на Лътник, Guardian – реакцията в Конгреса и геополитическите последици, а BBC – критиката на Бесънт към самата Nvidia и старото съперничество. Reuters и Дневник разглеждат други аспекти на по-широката история.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · The Guardian · BBC</span>
+      <p><span lang="en">CNN leads with the administration blame game and the discussion of firing Lutnick, citing the White House&#39;s vote of confidence. The Guardian foregrounds bipartisan congressional pressure. The BBC frames it as the scandal widening to the cabinet.</span><span lang="bg">CNN започва с вътрешното прехвърляне на вината и обсъждането на уволнение на Лътник, като цитира вота на доверие от Белия дом. Guardian поставя на първо място двупартийния натиск в Конгреса. BBC представя случая като разширяване на скандала към кабинета.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">The Guardian · CNN · BBC</span>
+      <p><span lang="en">The Guardian quotes many lawmakers (Curtis, Cornyn, Schumer, Jeffries, Johnson, Scott) and a Lutnick spokesperson. CNN relies on Bessent, anonymous sources and a White House statement. The BBC quotes Bessent, Tim Scott and Democrats Neal and Wyden.</span><span lang="bg">Guardian цитира множество законодатели (Къртис, Корнин, Шумър, Джефрис, Джонсън, Скот) и говорител на Лътник. CNN се позовава на Бесънт, анонимни източници и позиция на Белия дом. BBC цитира Бесънт, Тим Скот и демократите Нийл и Уайдън.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">BBC · CNN</span>
+      <p><span lang="en">The BBC highlights Bessent&#39;s remark that Nvidia itself must be held accountable for knowing its customers, which CNN omits. CNN reports that Lutnick was briefed months ago and that Bessent challenged him in a Situation Room meeting, which the BBC does not mention.</span><span lang="bg">BBC изтъква думите на Бесънт, че самата Nvidia трябва да отговаря за познаването на клиентите си, което CNN пропуска. CNN съобщава, че Лътник е бил информиран преди месеци и че Бесънт го е конфронтирал в Ситуационната зала, а BBC не споменава това.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">BBC · The Guardian</span>
+      <p><span lang="en">The BBC gives background on the Bessent–Lutnick rivalry and the 25% tariff on H200 chips. The Guardian adds the geopolitical angle: Chinese firms seeking chip capacity abroad and reaction on Chinese social media.</span><span lang="bg">BBC дава контекст за съперничеството между Бесънт и Лътник и за 25-процентното мито върху чиповете H200. Guardian добавя геополитическия аспект: китайски компании търсят капацитет извън Китай, както и реакциите в китайските социални мрежи.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/politics/bessent-lutnick-nvidia-megaspeed-blame" target="_blank" rel="noopener" title="Bessent points finger at Lutnick over Nvidia chip exports as Trump advisers discuss possible Commerce Secretary ouster"><span lang="en">Bessent points finger at Lutnick over Nvidia chip exports as Trump advisers discuss possible Commerce Secretary ouster</span><span lang="bg">Бесънт сочи Лътник за износа на чипове на Nvidia, докато съветници на Тръмп обсъждат евентуално отстраняване на търговския министър</span></a></li>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china" target="_blank" rel="noopener" title="Nvidia scandal: US treasury chief blames Lutnick’s commerce department over alleged lack of action"><span lang="en">Nvidia scandal: US treasury chief blames Lutnick&#39;s commerce department over alleged lack of action</span><span lang="bg">Скандалът с Nvidia: финансовият министър на САЩ обвинява търговското министерство на Лътник в бездействие</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Nvidia scandal fallout widens as Trump&#39;s treasury secretary blames cabinet colleague"><span lang="en">Nvidia scandal fallout widens as Trump&#39;s treasury secretary blames cabinet colleague</span><span lang="bg">Последиците от скандала с Nvidia се разширяват, след като финансовият министър на Тръмп обвини колега от кабинета</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/nvidia-megaspeed-scott-bessent-howard-lutnick-17582a5098a5fb4c8fe866a084a6e52b" target="_blank" rel="noopener" title="Bessent blames Lutnick’s Commerce Department for not restricting Nvidia chip exports"><span lang="en">Bessent blames Lutnick&#39;s Commerce Department for not restricting Nvidia chip exports</span><span lang="bg">Бесънт обвинява министерството на търговията на Лътник, че не е ограничило износа на чипове на Nvidia</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/legal/transactional/nvidias-huang-turns-paul-weiss-law-firm-that-inked-deal-with-trump-2026-11-13/" target="_blank" rel="noopener" title="Nvidia&#39;s Huang turns to Paul Weiss, law firm that inked deal with Trump"><span lang="en">Nvidia&#39;s Huang turns to Paul Weiss, law firm that inked deal with Trump</span><span lang="bg">Хуанг се обръща към Paul Weiss – адвокатската кантора, сключила сделка с Тръмп</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/izkustven-intelekt/2026/11/14/4979874_pochti_semeina_firma_haosut_v_nvidia_povdiga_vuprosi/?ref=rss" target="_blank" rel="noopener" title="Почти семейна фирма: хаосът в Nvidia повдига въпроси за бъдещето"><span lang="en">Almost a family firm: the chaos at Nvidia raises questions about its future</span><span lang="bg">Почти семейна фирма: хаосът в Nvidia повдига въпроси за бъдещето</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w08">
+  <div class="story-meta">
+    <span class="num">06</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">IEA: Global oil market returns to surplus for the first time since the start of the Iran war</span><span lang="bg">МЕА: Световният петролен пазар се връща към излишък за първи път от началото на войната в Иран</span></h3>
+  <p class="summary"><span lang="en">The International Energy Agency said global oil supply exceeded demand by almost 2m barrels a day in October, the first surplus since the US-Israeli war against Iran began, as Gulf exports recovered faster than demand. The agency now expects supply to average 105m barrels a day in the final quarter, 1.7m above forecast demand, having previously projected a deficit. Brent crude fell to its lowest level since late August earlier this week and traded at about $95 on Friday, well below its April peak of $126. The IEA also said members would speed up the release of remaining emergency stockpiles, adding 71m barrels by the end of February.</span><span lang="bg">Международната агенция по енергетика (МЕА) съобщи, че през октомври предлагането на петрол е надвишило търсенето с почти 2 млн. барела дневно – първи излишък от началото на войната на САЩ и Израел срещу Иран, тъй като износът от Персийския залив се е възстановил по-бързо от търсенето. Агенцията вече очаква предлагането да достигне средно 105 млн. барела дневно през последното тримесечие – с 1,7 млн. над прогнозното търсене, при положение че преди това е предвиждала дефицит. Цената на суровия петрол Брент падна тази седмица до най-ниското си равнище от края на август, а в петък се търгуваше около 95 долара за барел – значително под априлския връх от 126 долара. МЕА съобщи още, че членовете ѝ ще ускорят пускането на остатъка от аварийните запаси и ще добавят още 71 млн. барела на пазара до края на февруари.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Oil supply outstripped demand by almost 2m barrels a day in October, according to the IEA.</span><span lang="bg">През октомври предлагането на петрол е надхвърлило търсенето с почти 2 млн. барела дневно, според МЕА.</span></li><li><span lang="en">The IEA expects Q4 supply to average 105m barrels a day, 1.7m above forecast demand; it had previously expected a deficit.</span><span lang="bg">МЕА очаква предлагането през четвъртото тримесечие да е средно 105 млн. барела дневно, с 1,7 млн. над търсенето; преди това е предвиждала дефицит.</span></li><li><span lang="en">Brent crude was about $72 in February, peaked at $126 by the end of April, fell to $89.66 this week and traded around $95 on Friday.</span><span lang="bg">Брент струваше около 72 долара през февруари, достигна 126 долара до края на април, падна до 89,66 долара тази седмица и в петък се търгуваше около 95 долара.</span></li><li><span lang="en">IEA members will release a further 71m barrels of emergency stocks by the end of February.</span><span lang="bg">Членовете на МЕА ще пуснат допълнителни 71 млн. барела от аварийните запаси до края на февруари.</span></li><li><span lang="en">Global oil demand is forecast to fall by 2.68m barrels a day this year to 103.2m, with a rebound expected next year.</span><span lang="bg">Световното търсене на петрол се очаква да спадне с 2,68 млн. барела дневно тази година до 103,2 млн., с възстановяване през следващата година.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Both outlets report the same core IEA finding. The Guardian&#39;s full article offers far more detail and context, while only the opening of Дневник&#39;s piece is available, so the comparison is limited to headlines and leads.</span><span lang="bg">И двете медии съобщават за едно и също основно заключение на МЕА. Статията на The Guardian е налична изцяло и съдържа много повече детайли и контекст, а от материала на Дневник е видим само уводът, затова сравнението се ограничава до заглавията и лидовете.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">The Guardian · Дневник</span>
+      <p><span lang="en">The Guardian&#39;s headline ties the surplus explicitly to the Iran war (&#34;first time since start of Iran war&#34;), while Дневник&#39;s headline is a general statement about the world oil market returning to surplus, without mentioning the war.</span><span lang="bg">Заглавието на The Guardian изрично свързва излишъка с войната в Иран („за първи път от началото на войната“), докато заглавието на Дневник е общо твърдение за връщането на пазара към излишък, без да споменава войната.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian · Дневник</span>
+      <p><span lang="en">The Guardian leads with the October surplus of almost 2m barrels a day, whereas Дневник&#39;s lead stresses the expected surplus in the fourth quarter and attributes it to Middle East exports recovering faster than demand.</span><span lang="bg">The Guardian започва с октомврийския излишък от почти 2 млн. барела дневно, докато лидът на Дневник набляга на очаквания излишък през четвъртото тримесечие и го обяснява с по-бързото възстановяване на износа от Близкия изток спрямо търсенето.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">The Guardian · Дневник</span>
+      <p><span lang="en">The Guardian adds context on Hormuz disruption, Brent price moves, Trump&#39;s remark that the war was &#34;effectively over&#34; and lingering tanker-attack concerns; none of this is visible in the Дневник excerpt.</span><span lang="bg">The Guardian добавя контекст за блокираните доставки през Ормузкия проток, движението на цената на Брент, думите на Тръмп, че войната е „на практика приключила“, и опасенията от нови атаки срещу танкери; в наличния откъс от Дневник такива елементи не се виждат.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/business/2026/nov/13/global-oil-supply-returns-to-surplus-for-first-time-since-start-of-iran-war-says-iea" target="_blank" rel="noopener" title="Global oil supply returns to surplus for first time since start of Iran war, says IEA"><span lang="en">Global oil supply returns to surplus for first time since start of Iran war, says IEA</span><span lang="bg">Световното предлагане на петрол се връща към излишък за първи път от началото на войната в Иран, съобщи МЕА</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/14/4970723_svetovniiat_petrolen_pazar_se_vurna_kum_izlishuk/?ref=rss" target="_blank" rel="noopener" title="Световният петролен пазар се върна към излишък"><span lang="en">The global oil market has returned to surplus</span><span lang="bg">Световният петролен пазар се върна към излишък</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w09">
+  <div class="story-meta">
+    <span class="num">07</span>
+    <span class="chip"><span lang="en">Justice</span><span lang="bg">Правосъдие</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">US Supreme Court agrees to hear case on Trump&#39;s asylum restrictions at the southern border</span><span lang="bg">Върховният съд на САЩ ще разгледа дело за ограниченията на Тръмп за убежище на южната граница</span></h3>
+  <p class="summary"><span lang="en">The US Supreme Court agreed on Friday to decide whether President Donald Trump may bar migrants arriving at the southern border from applying for asylum. The policy stems from a proclamation Trump signed on his first day back in office, suspending entry for migrants it describes as engaged in an &#34;invasion&#34;. A federal appeals court in April upheld a district court ruling that the measure violates the Immigration and Nationality Act, but stayed its decision so the policy remains in force during the appeal. Arguments are expected early next year, with a ruling before July. The case joins other Trump immigration policies already before the court this term.</span><span lang="bg">Във вторник... </span></p>
+  <ul class="facts">
+    <li><span lang="en">The Supreme Court agreed on Friday, 13 November 2026, to hear the administration&#39;s appeal.</span><span lang="bg">В петък, 13 ноември 2026 г., Върховният съд се съгласи да разгледа жалбата на администрацията.</span></li><li><span lang="en">Trump&#39;s proclamation, signed on his first day back in office, suspends entry for migrants &#34;engaged in the invasion&#34; and restricts asylum claims until he finds the &#34;invasion&#34; has ceased.</span><span lang="bg">Прокламацията на Тръмп, подписана в първия му ден след завръщането в Белия дом, спира влизането на мигранти, &#34;участващи в инвазията&#34;, и ограничава молбите за убежище, докато той не установи, че &#34;инвазията&#34; е приключила.</span></li><li><span lang="en">Thirteen individuals and three immigrant rights groups challenged the policy last year; an appeals court in April found it violates the INA but stayed its ruling.</span><span lang="bg">Тринадесет души и три организации за правата на имигрантите оспориха политиката миналата година; през април апелативен съд прецени, че тя нарушава Закона за имиграцията и гражданството, но спря изпълнението на решението си.</span></li><li><span lang="en">Solicitor General D. John Sauer called the measures a &#34;cornerstone&#34; policy and the &#34;most effective&#34; change in resolving a border crisis.</span><span lang="bg">Генералният солиситор Д. Джон Сауър определи мерките като &#34;крайъгълен камък&#34; и &#34;най-ефективната&#34; промяна за справяне с гранична криза.</span></li><li><span lang="en">The case is expected to be heard early next year and decided before July.</span><span lang="bg">Делото се очаква да бъде разгледано в началото на следващата година, а решението да бъде взето преди юли.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only CNN&#39;s full text was available; Reuters and AP are compared by headline alone. All three report the same core event, with differences limited to wording.</span><span lang="bg">Наличен е само пълният текст на CNN; Ройтерс и АП са сравнени само по заглавия. И тримата отразяват едно и също събитие, а разликите са в избора на думи.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">CNN · Reuters · AP</span>
+      <p><span lang="en">CNN&#39;s headline says the court will &#34;decide if Trump may bar most asylum claims&#34;, framing the case as a question of whether a ban is allowed. Reuters says the court will &#34;weigh&#34; &#34;restrictions&#34;, a softer term. AP calls it an &#34;executive order suspending asylum access&#34;.</span><span lang="bg">Заглавието на CNN гласи, че съдът ще &#34;реши дали Тръмп може да забрани повечето молби за убежище&#34; и представя делото като въпрос за допустимостта на забрана. Ройтерс използва по-меко &#34;ограничения&#34; и &#34;ще разгледа&#34;, а АП говори за &#34;заповед за спиране на достъпа до убежище&#34;.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN</span>
+      <p><span lang="en">CNN&#39;s text places the case within the court&#39;s heavy term of Trump immigration cases and quotes both the appeals judge, Michelle Childs, and Solicitor General Sauer, so it gives both the legal objection and the administration&#39;s defence. The Reuters and AP texts were not available to compare.</span><span lang="bg">Текстът на CNN поставя делото в контекста на натоварената сесия на съда с имиграционни дела на Тръмп и цитира както съдия Мишел Чайлдс, така и генералния солиситор Сауър, т.е. и правното възражение, и защитата на администрацията. Текстовете на Ройтерс и АП не са налични за сравнение.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/politics/supreme-court-trump-asylum-policy" target="_blank" rel="noopener" title="Supreme Court to decide if Trump may bar most asylum claims at the southern border"><span lang="en">Supreme Court to decide if Trump may bar most asylum claims at the southern border</span><span lang="bg">Върховният съд ще реши дали Тръмп може да забрани повечето молби за убежище на южната граница</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/supreme-court-will-weigh-trumps-asylum-restrictions-us-mexico-border-2026-11-13/" target="_blank" rel="noopener" title="Supreme Court will weigh Trump&#39;s asylum restrictions at US-Mexico border"><span lang="en">Supreme Court will weigh Trump&#39;s asylum restrictions at US-Mexico border</span><span lang="bg">Върховният съд ще разгледа ограниченията на Тръмп за убежище на границата между САЩ и Мексико</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/supreme-court-trump-asylum-aeed6eb39a46b6f9e56f4b6940a5cfe4" target="_blank" rel="noopener" title="Supreme Court will consider Trump’s executive order suspending asylum access at the southern border"><span lang="en">Supreme Court will consider Trump’s executive order suspending asylum access at the southern border</span><span lang="bg">Върховният съд ще разгледа заповедта на Тръмп за спиране на достъпа до убежище на южната граница</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w15">
+  <div class="story-meta">
+    <span class="num">08</span>
+    <span class="chip"><span lang="en">Health</span><span lang="bg">Здраве</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">US loses measles elimination status after 26 years</span><span lang="bg">САЩ губят статута си на страна, елиминирала морбилите, след 26 години</span></h3>
+  <p class="summary"><span lang="en">The Pan American Health Organization has determined that the United States no longer qualifies as having eliminated measles, ending a status held since 2000, according to the Wall Street Journal and sources cited by CNN and Reuters. An independent expert commission found that the same strain had spread continuously for more than a year. The decision follows record case numbers, with more than 5,000 cases reported in 2026, mostly among unvaccinated people. Experts quoted by the outlets describe the loss as a blow to US public health standing.</span><span lang="bg">Панамериканската здравна организация е преценила, че САЩ вече не отговарят на условията за страна, елиминирала морбилите, с което приключва статут, държан от 2000 г. Това съобщава Wall Street Journal, а CNN и Reuters цитират източници по темата. Независима комисия от експерти е установила, че един и същи щам се е разпространявал непрекъснато повече от година. Решението следва рекордни нива на заболяването – над 5000 случая през 2026 г., предимно сред неваксинирани. Цитираните от медиите специалисти определят загубата като удар по авторитета на САЩ в общественото здраве.</span></p>
+  <ul class="facts">
+    <li><span lang="en">An independent commission reporting to the PAHO director concluded the US no longer qualifies; the news was first reported by the Wall Street Journal.</span><span lang="bg">Независима комисия, която се отчита пред директора на ПАХО, е заключила, че САЩ вече не отговарят на условията; новината първо е съобщена от Wall Street Journal.</span></li><li><span lang="en">Elimination status requires that no strain be transmitted continuously for 12 months or more; a CDC finding of 12 months of continuous transmission was reported by DW, citing Reuters.</span><span lang="bg">Статутът изисква нито един щам да не се предава непрекъснато 12 или повече месеца; според DW, цитираща Reuters, ЦКПБ е установил 12 месеца непрекъсната трансмисия.</span></li><li><span lang="en">CNN reports more than 5,400 cases this year, the most since 1991, while DW cites 5,182 confirmed CDC cases across 45 states, New York City and Washington, D.C.</span><span lang="bg">CNN съобщава за над 5400 случая тази година – най-много от 1991 г., а DW цитира 5182 потвърдени случая на ЦКПБ в 45 щата, Ню Йорк и Вашингтон.</span></li><li><span lang="en">Nearly all of this year&#39;s cases involve unvaccinated people or people with unknown vaccination status, and roughly one in nine patients was hospitalized.</span><span lang="bg">Почти всички случаи тази година са сред неваксинирани или с неизвестен ваксинационен статус, а приблизително един на девет пациенти е хоспитализиран.</span></li><li><span lang="en">To regain the status, a country must end transmission and remain outbreak-free for at least 12 months.</span><span lang="bg">За възстановяване на статута страната трябва да прекрати трансмисията и да остане без огнища поне 12 месеца.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All three outlets report the same core development, and two of them attribute it to the Wall Street Journal. They differ mainly in depth, the experts they quote and how much they link the outcome to US political leadership. Reuters is visible only through its headline.</span><span lang="bg">И трите медии съобщават за едно и също ключово събитие, а две от тях го приписват на Wall Street Journal. Разликите са главно в дълбочината, цитираните експерти и степента, в която свързват резултата с политическото ръководство на САЩ. Reuters се вижда само чрез заглавието си.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · DW</span>
+      <p><span lang="en">CNN gives much space to the science of genetic strain tracking, the Utah outbreak data and the health risks of measles. DW is more compact and puts the PAHO review of CDC evidence and the 12-month continuous transmission finding up front.</span><span lang="bg">CNN отделя много място на генетичното проследяване на щамовете, данните от Юта и здравните рискове от морбилите. DW е по-стегната и поставя отпред прегледа на ПАХО на данните на ЦКПБ и установените 12 месеца непрекъсната трансмисия.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · DW</span>
+      <p><span lang="en">CNN quotes mainly academic and medical experts (Rassmussen, Hotez, Moss) and a former CDC official, Demetre Daskalakis. DW quotes Noel Brewer, who presented the CDC report to PAHO, and Moss via Reuters, and also notes that CDC Director Erica Schwartz said the agency would keep encouraging vaccination.</span><span lang="bg">CNN цитира главно академични и медицински експерти (Расмусен, Хотез, Мос) и бивш представител на ЦКПБ Деметре Даскалакис. DW цитира Ноел Брюър, представил доклада на ЦКПБ пред ПАХО, и Мос чрез Reuters, като отбелязва и че директорът на ЦКПБ Ерика Шварц е заявила, че агенцията ще продължи да насърчава ваксинацията.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">CNN · DW</span>
+      <p><span lang="en">CNN links the loss to the Trump administration, saying some members, including Trump, have cast doubt on vaccines. DW instead points to vaccine hesitancy under Health Secretary Robert F. Kennedy Jr.</span><span lang="bg">CNN свързва загубата с администрацията на Тръмп, като посочва, че някои нейни членове, включително Тръмп, са поставяли под съмнение ваксините. DW вместо това посочва ваксинната неохота при здравния министър Робърт Ф. Кенеди-младши.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">CNN · DW</span>
+      <p><span lang="en">The case and death counts differ: CNN reports more than 5,400 cases this year and at least 10 deaths, while DW reports 5,182 confirmed cases this year and 13 deaths since 2025.</span><span lang="bg">Данните за случаите и починалите се различават: CNN съобщава за над 5400 случая тази година и поне 10 починали, а DW – за 5182 потвърдени случая тази година и 13 починали от 2025 г.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">CNN · Reuters</span>
+      <p><span lang="en">CNN&#39;s headline stresses the length of the streak (&#34;After 26 years&#34;). Reuters&#39; headline attributes the loss to continued spread of the disease and cites the WSJ. Only the headline of Reuters&#39; article is available.</span><span lang="bg">Заглавието на CNN подчертава продължителността на статута („След 26 години“). Заглавието на Reuters свързва загубата с продължаващото разпространение на болестта и цитира WSJ. За Reuters е налично само заглавието.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/health/us-measles-elimination-status" target="_blank" rel="noopener" title="After 26 years, the US has lost its measles elimination status"><span lang="en">After 26 years, the US has lost its measles elimination status</span><span lang="bg">След 26 години САЩ загубиха статута си на страна, елиминирала морбилите</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/us-loses-measles-elimination-status-after-26-years-wsj-reports/a-79946974?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="US loses measles-elimination status after 26 years, WSJ reports"><span lang="en">US loses measles-elimination status after 26 years, WSJ reports</span><span lang="bg">САЩ губят статута си на страна, елиминирала морбилите, след 26 години, съобщава WSJ</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/us-loses-measles-free-status-after-continued-spread-disease-wsj-reports-2026-11-14/" target="_blank" rel="noopener" title="US loses measles-free status after continued spread of the disease, WSJ reports"><span lang="en">US loses measles-free status after continued spread of the disease, WSJ reports</span><span lang="bg">САЩ губят статута си на страна без морбили заради продължаващото разпространение на болестта, съобщава WSJ</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w05">
+  <div class="story-meta">
+    <span class="num">09</span>
+    <span class="chip"><span lang="en">Justice</span><span lang="bg">Правосъдие</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">10 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Hungary seizes nearly $20m in hidden cash in corruption probe of ex-Orbán minister</span><span lang="bg">Унгария иззе близо 20 млн. долара скрити пари при разследване на бивш министър на Орбан</span></h3>
+  <p class="summary"><span lang="en">Hungary&#39;s National Asset Recovery and Protection Office said it found about $19.5m in cash during two days of searches linked to a corruption case against Miklós Seszták, development minister in Viktor Orbán&#39;s government from 2014 to 2018. The money, in forints, euros and US dollars, was buried in forests and hidden in farm buildings, warehouses, a home and a safe. Seszták is suspected of taking more than $37m in bribes and kickbacks tied to overpriced used-bus purchases by a state transport company and state construction projects. Prime Minister Péter Magyar said the find marked the end of the &#34;Fidesz-KDNP mafia&#34;, while Orbán has called the probes political persecution.</span><span lang="bg">Унгарската Национална служба за възстановяване и защита на активи обяви, че е открила около 19,5 млн. долара в брой при двудневни обиски по дело за корупция срещу Миклош Шестак, министър на националното развитие в правителството на Виктор Орбан между 2014 и 2018 г. Парите във форинти, евро и щатски долари били заровени в гори и укрити в селскостопански постройки, складове, жилище и сейф. Шестак е заподозрян, че е получил над 37 млн. долара подкупи и комисиони, свързани със завишени цени при покупката на употребявани автобуси от държавна транспортна компания и с държавни строителни проекти. Премиерът Петер Мадяр заяви, че находката бележи края на „мафията ФИДЕС–ХДНП“, а Орбан определя разследванията като политическо преследване.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The cash totalled 5,071,632,000 forints, €2,658,350 and $1,257,100, worth about $19.5m, found during searches on 12–13 November in Budapest and three other counties.</span><span lang="bg">Сумата е 5 071 632 000 форинта, 2 658 350 евро и 1 257 100 долара, или около 19,5 млн. долара, открити при обиски на 12 и 13 ноември в Будапеща и още три окръга.</span></li><li><span lang="en">Twelve Treasury employees spent eight hours counting the money with five machines, according to Finance Minister András Kármán.</span><span lang="bg">Според финансовия министър Андраш Кармán 12 служители на Хазната са броили парите осем часа с пет машини.</span></li><li><span lang="en">Seszták was detained in late September and denies wrongdoing.</span><span lang="bg">Шестак е задържан в края на септември и отрича вина.</span></li><li><span lang="en">Other Orbán-era figures, including ex-central bank governor György Matolcsy and Orbán&#39;s younger brother, have also been detained in separate cases.</span><span lang="bg">Други фигури от ерата на Орбан, сред които бившият управител на централната банка Дьорд Матолчи и по-малкият брат на Орбан, също са задържани по отделни дела.</span></li><li><span lang="en">A Median poll published by HVG found 70% of respondents consider the anti-corruption drive very important.</span><span lang="bg">Проучване на „Медиан“, публикувано от HVG, показва, че 70% от анкетираните смятат антикорупционните разследвания за много важни.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Outlets agree on the core facts: the cash, the Seszták case and Magyar&#39;s &#34;mafia&#34; remark. They differ mainly in the dollar total used, the amount of political and legal context, and the depth of detail; Bulgarian outlets are shorter and partly inconsistent.</span><span lang="bg">Изданията са единодушни за основните факти: парите, случая „Шестак“ и думите на Мадяр за „мафията“. Разликите са главно в посочената сума, в обема на политическия и правния контекст и в детайлността; българските медии са по-кратки и частично непоследователни.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">The Guardian · DW · Al Jazeera · Mediapool · Нова · bTV Новините</span>
+      <p><span lang="en">The Guardian, DW and bTV give about $19.5m or nearly $20m, while Mediapool and Нова report about $18m (Mediapool: $18.1m). Al Jazeera&#39;s article carries both, with a $18m subheading and $19.5m in the body. Дневник&#39;s headline uses euros (over €17m).</span><span lang="bg">The Guardian, DW и bTV посочват около 19,5 или близо 20 млн. долара, а Mediapool и Нова – около 18 млн. (Mediapool: 18,1 млн.). Материалът на Al Jazeera съдържа и двете суми – 18 млн. в подзаглавието и 19,5 млн. в текста. Заглавието на Дневник е в евро (над 17 млн.).</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">Нова · The Guardian · DW</span>
+      <p><span lang="en">Нова is very brief, omits Magyar&#39;s reaction and Orbán&#39;s response, and says the money was found in Seszták&#39;s property, whereas other outlets describe several locations and do not say all were his. The Guardian, DW and Al Jazeera include the reactions and wider arrests.</span><span lang="bg">Нова е твърде кратка, пропуска реакцията на Мадяр и отговора на Орбан и твърди, че парите са в имот на Шестак, докато другите издания описват няколко места и не казват, че всички са негови. The Guardian, DW и Al Jazeera включват реакциите и по-широките арести.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">DW · Al Jazeera · The Guardian</span>
+      <p><span lang="en">DW gives the most context: the &#34;Operation Purgatory&#34; label, Matolcsy&#39;s case with the 288bn-forint foundation, Orbán&#39;s brother, and a poll showing Fidesz support at 16%. Al Jazeera adds the HVG/Median poll on anti-corruption, while the Guardian is more concise and notes the list of detained ex-ministers.</span><span lang="bg">DW дава най-много контекст: наименованието „Операция Чистилище“, делото срещу Матолчи с фондацията от 288 млрд. форинта, брата на Орбан и проучване, според което подкрепата за ФИДЕС е 16%. Al Jazeera добавя проучването на HVG/„Медиан“, а The Guardian е по-кратък и отбелязва задържаните бивши министри.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">Mediapool · DW · The Guardian</span>
+      <p><span lang="en">Mediapool and DW quote Magyar&#39;s stronger line that Orbán is &#34;a proven mafia boss&#34; and Fidesz a &#34;criminal organization&#34;; the Guardian quotes only the &#34;end of the mafia&#34; remark. DW notes Seszták&#39;s lawyer did not respond and that he denies wrongdoing, while the Guardian does not mention his denial.</span><span lang="bg">Mediapool и DW цитират по-острата реплика на Мадяр, че Орбан е „доказан мафиотски бос“, а ФИДЕС – „престъпна организация“; The Guardian цитира само израза за края на мафията. DW отбелязва, че адвокатът на Шестак не е отговорил и че той отрича вина, докато The Guardian не споменава отричането.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">The Guardian · bTV Новините · Al Jazeera</span>
+      <p><span lang="en">The Guardian puts the state as the actor (&#34;seizes&#34;) and bTV stresses the dramatic detail of cash &#34;buried in forests and hidden in caches&#34;, while Al Jazeera uses a more neutral &#34;found&#34; headline.</span><span lang="bg">The Guardian представя държавата като действащо лице („иззема“), bTV наблягат на драматичния детайл със заровените в гори и скрити в тайници пари, а Al Jazeera използва по-неутралното „намерени“.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/world/2026/nov/13/hungary-seizes-195m-in-cash-found-buried-in-forests-amid-graft-inquiry" target="_blank" rel="noopener" title="Hungary seizes $19.5m in cash found buried in forests amid graft inquiry"><span lang="en">Hungary seizes $19.5m in cash found buried in forests amid graft inquiry</span><span lang="bg">Унгария иззе 19,5 млн. долара в брой, заровени в гори, при разследване за корупция</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/svetut/otkriha-19-5-mln-dolara-zaroveni-v-gori-i-skriti-v-tajnici-na-bivsh-ministar-na-orban.html" target="_blank" rel="noopener" title="Откриха 19,5 млн. долара, заровени в гори и скрити в тайници, при разследване на бивш министър на Орбан (ВИДЕО)"><span lang="en">$19.5m buried in forests and hidden in caches found in probe of ex-Orbán minister (VIDEO)</span><span lang="bg">Откриха 19,5 млн. долара, заровени в гори и скрити в тайници, при разследване на бивш министър на Орбан (ВИДЕО)</span></a></li>
+      
+      <li><span class="outlet">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/11/14/hungarian-investigators-uncover-19-5m-hidden-in-forests-and-buildings?traffic_source=rss" target="_blank" rel="noopener" title="Nearly $20m found in Hungary’s forests, buildings amid corruption probe"><span lang="en">Nearly $20m found in Hungary&#39;s forests, buildings amid corruption probe</span><span lang="bg">Близо 20 млн. долара са открити в унгарски гори и сгради при разследване за корупция</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/svyat/otkriha-18-mln-dolara-v-broi-pri-razsledvane-sreshtu-bivsh-ministar-na-orban/" target="_blank" rel="noopener" title="Откриха 18 млн. долара в брой при разследване срещу бивш министър на Орбан"><span lang="en">$18m in cash found in probe of ex-Orbán minister</span><span lang="bg">Откриха 18 млн. долара в брой при разследване срещу бивш министър на Орбан</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/hungary-millions-in-hidden-cash-found-in-orban-graft-probe/a-79946923?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Hungary: Millions in hidden cash found in Orban graft probe"><span lang="en">Hungary: Millions in hidden cash found in Orbán graft probe</span><span lang="bg">Унгария: Милиони скрити пари са открити при разследване на корупция около Орбан</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559225/%D0%BE%D1%82%D0%BA%D1%80%D0%B8%D1%85%D0%B0-18-%D0%BC%D0%B8%D0%BB%D0%B8%D0%BE%D0%BD%D0%B0-%D0%B4%D0%BE%D0%BB%D0%B0%D1%80%D0%B0-%D0%B2-%D0%B8%D0%BC%D0%BE%D1%82-%D0%BD%D0%B0-%D0%B1%D0%B8%D0%B2%D1%88-%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80-%D0%BE%D1%82-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%BE%D1%82%D0%BE-%D0%BD%D0%B0-%D0%BE%D1%80%D0%B1%D0%B0%D0%BD/" target="_blank" rel="noopener" title="Откриха 18 милиона долара в имот на бивш министър от правителството на Орбан"><span lang="en">$18m found in property of ex-minister from Orbán government</span><span lang="bg">Откриха 18 милиона долара в имот на бивш министър от правителството на Орбан</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/hungary-hidden-cash-recovery-orban-minister-investigation-407e76ce08b3e8d736eeb2fd40a05e44" target="_blank" rel="noopener" title="Hungarian authorities recover $19.5 million in cash during investigation into Orbán-era minister"><span lang="en">Hungarian authorities recover $19.5 million in cash during investigation into Orbán-era minister</span><span lang="bg">Унгарските власти възстановиха 19,5 млн. долара в брой при разследване на министър от ерата на Орбан</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/hungary-recovers-20-million-cash-probe-orban-minister-2026-11-14/" target="_blank" rel="noopener" title="Hungary recovers $20 million cash in probe of Orban minister"><span lang="en">Hungary recovers $20 million cash in probe of Orbán minister</span><span lang="bg">Унгария възстанови 20 млн. долара в брой при разследване на министър на Орбан</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/ckjwj03w4w0qo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Hungarian authorities uncover $20m during probe of Orbán-era minister"><span lang="en">Hungarian authorities uncover $20m during probe of Orbán-era minister</span><span lang="bg">Унгарските власти откриха 20 млн. долара при разследване на министър от ерата на Орбан</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/14/4979935_ungariia_otkri_zakopani_i_skriti_nad_17_mln_evro_pri/?ref=rss" target="_blank" rel="noopener" title="Унгария откри закопани и скрити над 17 млн. евро при разследване срещу министър на Орбан"><span lang="en">Hungary finds buried and hidden over €17m in probe of Orbán minister</span><span lang="bg">Унгария откри закопани и скрити над 17 млн. евро при разследване срещу министър на Орбан</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w07">
+  <div class="story-meta">
+    <span class="num">10</span>
+    <span class="chip"><span lang="en">Diplomacy</span><span lang="bg">Дипломация</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Trump&#39;s shifting statements on Iran leave path ahead unclear</span><span lang="bg">Променливите изявления на Тръмп за Иран оставят неяснота за по-нататъшния път</span></h3>
+  <p class="summary"><span lang="en">President Donald Trump wrote on Truth Social that the US &#34;no longer needs a deal with Iran&#34;, just days after voicing optimism about negotiations. A day earlier, at a Veterans Day ceremony, he said &#34;we won&#34; but that the conflict had not formally ended. An administration official told Fox News the naval blockade and military pressure will continue. AP&#39;s headline says the shifting rhetoric after the US elections leaves the Middle East in limbo about the way forward.</span><span lang="bg">Президентът Доналд Тръмп написа в Truth Social, че САЩ &#34;вече не се нуждаят от сделка с Иран&#34;, само дни след като изрази оптимизъм за преговорите. Ден по-рано, на церемония за Деня на ветераните, той заяви &#34;победихме&#34;, но призна, че конфликтът все още не е формално приключил. Представител на администрацията пред Fox News заяви, че морската блокада и военният натиск ще продължат. Заглавието на AP посочва, че променливата риторика след изборите в САЩ оставя Близкия изток в неяснота относно по-нататъшния път.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Trump wrote on Truth Social: &#34;We don&#39;t need a deal with Iran… We&#39;ve got their money, Hundreds of Billions of Dollars, and we&#39;ve got their Strait!&#34;</span><span lang="bg">Тръмп написа в Truth Social: &#34;Не се нуждаем от сделка с Иран… Имаме техните пари, стотици милиарди долари, и имаме техния проток!&#34;</span></li><li><span lang="en">At Arlington National Cemetery on Veterans Day he said &#34;We won&#34; but wanted &#34;a total victory, not a 93 percent victory&#34;.</span><span lang="bg">В Арлингтънското национално гробище в Деня на ветераните той каза &#34;Победихме&#34;, но че иска &#34;пълна победа, а не 93-процентна победа&#34;.</span></li><li><span lang="en">A US official said the naval blockade (Operation Economic Outcast) and the new Operation Iron Gate will continue with full effect.</span><span lang="bg">Представител на САЩ заяви, че морската блокада (операция &#34;Икономически изгнаник&#34;) и новата операция &#34;Железни порти&#34; ще продължат с пълна сила.</span></li><li><span lang="en">According to a preliminary review cited by Fox News, Trump has suggested at least a dozen times since February that a deal was near or Iran wanted to negotiate; a ceasefire was agreed in April but the conflict remains unresolved.</span><span lang="bg">Според предварителен преглед, цитиран от Fox News, от февруари насам Тръмп е намеквал поне дузина пъти, че сделка е близка или че Иран иска преговори; през април е договорено примирие, но конфликтът остава нерешен.</span></li><li><span lang="en">Hudson Institute&#39;s Ludovic Hood said the strategy lacks &#34;disciplined diplomacy&#34; and closer work with Gulf and European partners.</span><span lang="bg">Людовик Худ от Института Хъдсън заяви, че на стратегията ѝ липсва &#34;дисциплинирана дипломация&#34; и по-тясна работа с партньорите от Залива и Европа.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only AP&#39;s headline is available, so the comparison is limited. The two headlines frame the story differently: AP stresses regional uncertainty, while Fox News stresses Trump&#39;s signals of an end to the war and a strategic gap.</span><span lang="bg">Налично е само заглавието на AP, затова сравнението е ограничено. Двете заглавия представят темата различно: AP подчертава несигурността в региона, а Fox News – сигналите на Тръмп за край на войната и стратегическата празнина.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">AP · Fox News</span>
+      <p><span lang="en">AP&#39;s headline makes the Middle East the affected party, left &#34;in limbo&#34; by Trump&#39;s rhetoric and ties the shift to the US elections. Fox News makes Trump the actor &#34;signaling an end&#34; to the war.</span><span lang="bg">Заглавието на AP поставя Близкия изток като засегнатата страна, оставена &#34;в неяснота&#34; от риториката на Тръмп, и свързва промяната с изборите в САЩ. Fox News представя Тръмп като действащото лице, което &#34;сигнализира за край&#34; на войната.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">AP · Fox News</span>
+      <p><span lang="en">AP&#39;s headline points to confusion and uncertainty about Trump&#39;s messaging. Fox News&#39;s headline is more measured, with an expert flagging one missing piece within a strategy the article largely calls sensible.</span><span lang="bg">Заглавието на AP загатва за объркване и несигурност около посланията на Тръмп. Заглавието на Fox News е по-сдържано – експерт посочва една липсваща част в стратегия, която статията като цяло определя като разумна.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">Fox News</span>
+      <p><span lang="en">Fox News&#39;s article quotes Trump, an unnamed US official defending the strategy and Hudson Institute fellow Ludovic Hood. Nothing can be said about AP&#39;s sourcing, as only its headline was available.</span><span lang="bg">Статията на Fox News цитира Тръмп, неназован американски представител, който защитава стратегията, и Людовик Худ от Института Хъдсън. За източниците на AP не може да се каже нищо, тъй като е наличен само заглавието.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Fox News</span>
+        <a href="https://www.foxnews.com/politics/trump-keeps-signaling-end-iran-war-expert-warns-crucial-piece-his-strategy-missing" target="_blank" rel="noopener" title="Trump keeps signaling an end to Iran war, but expert warns a crucial piece of his strategy is missing"><span lang="en">Trump keeps signaling an end to Iran war, but expert warns a crucial piece of his strategy is missing</span><span lang="bg">Тръмп продължава да сигнализира за край на войната с Иран, но експерт предупреждава, че липсва ключов елемент от стратегията му</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/trump-iran-talks-strikes-limbo-02378df1ec3073d2c0f8f162e697d181" target="_blank" rel="noopener" title="With shifting Iran rhetoric following US elections, Trump leaves Mideast in limbo about path ahead"><span lang="en">With shifting Iran rhetoric following US elections, Trump leaves Mideast in limbo about path ahead</span><span lang="bg">С променливата си риторика за Иран след изборите в САЩ Тръмп оставя Близкия изток в неяснота за по-нататъшния път</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w10">
+  <div class="story-meta">
+    <span class="num">11</span>
+    <span class="chip"><span lang="en">Science &amp; tech</span><span lang="bg">Наука и технологии</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">5 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">SpaceX Starship reaches orbit on 15th test flight, but booster catch fails</span><span lang="bg">Starship на SpaceX достигна орбита при 15-ия тестов полет, но улавянето на ускорителя не успя</span></h3>
+  <p class="summary"><span lang="en">SpaceX launched its 15th Starship test flight from Starbase, Texas, on Friday. The Super Heavy booster was meant to be caught by the launch tower&#39;s mechanical arms but was diverted to the Gulf of Mexico instead. The Ship upper stage reached orbit and deployed Starlink satellites. SpaceX plans to decide whether to attempt the first-ever catch of the Ship when it returns to the launch tower about 22 hours after liftoff.</span><span lang="bg">SpaceX изстреля 15-ия тестов полет на Starship от Старбейс, Тексас, в петък. Ускорителят Super Heavy трябваше да бъде уловен от механичните рамена на стартовата кула, но вместо това беше отклонен към Мексиканския залив. Горната степен Ship достигна орбита и разгърна спътници на Starlink. SpaceX ще реши дали да опита първото в историята улавяне на Ship при връщането му към кулата около 22 часа след излитането.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The Super Heavy booster&#39;s attempted tower catch was abandoned and it came down in the Gulf of Mexico; the cause was not immediately clear.</span><span lang="bg">Опитът за улавяне на ускорителя Super Heavy от кулата беше прекратен и той падна в Мексиканския залив; причината не беше изяснена веднага.</span></li><li><span lang="en">The Ship reached orbit and deployed 26 Starlink satellites, according to BBC and DW.</span><span lang="bg">Ship достигна орбита и разгърна 26 спътника на Starlink, според BBC и DW.</span></li><li><span lang="en">The Ship is due to circle Earth for about 22 hours before a possible catch by the launch tower, which has never been done before.</span><span lang="bg">Ship трябва да обикаля Земята около 22 часа преди възможно улавяне от кулата, което никога досега не е правено.</span></li><li><span lang="en">SpaceX had caught the booster on three earlier flights, while the upper stage has never been caught.</span><span lang="bg">SpaceX е улавяла ускорителя при три предишни полета, а горната степен никога не е била улавяна.</span></li><li><span lang="en">Starship&#39;s progress bears on NASA&#39;s plan to land astronauts on the Moon, targeted for 2028.</span><span lang="bg">Напредъкът на Starship е важен за плана на НАСА за кацане на астронавти на Луната, насрочено за 2028 г.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets report the same core event: orbit reached, booster catch failed. They differ in whether the headline leads with the success or the failure, in how they describe the booster&#39;s end, and in how much wider context they add. France 24&#39;s summary has a different satellite count from the others.</span><span lang="bg">Всички медии съобщават за едно и също: орбитата е достигната, а улавянето на ускорителя е неуспешно. Разликите са в това дали заглавието акцентира върху успеха или върху неуспеха, как е описан краят на ускорителя и колко широк контекст се предлага. В резюмето на France 24 броят на спътниците е различен от този при останалите.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">CNN · AP · BBC · DW · France 24</span>
+      <p><span lang="en">CNN and AP headlines lead with Starship &#39;soaring&#39; into orbit, with AP attributing the lost catch to a booster explosion. BBC (&#39;Setback&#39;), DW (&#39;fails to recover booster&#39;) and France 24 (&#39;encounters problems&#39;) put the problem first.</span><span lang="bg">Заглавията на CNN и AP започват с това, че Starship „се извисява“ в орбита, като AP свързва пропуснатото улавяне с експлозия на ускорителя. BBC („Неуспех“), DW („не успя да възстанови ускорителя“) и France 24 („среща проблеми“) поставят проблема на първо място.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">BBC · DW · CNN · France 24</span>
+      <p><span lang="en">The booster&#39;s fate is described differently: BBC says it was diverted to the ocean and burst into flames; DW says it exploded above the Gulf; CNN says it was redirected to splash down; France 24 says it splashed down. France 24&#39;s summary also says 15 Starlink satellites, whereas BBC and DW say 26.</span><span lang="bg">Съдбата на ускорителя е описана различно: BBC пише, че е отклонен към океана и пламнал при падането; DW – че е избухнал над залива; CNN – че е пренасочен да пада във водата; France 24 – че е паднал в залива. В резюмето на France 24 са посочени и 15 спътника на Starlink, а BBC и DW съобщават за 26.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-context"><span lang="en">Context</span><span lang="bg">Контекст</span></span>
+      <span class="who">CNN · BBC · DW</span>
+      <p><span lang="en">CNN gives the most business context: Starship&#39;s role in the Artemis IV moon landing, SpaceX&#39;s AI ambitions, phasing out Falcon and Dragon, and doubts about customer pricing. BBC focuses on NASA&#39;s lunar schedule and competition from Blue Origin and China. DW adds that previous upper stages ended in the ocean and mentions at least $15 billion of SpaceX investment.</span><span lang="bg">CNN дава най-много бизнес контекст: ролята на Starship в лунното кацане по Artemis IV, амбициите на SpaceX в изкуствения интелект, постепенното спиране на Falcon и Dragon и съмненията за цените за клиентите. BBC се фокусира върху лунния график на НАСА и конкуренцията от Blue Origin и Китай. DW добавя, че предишните горни степени са завършвали в океана, и споменава поне 15 млрд. долара инвестиции на SpaceX.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">BBC · DW · CNN</span>
+      <p><span lang="en">BBC quotes a SpaceX spokesperson on safety and Prof Malcolm Macdonald of the Royal Aeronautical Society on reusability. DW quotes SpaceX&#39;s Dan Huot saying the cause was unclear. CNN quotes SpaceX&#39;s Gwynne Shotwell, Elon Musk and an anonymous industry source.</span><span lang="bg">BBC цитира говорител на SpaceX за безопасността и проф. Малкълм Макдоналд от Кралското аеронавигационно дружество за повторната употреба. DW цитира Дан Хуот от SpaceX, който казва, че причината не е ясна. CNN цитира Гуин Шотуел, Илон Мъск и анонимен източник от индустрията.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch" target="_blank" rel="noopener" title="SpaceX Starship soars in orbit, still aiming for ship catch in unprecedented test flight"><span lang="en">SpaceX Starship soars in orbit, still aiming for ship catch in unprecedented test flight</span><span lang="bg">Starship на SpaceX е в орбита и все още се цели в улавяне на кораба при безпрецедентен тестов полет</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="Setback for SpaceX Starship rocket&#39;s double-catch test"><span lang="en">Setback for SpaceX Starship rocket&#39;s double-catch test</span><span lang="bg">Неуспех за теста на SpaceX с двойно улавяне на ракетата Starship</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/spacex-launches-starship-rocket-fails-to-recover-booster/a-79946091?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="SpaceX launches Starship rocket, fails to recover booster"><span lang="en">SpaceX launches Starship rocket, fails to recover booster</span><span lang="bg">SpaceX изстреля ракетата Starship, но не успя да възстанови ускорителя</span></a></li>
+      
+      <li><span class="outlet">France 24</span>
+        <a href="https://www.france24.com/en/spacex-s-starship-encounters-problems-during-15th-test-flight" target="_blank" rel="noopener" title="SpaceX&#39;s Starship encounters problems during 15th test flight"><span lang="en">SpaceX&#39;s Starship encounters problems during 15th test flight</span><span lang="bg">Starship на SpaceX среща проблеми по време на 15-ия тестов полет</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/spacex-starship-rocket-elon-musk-f9452dd86770dda36828a35bb27d65ee" target="_blank" rel="noopener" title="SpaceX’s Starship soars into orbit after booster explosion prevents an unprecedented double catch"><span lang="en">SpaceX&#39;s Starship soars into orbit after booster explosion prevents an unprecedented double catch</span><span lang="bg">Starship на SpaceX се извисява в орбита, след като експлозия на ускорителя осуети безпрецедентно двойно улавяне</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w11">
+  <div class="story-meta">
+    <span class="num">12</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Tech sell-off raises questions over timing of Anthropic IPO</span><span lang="bg">Разпродажбата на технологични акции поставя под въпрос времето за борсовия дебют на Anthropic</span></h3>
+  <p class="summary"><span lang="en">Technology stocks have sold off sharply after the Democrats won control of the US Congress in the midterms. Nvidia shares also fell nearly 10% over two days amid an investigation into CEO Jensen Huang&#39;s ties to a woman suspected of being a Chinese spy, and Huang later resigned. OpenAI has delayed its listing until next year, but Anthropic still plans to go public later this month, offering 825 million shares at $70–78 each. Analysts are divided on whether the turbulence signals a bursting AI bubble or a healthy correction. Reuters reports that investors are flocking to the offering while questioning how durable Anthropic&#39;s lead in AI is.</span><span lang="bg">Технологичните акции поевтиняха рязко, след като демократите спечелиха контрола над Конгреса на САЩ на междинните избори. Акциите на Nvidia също паднаха с близо 10% за два дни на фона на разследване на връзките на изпълнителния директор Дженсън Хуанг с жена, подозирана от американското разузнаване, че е китайски шпионин, а по-късно Хуанг подаде оставка. OpenAI отложи борсовия си дебют за следващата година, но Anthropic все още планира да излезе на борсата по-късно този месец и ще предложи 825 млн. акции на цена между 70 и 78 долара. Анализаторите са разделени дали вълнението означава спукване на AI балона, или е здравословна корекция. Според Ройтерс инвеститорите се стремят към предлагането, но поставят под въпрос трайността на водещата позиция на Anthropic в сферата на изкуствения интелект.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The Magnificent Seven lost more than $1 trillion in value in a single trading day after the Democrats won Congress.</span><span lang="bg">„Великолепната седморка“ загуби над 1 трилион долара пазарна стойност в рамките на една търговска сесия, след като демократите спечелиха Конгреса.</span></li><li><span lang="en">Anthropic will offer 825 million shares at $70–78 each; it now sees a valuation of about $1.2–1.3 trillion, down from an original target of over $2 trillion.</span><span lang="bg">Anthropic ще предложи 825 млн. акции по 70–78 долара; фирмата вече оценява себе си на около 1,2–1,3 трилиона долара при първоначална цел над 2 трилиона.</span></li><li><span lang="en">Goldman Sachs estimates hyperscalers need about $300 billion in annual AI revenue to break even, leaving a gap of roughly $230 billion.</span><span lang="bg">По оценка на Goldman Sachs хиперскейлърите се нуждаят от около 300 млрд. долара годишни приходи от AI, за да излязат на нула, което оставя дефицит от около 230 млрд.</span></li><li><span lang="en">Anthropic currently has about $52 billion in revenue, against a Goldman forecast of more than $600 billion by 2030.</span><span lang="bg">Anthropic има сега около 52 млрд. долара приходи, а прогнозата на Goldman Sachs е над 600 млрд. до 2030 г.</span></li><li><span lang="en">OpenAI has postponed its IPO until next year.</span><span lang="bg">OpenAI отложи борсовия си дебют за следващата година.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only DW&#39;s full text is available; Reuters is visible by headline alone, so the comparison is limited to framing in the headlines.</span><span lang="bg">Наличен е само пълният текст на DW, а Ройтерс се вижда единствено по заглавие, затова сравнението се ограничава до рамкирането в заглавията.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">DW · Reuters</span>
+      <p><span lang="en">DW&#39;s headline asks whether the AI bubble is bursting, framing the IPO against market fear. Reuters&#39; headline stresses strong investor demand for the IPO, with a caveat about how durable Anthropic&#39;s AI lead is.</span><span lang="bg">Заглавието на DW пита дали AI балонът се спуква и поставя IPO-то на фона на пазарния страх. Заглавието на Ройтерс подчертава силния инвеститорски интерес към IPO-то, с уговорка за трайността на лидерството на Anthropic в AI.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">DW · Reuters</span>
+      <p><span lang="en">DW centres on the wider market sell-off and bubble risk, while Reuters centres on Anthropic and investor appetite. Reuters labels its piece an exclusive.</span><span lang="bg">DW акцентира върху по-широката пазарна разпродажба и риска от балон, докато Ройтерс е съсредоточен върху Anthropic и интереса на инвеститорите. Ройтерс определя материала си като ексклузивен.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/is-the-ai-bubble-bursting-just-as-anthropic-goes-public/a-79896537?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Is the AI bubble bursting just as Anthropic goes public?"><span lang="en">Is the AI bubble bursting just as Anthropic goes public?</span><span lang="bg">Спуква ли се AI балонът тъкмо когато Anthropic излиза на борсата?</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/business/finance/investors-flock-anthropic-ipo-question-durability-ai-lead-2026-11-13/" target="_blank" rel="noopener" title="EXCLUSIVE: Investors flock to Anthropic IPO but question durability of AI lead"><span lang="en">EXCLUSIVE: Investors flock to Anthropic IPO but question durability of AI lead</span><span lang="bg">ЕКСКЛУЗИВНО: Инвеститори се стичат към IPO на Anthropic, но поставят под въпрос трайността на лидерството му в AI</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w12">
+  <div class="story-meta">
+    <span class="num">13</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Bank of England chief economist signals further interest rate rises</span><span lang="bg">Главният икономист на Английската централна банка сигнализира за нови повишения на лихвите</span></h3>
+  <p class="summary"><span lang="en">Bank of England chief economist Huw Pill has said the bank will probably need to raise interest rates again next month and in early 2027 to fight rising inflation. He made the remarks in an interview with the Financial Times. Earlier this month the bank raised its rate from 3.75% to 4%. Pill said he sees an end to the US-Israeli conflict with Iran and a fall in energy prices as very unlikely, and that he believes the bank waited too long to act.</span><span lang="bg">Главният икономист на Английската централна банка Хю Пил заяви, че банката вероятно ще трябва да повиши лихвите отново следващия месец и в началото на 2027 г., за да се справи с растящата инфлация. Той говори в интервю за Financial Times. По-рано този месец лихвата беше вдигната от 3,75% на 4%. Пил определи края на американо-израелския конфликт с Иран и спада на цените на енергията като много малко вероятни и заяви, че според него банката е действала със закъснение.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Pill said the bank will probably need to raise rates next month and again in early 2027.</span><span lang="bg">Пил заяви, че банката вероятно ще трябва да повиши лихвите следващия месец и отново в началото на 2027 г.</span></li><li><span lang="en">The bank raised its rate from 3.75% to 4% earlier this month.</span><span lang="bg">По-рано този месец банката вдигна лихвата от 3,75% на 4%.</span></li><li><span lang="en">Inflation is expected to rise to 5% in spring 2027, driven by high oil and gas prices linked to the Iran war.</span><span lang="bg">Очаква се инфлацията да достигне 5% през пролетта на 2027 г., подтикната от високите цени на петрола и газа заради войната с Иран.</span></li><li><span lang="en">An estimated 2.3 million homeowners will have to refinance their loans next year, facing higher mortgage payments.</span><span lang="bg">Приблизително 2,3 млн. собственици на жилища ще трябва да рефинансират заемите си през следващата година и ще плащат по-високи вноски.</span></li><li><span lang="en">Financial markets expect UK rates to rise to almost 5% in 2027; Pill called this &#34;not outrageous&#34;.</span><span lang="bg">Финансовите пазари очакват лихвите във Великобритания да достигнат почти 5% през 2027 г.; Пил определи това като „не прекалено“.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only the Guardian&#39;s full text is available; Reuters is visible by headline alone, so the comparison is limited to framing in the headlines. Both attribute the signal to Pill and the FT interview.</span><span lang="bg">Пълният текст е наличен само за The Guardian, а Reuters се вижда единствено със заглавие, затова сравнението се ограничава до формулировката на заглавията. И двата медии свързват сигнала с Пил и интервюто за FT.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">The Guardian · Reuters</span>
+      <p><span lang="en">The Guardian&#39;s headline is generic (&#34;in coming months&#34;, &#34;economist says&#34;) and doesn&#39;t name Pill or the FT, while Reuters names Pill and the FT and points to 2027 as the timeframe.</span><span lang="bg">Заглавието на The Guardian е общо („през следващите месеци“, „казва икономист“) и не назовава Пил или FT, докато Reuters посочва Пил и FT и изтъква 2027 г. като времева рамка.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">The Guardian</span>
+      <p><span lang="en">The Guardian&#39;s body text goes beyond the rate signal to household impact, citing mortgage refinancing for 2.3 million homeowners, the energy price cap and council tax, plus disagreement over the economy&#39;s strength. Reuters&#39; body is not available for comparison.</span><span lang="bg">Текстът на The Guardian надхвърля сигнала за лихвите и показва ефекта върху домакинствата: рефинансиране на ипотеки за 2,3 млн. собственици, таван на цените на енергията и общинския данък, както и несъгласие за силата на икономиката. Текстът на Reuters не е наличен за сравнение.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">The Guardian</span>
+        <a href="https://www.theguardian.com/business/2026/nov/14/interest-rate-rises-inflation-bank-of-england-chief-economist" target="_blank" rel="noopener" title="Interest rate rises likely in coming months, Bank of England economist says"><span lang="en">Interest rate rises likely in coming months, Bank of England economist says</span><span lang="bg">Лихвени повишения са вероятни през следващите месеци, казва икономист на Английската централна банка</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/world/uk/boe-likely-raise-rates-further-2027-pill-tells-ft-2026-11-14/" target="_blank" rel="noopener" title="BOE likely to raise rates further in 2027, Pill tells FT"><span lang="en">BOE likely to raise rates further in 2027, Pill tells FT</span><span lang="bg">Английската централна банка вероятно ще вдигне лихвите още през 2027 г., казва Пил пред FT</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w13">
+  <div class="story-meta">
+    <span class="num">14</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">After US midterms: Boebert loses her seat as Republicans look to 2028</span><span lang="bg">След междинните избори в САЩ: Бобърт губи мястото си, а републиканците гледат към 2028 г.</span></h3>
+  <p class="summary"><span lang="en">Rep. Lauren Boebert of Colorado is projected to lose her House seat to Democrat Eileen Laubacher, the AP reported, in a razor-thin race. Democrats have flipped seats in several Republican strongholds, and Fox News reports they now hold 256 House seats to Republicans&#39; 169, with some races still uncalled. In the aftermath, CNN reports that Vice President JD Vance is considering not running for president in 2028, while Secretary of State Marco Rubio, amid speculation about his own future, downplayed the losses in a speech. Discussion of the 2028 field has begun, according to Dnevnik.</span><span lang="bg">Републиканката Лорън Бобърт от Колорадо е прогнозирана да загуби мястото си в Камарата на представителите от демократката Айлийн Лаубахер, съобщи АП, при много оспорвана надпревара. Демократите отнеха места в няколко републикански крепости, а според Fox News вече имат 256 места в Камарата срещу 169 за републиканците, като някои състезания още не са решени. В последвалите дни, според CNN, вицепрезидентът Джей Ди Ванс обмисля да не се кандидатира за президент през 2028 г., а държавният секретар Марко Рубио, на фона на спекулации за политическото му бъдеще, омаловажи загубите в реч. Според „Дневник“ обсъждането на кандидатите за 2028 г. вече е започнало.</span></p>
+  <ul class="facts">
+    <li><span lang="en">AP called Colorado&#39;s 4th District for Democrat Eileen Laubacher, who led Boebert 48.7% to 47.9% with 99% of ballots counted (per Fox News).</span><span lang="bg">АП обяви победа на демократката Айлийн Лаубахер в 4-ия окръг на Колорадо – 48,7% срещу 47,9% за Бобърт при преброени 99% от бюлетините (по данни на Fox News).</span></li><li><span lang="en">Fox News reports Democrats flipped seats in Texas, Kansas, South Carolina and Mississippi and now hold 256 House seats to Republicans&#39; 169; several races remain uncalled.</span><span lang="bg">Fox News съобщава, че демократите са отнели места в Тексас, Канзас, Южна Каролина и Мисисипи и вече имат 256 места в Камарата срещу 169 за републиканците; няколко състезания остават нерешени.</span></li><li><span lang="en">CNN, cited by BNR, reports Vance is weighing not running in 2028, as allies worry any Republican would struggle if the Iran war is still ongoing.</span><span lang="bg">Според CNN, цитирана от БНР, Ванс обмисля да не се кандидатира през 2028 г., тъй като съюзници се опасяват, че всеки републиканец ще се затрудни, ако войната с Иран не е приключила.</span></li><li><span lang="en">CNN also reports Trump privately criticized Vance for a post blaming the Iran war for the midterm loss, and was reportedly &#39;furious&#39; that Vance did not publicly defend the decision.</span><span lang="bg">Според същия материал Тръмп е разкритикувал Ванс насаме заради публикация, свързваща загубата на изборите с войната с Иран, и е бил „бесен“, че той не е защитил публично решението му.</span></li><li><span lang="en">Rubio told the Federalist Society that &#39;great things that last are built in decades, not election cycles,&#39; and said elections do not decide everything.</span><span lang="bg">Рубио заяви пред Федералисткото общество, че „великите неща се градят с десетилетия, а не с изборни цикли“, и че изборите сами по себе си не решават всичко.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">The outlets cover different angles of the post-midterm picture: the Boebert result (Fox News, AP, Reuters), Rubio&#39;s speech (CNN) and 2028 speculation (BNR, Dnevnik). The Boebert headlines report the same outcome with different wording. Only headlines are available for AP and Reuters, and only a summary for Dnevnik.</span><span lang="bg">Изданията разглеждат различни страни на ситуацията след междинните избори: резултата на Бобърт (Fox News, АП, Ройтерс), речта на Рубио (CNN) и спекулациите за 2028 г. (БНР, „Дневник“). Заглавията за Бобърт отразяват един и същ резултат с различни формулировки. За АП и Ройтерс има само заглавия, а за „Дневник“ – само резюме.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Fox News · AP · Reuters</span>
+      <p><span lang="en">Fox News calls Boebert&#39;s loss &#39;another Democratic flip&#39; and labels her a &#39;GOP firebrand&#39;, placing it in a pattern of Democratic gains. AP&#39;s headline states flatly that she &#39;loses&#39; to Laubacher. Reuters calls her &#39;a colorful conservative&#39; and attributes the result to &#39;US media&#39;.</span><span lang="bg">Fox News определя загубата на Бобърт като „поредно отнето от демократите“ място и я нарича „републикански бунтар“, като я вписва в тенденция на демократични успехи. Заглавието на АП просто съобщава, че тя „губи“ от Лаубахер. Ройтерс я описва като „колоритен консерватор“ и приписва резултата на „американски медии“.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Fox News · CNN</span>
+      <p><span lang="en">Fox News gives vote percentages and House seat totals (256 to 169). CNN&#39;s piece centres on Rubio&#39;s rhetoric and quotes at length, rather than on numbers.</span><span lang="bg">Fox News дава процентите гласове и общия брой места в Камарата (256 към 169). Материалът на CNN се фокусира върху риториката на Рубио и го цитира обширно, а не върху числа.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">CNN · БНР</span>
+      <p><span lang="en">CNN quotes Rubio directly at length. BNR&#39;s report on Vance relies on CNN&#39;s anonymous sources close to Vance, with no on-record voices.</span><span lang="bg">CNN цитира директно и подробно Рубио. Материалът на БНР за Ванс се основава на анонимни източници от обкръжението му, цитирани от CNN, без изказвания пред микрофон.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">Дневник · БНР</span>
+      <p><span lang="en">Dnevnik&#39;s headline frames the 2028 race as having already begun, while BNR focuses on Vance&#39;s doubts and tension with Trump. BNR also links the possible withdrawal to the Iran war.</span><span lang="bg">Заглавието на „Дневник“ представя надпреварата за 2028 г. като вече започнала, докато БНР се фокусира върху съмненията на Ванс и напрежението с Тръмп. БНР свързва и възможното оттегляне с войната с Иран.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Fox News</span>
+        <a href="https://www.foxnews.com/politics/rep-lauren-boebert-projected-lose-house-seat-another-democratic-flip" target="_blank" rel="noopener" title="Rep Lauren Boebert projected to lose House seat in another Democratic flip"><span lang="en">Rep Lauren Boebert projected to lose House seat in another Democratic flip</span><span lang="bg">Прогнозира се, че Лорън Бобърт губи мястото си в Камарата – поредно отнето от демократите</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/lauren-boebert-colorado-house-laubacher-3fdd6112a72340a4b6691537a9db3409" target="_blank" rel="noopener" title="Rep. Lauren Boebert of Colorado loses House seat to Democrat Eileen Laubacher"><span lang="en">Rep. Lauren Boebert of Colorado loses House seat to Democrat Eileen Laubacher</span><span lang="bg">Лорън Бобърт от Колорадо губи мястото си в Камарата от демократката Айлийн Лаубахер</span></a></li>
+      
+      <li><span class="outlet">Reuters</span>
+        <a href="https://www.reuters.com/legal/government/republican-lauren-boebert-colorful-conservative-loses-reelection-bid-colorado-2026-11-13/" target="_blank" rel="noopener" title="Republican Lauren Boebert, a colorful conservative, loses reelection bid in Colorado, according to US media"><span lang="en">Republican Lauren Boebert, a colorful conservative, loses reelection bid in Colorado, according to US media</span><span lang="bg">Републиканката Лорън Бобърт, колоритен консерватор, губи преизбирането си в Колорадо, според американски медии</span></a></li>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/politics/marco-rubio-political-speech" target="_blank" rel="noopener" title="Rubio says more work to do and downplays election losses amid speculation about political future"><span lang="en">Rubio says more work to do and downplays election losses amid speculation about political future</span><span lang="bg">Рубио: има още работа за вършене, и омаловажава изборните загуби на фона на спекулации за политическото му бъдеще</span></a></li>
+      
+      <li><span class="outlet">БНР</span>
+        <a href="https://bnrnews.bg/main/post/557979/dzhey-di-vans-obmislya-da-ne-se-kandidatira-za-prezident" target="_blank" rel="noopener" title="Джей Ди Ванс обмисля да не се кандидатира за президент през 2028 г."><span lang="en">JD Vance is considering not running for president in 2028</span><span lang="bg">Джей Ди Ванс обмисля да не се кандидатира за президент през 2028 г.</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/sviat/2026/11/14/4979773_nadprevarata_za_beliia_dom_zapochna_-_koi_moje_da_sa/?ref=rss" target="_blank" rel="noopener" title="Надпреварата за Белия дом започна - кои може да са претендентите през 2028 г."><span lang="en">The race for the White House has begun – who the 2028 contenders could be</span><span lang="bg">Надпреварата за Белия дом започна - кои може да са претендентите през 2028 г.</span></a></li>
+      
+      <li><span class="outlet">AP</span>
+        <a href="https://apnews.com/article/rubio-iran-war-economy-midterms-09fbf543893f84452080640f80e938e0" target="_blank" rel="noopener" title="Rubio acknowledges &#39;people are struggling&#39; economically in speech after GOP midterm wipeout"><span lang="en">Rubio acknowledges &#39;people are struggling&#39; economically in speech after GOP midterm wipeout</span><span lang="bg">Рубио признава, че „хората се затрудняват“ икономически, в реч след републиканския разгром на междинните избори</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="w14">
+  <div class="story-meta">
+    <span class="num">15</span>
+    <span class="chip"><span lang="en">Disaster</span><span lang="bg">Бедствие</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">6 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Tanker hits docked cruise ship in New Orleans; all aboard accounted for, 32 hospitalized</span><span lang="bg">Танкер удари акостирал круизен кораб в Ню Орлиънс; всички на борда са открити, 32-ма са в болница</span></h3>
+  <p class="summary"><span lang="en">On Friday, 13 November 2026, the tanker Atlantic Asphalt struck the paddlewheel cruise ship American Heritage, operated by American Cruise Lines, while it was docked at the Port of New Orleans on the Mississippi River. The cruise ship capsized and partly sank. Officials say everyone aboard has been accounted for, and 32 people were taken to hospital with non-critical injuries. Mayor Helena Moreno called the outcome a &#34;miracle on the Mississippi&#34;. The Coast Guard says the tanker appears to have suffered a loss of steering, and the NTSB is sending a team to investigate.</span><span lang="bg">В петък, 13 ноември 2026 г., танкерът „Атлантик асфалт“ удари круизния кораб с гребно колело „Американ херитидж“ на American Cruise Lines, докато той е бил на кей в пристанището на Ню Орлиънс на река Мисисипи. Круизният кораб се е преобърнал и частично е потънал. Според властите всички на борда са открити, а 32-ма души са откарани в болници с нетежки наранявания. Кметицата Хелена Морено нарече изхода „чудо на Мисисипи“. Бреговата охрана съобщава, че танкерът изглежда е загубил управление, а НТСБ изпраща екип за разследване.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The collision happened at about 12:30 p.m. local time, according to port officials, with the cruise ship docked at the Port of New Orleans.</span><span lang="bg">Сблъсъкът е станал около 12:30 ч. местно време според пристанищните власти, докато круизният кораб е бил на кей в пристанището на Ню Орлиънс.</span></li><li><span lang="en">Thirty-two people were hospitalized, none with critical injuries; no one is reported unaccounted for.</span><span lang="bg">32-ма души са хоспитализирани, никой с животозастрашаващи наранявания; не се съобщава за изчезнали.</span></li><li><span lang="en">Coast Guard Capt. Melanie Burnham said the tanker appeared to have had a loss of steering; a river pilot was at the helm and the exact cause is unknown.</span><span lang="bg">Капитан Мелани Бърнъм от Бреговата охрана заяви, че танкерът изглежда е загубил управление; на руля е бил речен лоцман, а точната причина не е известна.</span></li><li><span lang="en">At least two harbor police officers fell into the water during the evacuation and are in good condition in hospital.</span><span lang="bg">Поне двама служители на пристанищната полиция са паднали във водата по време на евакуацията и са в добро състояние в болница.</span></li><li><span lang="en">The Coast Guard shut the Mississippi in the area and plans to reopen it, initially with one-way traffic; the NTSB is sending an investigation team.</span><span lang="bg">Бреговата охрана затвори движението по Мисисипи в района и планира да го възстанови първоначално в една посока; НТСБ изпраща екип за разследване.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">All outlets agree on the core facts: a tanker hit a docked cruise ship, nobody is missing and 32 people are in hospital. They differ mainly in the number of people aboard, the type of vessel that hit the ship, and how much detail and context they give.</span><span lang="bg">Всички медии са единодушни за основното: танкер е ударил акостирал круизен кораб, няма изчезнали, а 32-ма са в болница. Разликите са главно в броя на хората на борда, типа на удрящия кораб и количеството подробности и контекст.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">CNN · Euronews · BBC · DW</span>
+      <p><span lang="en">The number aboard varies: CNN cites 180–190 passengers, Euronews 197 passengers and crew (per the port), DW at least 180 passengers and crew, and BBC about 129 passengers plus crew (headline figure of 130 rescued).</span><span lang="bg">Броят на хората на борда се различава: CNN съобщава за 180–190 пътници, Euronews – 197 пътници и екипаж (по данни на пристанището), DW – поне 180 пътници и екипаж, а BBC – около 129 пътници плюс екипаж (в текста 130 спасени).</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-facts"><span lang="en">Conflicting facts</span><span lang="bg">Разминаващи се факти</span></span>
+      <span class="who">Нова · DW · CNN · BBC</span>
+      <p><span lang="en">The striking vessel is described differently: Nova calls it a container ship in its headline but a tanker in its text, DW calls it a freighter, while CNN and BBC identify it as the tanker/cargo vessel Atlantic Asphalt.</span><span lang="bg">Удрящият кораб е описан различно: Нова го нарича контейнеровоз в заглавието, но танкер в текста, DW – товарен кораб, а CNN и BBC го назовават като танкера/товарния кораб „Атлантик асфалт“.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">CNN · BBC</span>
+      <p><span lang="en">CNN gives most space to official response and logistics: Trump&#39;s and Landry&#39;s statements, the NTSB team possibly delayed by an FAA ground stop, the bridge being undamaged and plans to reopen the river. BBC focuses more on the rescue and the cause (loss of steering), adding a witness account.</span><span lang="bg">CNN отделя най-много място на официалната реакция и логистиката: изказвания на Тръмп и Лендри, екипа на НТСБ, чието пристигане може да се забави заради спиране на полетите от FAA, непокътнатия мост и възстановяването на движението по реката. BBC се фокусира повече върху спасяването и причината (загуба на управление) и добавя свидетел.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">DW · BBC · CNN</span>
+      <p><span lang="en">DW and BBC quote eyewitnesses (Devon Flanagan; Jamie Holford, who likened the sound to a war movie), plus DW quotes the company and the Homeland Security secretary; CNN relies on officials and the Red Cross.</span><span lang="bg">DW и BBC цитират очевидци (Devon Flanagan; Jamie Holford, който сравнява звука с военен филм), а DW цитира и компанията и министъра на вътрешната сигурност; CNN разчита на официални лица и Червения кръст.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Euronews · BBC · DW · CNN</span>
+      <p><span lang="en">Euronews and BBC lead their headlines with the &#34;miracle&#34; quote and the rescue, while CNN and DW use neutral headlines centered on the collision itself.</span><span lang="bg">Euronews и BBC водят със заглавия с цитата „чудо“ и спасяването, докато CNN и DW използват неутрални заглавия, насочени към самия сблъсък.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">CNN</span>
+        <a href="https://www.cnn.com/2026/11/13/us/new-orleans-river-cruise-collision" target="_blank" rel="noopener" title="Tanker collides with river cruiser near Port of New Orleans"><span lang="en">Tanker collides with river cruiser near Port of New Orleans</span><span lang="bg">Танкер се сблъска с речен круизен кораб край пристанището на Ню Орлиънс</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559203/%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%D0%BE%D0%B7-%D0%B8-%D0%BA%D1%80%D1%83%D0%B8%D0%B7%D0%B5%D0%BD-%D0%BA%D0%BE%D1%80%D0%B0%D0%B1-%D1%81%D0%B5-%D1%81%D0%B1%D0%BB%D1%8A%D1%81%D0%BA%D0%B0%D1%85%D0%B0-%D0%B2-%D0%BD%D1%8E-%D0%BE%D1%80%D0%BB%D0%B8%D1%8A%D0%BD%D1%81/" target="_blank" rel="noopener" title="Контейнеровоз и круизен кораб се сблъскаха в Ню Орлиънс"><span lang="en">Container ship and cruise ship collide in New Orleans</span><span lang="bg">Контейнеровоз и круизен кораб се сблъскаха в Ню Орлиънс</span></a></li>
+      
+      <li><span class="outlet">Euronews</span>
+        <a href="https://www.euronews.com/2026/11/13/tanker-collides-with-new-orleans-river-cruise-carrying-129-passengers-rescue-operation-und" target="_blank" rel="noopener" title="&#39;Miracle on the Mississippi&#39;: All passengers rescued after tanker collides with cruise ship in New Orleans"><span lang="en">&#39;Miracle on the Mississippi&#39;: All passengers rescued after tanker collides with cruise ship in New Orleans</span><span lang="bg">„Чудо на Мисисипи“: Всички пътници са спасени след сблъсък на танкер с круизен кораб в Ню Орлиънс</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/svetut/mashtabna-spasitelna-operacija-vsichki-patnici-i-chlenove-na-ekipazha-sa-otkriti-sled-sblasaka-na-kruizen-korab-s-tanker.html" target="_blank" rel="noopener" title="Мащабна спасителна операция: Всички пътници и членове на екипажа са открити след сблъсъка на круизен кораб с танкер"><span lang="en">Large-scale rescue operation: All passengers and crew found after cruise ship collides with tanker</span><span lang="bg">Мащабна спасителна операция: Всички пътници и членове на екипажа са открити след сблъсъка на круизен кораб с танкер</span></a></li>
+      
+      <li><span class="outlet">DW</span>
+        <a href="https://www.dw.com/en/tanker-collides-with-cruise-ship-on-mississippi-in-new-orleans/a-79945080?maca=en-rss-en-all-1573-xml-mrss" target="_blank" rel="noopener" title="Tanker collides with cruise ship on Mississippi in New Orleans"><span lang="en">Tanker collides with cruise ship on Mississippi in New Orleans</span><span lang="bg">Танкер се сблъска с круизен кораб на Мисисипи в Ню Орлиънс</span></a></li>
+      
+      <li><span class="outlet">BBC</span>
+        <a href="https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" title="&#39;Miracle on Mississippi&#39; - All passengers rescued after New Orleans cruise ship collision"><span lang="en">&#39;Miracle on Mississippi&#39; - All passengers rescued after New Orleans cruise ship collision</span><span lang="bg">„Чудо на Мисисипи“ – всички пътници са спасени след сблъсъка на круизен кораб в Ню Орлиънс</span></a></li>
+      
+    </ul>
+  </div>
+</article>
+
+  <h2 class="section" id="bulgaria"><span lang="en">Bulgaria</span><span lang="bg">България</span></h2>
+  <article class="story" id="b02">
+  <div class="story-meta">
+    <span class="num">01</span>
+    <span class="chip"><span lang="en">Disaster</span><span lang="bg">Бедствие</span></span>
+    <span class="imp" title="importance 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+    <span class="count">5 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Trakia motorway pile-up death toll rises to 13 as investigators say no leading theory</span><span lang="bg">Жертвите на катастрофата на АМ „Тракия“ станаха 13, следователите нямат водеща версия</span></h3>
+  <p class="summary"><span lang="en">The death toll from the multi-vehicle crash on the Trakia motorway has risen to 13 after a 42-year-old man from Elhovo died in the Deva Maria hospital in Burgas. Investigators from the National Investigation Service said they are pursuing all hypotheses and have no leading one. The detained Romanian truck driver was released, and there is currently not enough evidence to charge him. Lead investigator Yasen Todorov said the probe could end with no one charged or with several people charged.</span><span lang="bg">Броят на жертвите на верижната катастрофа на автомагистрала „Тракия“ достигна 13, след като в бургаската болница „Дева Мария“ почина 42-годишен мъж от Елхово. От Националната следствена служба заявиха, че работят по всички версии и че няма водеща. Задържаният румънски тираджия е освободен и към момента няма достатъчно доказателства за повдигане на обвинение срещу него. Водещият следовател Ясен Тодоров посочи, че разследването може да приключи както без обвиняем, така и с няколко.</span></p>
+  <ul class="facts">
+    <li><span lang="en">A 42-year-old man from Elhovo died in a Burgas hospital, bringing the toll to 13 (earlier reports said 12).</span><span lang="bg">42-годишен мъж от Елхово почина в бургаска болница и жертвите станаха 13 (по-рано се съобщаваше за 12).</span></li><li><span lang="en">Investigators have requested records from hospitals in Sliven, Yambol and Burgas to commission forensic medical examinations; most are already ordered, the rest next week.</span><span lang="bg">Следствието е изискало документация от болниците в Сливен, Ямбол и Бургас за съдебномедицински експертизи; повечето вече са назначени, останалите – следващата седмица.</span></li><li><span lang="en">The exact number of injured is unclear because patients are being transferred between hospitals; Todorov said it may be fewer than 51.</span><span lang="bg">Точният брой на пострадалите не е ясен, тъй като пациенти се прехвърлят между болници; Тодоров каза, че може да са по-малко от 51.</span></li><li><span lang="en">The expert analysis is described as extremely complex: effectively 81 separate collisions, each examined individually.</span><span lang="bg">Експертизата е изключително сложна: на практика 81 отделни ПТП-та, всяко от които се обследва поотделно.</span></li><li><span lang="en">Witness interviews are expected to finish within about a month; investigators are still seeking more witnesses.</span><span lang="bg">Разпитите на свидетелите се очаква да приключат в рамките на около месец; следствието все още издирва свидетели.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Most outlets centred on the investigator&#39;s statements about the open-ended probe, while public broadcaster BNT reported only the rise in the death toll. The core facts are consistent, though the amount of detail varies a lot, and several articles were only partly visible.</span><span lang="bg">Повечето медии се фокусират върху думите на следователя за отворения характер на разследването, а обществен////ата БНТ отразява само ръста на жертвите. Основните факти съвпадат, но детайлите са различни, а част от материалите са видими само частично.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Дневник · bTV Новините · Mediapool</span>
+      <p><span lang="en">Dnevnik, bTV and Mediapool put the investigator in the headline as the actor and lead with the possibility of &#39;several defendants or none&#39;, while BNT&#39;s headline is solely about the death toll rising to 13.</span><span lang="bg">Дневник, bTV и Mediapool поставят следователя в заглавието и водят с възможността за „няколко обвиняеми или нито един“, докато заглавието на БНТ е единствено за ръста на жертвите до 13.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Нова · Mediapool</span>
+      <p><span lang="en">Nova&#39;s headline stresses the absence of a leading theory and evidence gathering, and its text gives most space to forensic procedure and the complexity of 81 separate collisions, quoting acting NIS director Marian Marinov. Mediapool adds the search for witnesses and the uncertain number of injured (&#39;maybe fewer than 51&#39;).</span><span lang="bg">Заглавието на Нова акцентира върху липсата на водеща версия и събирането на доказателства, а текстът дава най-много място на съдебномедицинските процедури и сложността на 81-те отделни ПТП-та, като цитира и.ф. директора на НСС Мариан Маринов. Mediapool добавя издирването на свидетели и неяснотата около броя на пострадалите („може би са по-малко от 51“).</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">БНТ · Нова</span>
+      <p><span lang="en">BNT&#39;s article on the 13th death gives only victim details (42-year-old from Elhovo, Deva Maria hospital) and omits the investigation, whereas Nova&#39;s and Mediapool&#39;s pieces carry the investigation details but, as visible, not the 13th death, reporting 12 dead.</span><span lang="bg">Материалът на БНТ за 13-ата жертва дава само данни за починалия (42-годишен от Елхово, болница „Дева Мария“) и не засяга разследването, докато текстовете на Нова и Mediapool съдържат подробности за разследването, но отчитат 12 загинали, без новата жертва.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-tone"><span lang="en">Tone</span><span lang="bg">Тон</span></span>
+      <span class="who">БНТ · Нова</span>
+      <p><span lang="en">BNT&#39;s tone is sympathetic and human-focused, while Nova&#39;s and Mediapool&#39;s are procedural and factual; Nova adds the investigators&#39; assurance of an objective and complete probe.</span><span lang="bg">Тонът на БНТ е съчувствен и насочен към човешката загуба, а Нова и Mediapool са процедурни и фактологични; Нова добавя уверението на следствието за обективно и пълно разследване.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559210/%D0%B1%D0%B5%D0%B7-%D0%B2%D0%BE%D0%B4%D0%B5%D1%89%D0%B0-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F-%D0%B7%D0%B0-%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%B4%D0%B8%D1%8F%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B0%D0%BC-%D1%82%D1%80%D0%B0%D0%BA%D0%B8%D1%8F-%D1%80%D0%B0%D0%B7%D1%81%D0%BB%D0%B5%D0%B4%D0%B2%D0%B0%D1%89%D0%B8%D1%82%D0%B5-%D1%81%D1%8A%D0%B1%D0%B8%D1%80%D0%B0%D1%82-%D0%B4%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0/" target="_blank" rel="noopener" title="Без водеща версия за трагедията на АМ „Тракия”, разследващите събират доказателства"><span lang="en">No leading theory on the Trakia motorway tragedy, investigators gather evidence</span><span lang="bg">Без водеща версия за трагедията на АМ „Тракия“, разследващите събират доказателства</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/burzi-novini/2026/11/14/4979940_sledovatel_za_katastrofite_na_trakiia_vuzmojno_e_da/?ref=rss" target="_blank" rel="noopener" title="Следовател за катастрофите на &#34;Тракия&#34;: Възможно е да има няколко обвиняеми, но и нито един"><span lang="en">Investigator on the Trakia crashes: There may be several defendants, or none</span><span lang="bg">Следовател за катастрофите на „Тракия“: Възможно е да има няколко обвиняеми, но и нито един</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/bulgaria/jasen-todorov-razsledvaneto-na-katastrofite-na-am-trakija-mozhe-da-prikljuchi-kakto-bez-obvinjaem-taka-i-s-njakolko.html" target="_blank" rel="noopener" title="Ясен Тодоров: Разследването на катастрофите на АМ „Тракия“ може да приключи както без обвиняем, така и с няколко"><span lang="en">Yasen Todorov: Trakia crash investigation may end with no defendant or several</span><span lang="bg">Ясен Тодоров: Разследването на катастрофите на АМ „Тракия“ може да приключи както без обвиняем, така и с няколко</span></a></li>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/bulgaria/sledovatel-za-katastrofata-na-trakiya-mozhe-da-ima-nyakolko-obvinyaemi-no-mozhe-i-razsledvaneto-da-priklyuchi-bez-nito-edin/" target="_blank" rel="noopener" title="Следовател за катастрофата на &#34;Тракия&#34;: Може да има няколко обвиняеми, но може и разследването да приключи без нито един"><span lang="en">Investigator on the Trakia crash: There may be several defendants, but the probe may end with none</span><span lang="bg">Следовател за катастрофата на „Тракия“: Може да има няколко обвиняеми, но може и разследването да приключи без нито един</span></a></li>
+      
+      <li><span class="outlet">БНТ</span>
+        <a href="https://bntnews.bg/news/zhertvite-na-tezhkata-katastrofa-na-trakiya-veche-sa-13-1422250news.html" target="_blank" rel="noopener" title="Жертвите на тежката катастрофа на „Тракия“ вече са 13"><span lang="en">The victims of the serious Trakia crash are now 13</span><span lang="bg">Жертвите на тежката катастрофа на „Тракия“ вече са 13</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="b01">
+  <div class="story-meta">
+    <span class="num">02</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">3 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">S&amp;P cuts Bulgaria&#39;s rating outlook from positive to stable, affirms BBB+</span><span lang="bg">S&amp;P понижи перспективата пред рейтинга на България от позитивна на стабилна, потвърди BBB+</span></h3>
+  <p class="summary"><span lang="en">Standard &amp; Poor&#39;s changed the outlook on Bulgaria&#39;s long-term credit rating from positive to stable and affirmed the long- and short-term ratings at BBB+/A-2. The agency cited worsening budget and external positions amid signs of economic overheating, including strong imports, weak exports and fast wage and credit growth. It estimates the 2026 budget deficit at 5.1% of GDP and the current account deficit at 8.7% of GDP. S&amp;P considers the draft 2027 budget&#39;s consolidation measures feasible but of relatively lower quality, and says the rating could be lowered if consolidation stalls.</span><span lang="bg">Рейтинговата агенция Standard &amp; Poor&#39;s (S&amp;P) промени перспективата пред дългосрочния кредитен рейтинг на България от позитивна на стабилна и потвърди дългосрочния и краткосрочния рейтинг на &#34;BBB+/A-2&#34;. Като причини агенцията посочва влошаването на бюджетните и външните показатели на фона на признаци за прегряване на икономиката – силен внос, слаб износ, бърз ръст на заплатите и кредитирането. Тя оценява бюджетния дефицит за 2026 г. на 5,1% от БВП, а дефицита по текущата сметка – на 8,7% от БВП. Мерките за консолидация в проектобюджета за 2027 г. са определени като изпълними, но с относително по-ниско качество, а рейтингът може да бъде понижен при забавяне на консолидацията.</span></p>
+  <ul class="facts">
+    <li><span lang="en">The outlook moved from positive to stable; the BBB+/A-2 ratings were affirmed.</span><span lang="bg">Перспективата е променена от позитивна на стабилна, а рейтингите &#34;BBB+/A-2&#34; са потвърдени.</span></li><li><span lang="en">S&amp;P expects a 2026 budget deficit of 5.1% of GDP, Bulgaria&#39;s largest in at least 12 years, and a current account deficit of 8.7% of GDP.</span><span lang="bg">S&amp;P очаква бюджетен дефицит от 5,1% от БВП през 2026 г. – най-големият за поне 12 години, и дефицит по текущата сметка от 8,7% от БВП.</span></li><li><span lang="en">Private-sector wages rose 11.7% in the first half of 2026, household lending 21% and house prices 15.5% year on year in June.</span><span lang="bg">Заплатите в частния сектор са нараснали с 11,7% през първото полугодие на 2026 г., заемите за домакинствата – с 21%, а цените на имотите – с 15,5% на годишна база през юни.</span></li><li><span lang="en">The 2027 draft budget includes a one-off windfall tax expected to raise €800 million (0.6% of GDP).</span><span lang="bg">Проектобюджетът за 2027 г. включва еднократно облагане на &#34;свръхпечалбите&#34;, от което се очакват 800 млн. евро (0,6% от БВП).</span></li><li><span lang="en">S&amp;P could downgrade if consolidation is delayed, or upgrade if external imbalances narrow.</span><span lang="bg">S&amp;P може да понижи рейтинга при забавена консолидация или да го повиши, ако външните дисбаланси се свият.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Mediapool gives a detailed account of S&amp;P&#39;s reasoning, while Nova&#39;s main report is a brief note. Дневник&#39;s items, seen by headline or summary only, emphasise political and expert reactions. Full texts were available only for Mediapool and Nova.</span><span lang="bg">Mediapool подробно излага аргументите на S&amp;P, докато основното съобщение на Нова е кратка новина. Материалите на Дневник, които се виждат само по заглавие или резюме, акцентират върху политическите и експертните реакции. Пълен текст има само за Mediapool и Нова.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Mediapool · Нова</span>
+      <p><span lang="en">Mediapool details the double deficits, overheating, wage and credit growth and the downgrade and upgrade scenarios. Nova reports only the outlook change and the affirmed BBB+ rating, linking it to the announced 2027 budget parameters.</span><span lang="bg">Mediapool разглежда двойните дефицити, прегряването, ръста на заплатите и кредитирането и сценариите за понижение и повишение. Нова съобщава само за промяната на перспективата и потвърдения рейтинг BBB+, като я свързва с оповестените параметри на бюджета за 2027 г.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Mediapool · Нова · Дневник</span>
+      <p><span lang="en">Mediapool&#39;s headline names the causes (overheating and imports). Nova&#39;s headline says only that the agency &#34;reviewed&#34; the rating, without saying the outlook was cut. Дневник&#39;s headline attributes the lowered expectations to &#34;Radev&#39;s deficits&#34;, which puts the blame on the government.</span><span lang="bg">Заглавието на Mediapool назовава причините (прегряване и внос). Нова казва само, че агенцията е „преразгледала“ рейтинга, без да споменава понижената перспектива. Заглавието на Дневник свързва по-ниските очаквания с „дефицитите на Радев“ и така поставя вината върху правителството.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-sources_quoted"><span lang="en">Who is quoted</span><span lang="bg">Кой е цитиран</span></span>
+      <span class="who">Mediapool · Нова · Дневник</span>
+      <p><span lang="en">Mediapool quotes S&amp;P&#39;s own statement extensively. Nova&#39;s text has no quotes. Дневник&#39;s headlines point to an economist, former president Rosen Plevneliev and GERB, who call the budget risky or demand the cabinet&#39;s resignation.</span><span lang="bg">Mediapool цитира обилно съобщението на S&amp;P. Текстът на Нова не съдържа цитати. Заглавията на Дневник сочат към икономист, бившия президент Росен Плевнелиев и ГЕРБ, които определят бюджета като рискован или искат оставката на кабинета.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-omission"><span lang="en">Omission</span><span lang="bg">Пропуск</span></span>
+      <span class="who">Нова · Mediapool</span>
+      <p><span lang="en">Nova&#39;s main report omits the deficit figures and S&amp;P&#39;s view that the 2027 measures are feasible but of lower quality. Mediapool includes them, along with S&amp;P&#39;s note that Bulgarian households and firms hold enough foreign assets to act as a buffer.</span><span lang="bg">Основната новина на Нова пропуска данните за дефицитите и оценката на S&amp;P, че мерките за 2027 г. са изпълними, но с по-ниско качество. Mediapool ги включва, заедно с бележката на S&amp;P, че българските граждани и фирми имат достатъчно чуждестранни активи, които служат като буфер.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Mediapool</span>
+        <a href="https://www.mediapool.bg/biznes/sampp-svali-perspektivata-pred-reitinga-na-bulgaria-zaradi-pregryavaneto-i-vnosa/" target="_blank" rel="noopener" title="S&amp;P свали перспективата пред рейтинга на България заради прегряването и вноса"><span lang="en">S&amp;P lowers outlook on Bulgaria&#39;s rating over overheating and imports</span><span lang="bg">S&amp;P свали перспективата пред рейтинга на България заради прегряването и вноса</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559223/%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B0%D1%82%D0%B0-%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%BE%D0%B2%D0%B0-%D0%B0%D0%B3%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D0%B4-%D0%B5%D0%BD%D0%B4-%D0%BF%D1%83%D1%8A%D1%80%D1%81-%D0%BF%D1%80%D0%B5%D1%80%D0%B0%D0%B7%D0%B3%D0%BB%D0%B5%D0%B4%D0%B0-%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F/" target="_blank" rel="noopener" title="Международната рейтингова агенция „Стандард енд Пуърс“ преразгледа кредитния рейтинг на България"><span lang="en">International rating agency Standard &amp; Poor&#39;s reviewed Bulgaria&#39;s credit rating</span><span lang="bg">Международната рейтингова агенция „Стандард енд Пуърс“ преразгледа кредитния рейтинг на България</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/duma_na_sedmitsa/2026/11/14/4979861_ikonomistut_luchezar_bogdanov_bjudjet_2027_e_plah_i_s/?ref=rss" target="_blank" rel="noopener" title="Икономистът Лъчезар Богданов: Бюджет 2027 е плах и с много рискове"><span lang="en">Economist Luchezar Bogdanov: Budget 2027 is timid and carries many risks</span><span lang="bg">Икономистът Лъчезар Богданов: Бюджет 2027 е плах и с много рискове</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/bulgaria/2026/11/14/4979939_agenciia_sp_poniji_ochakvaniiata_si_za_bulgariia/?ref=rss" target="_blank" rel="noopener" title="Агенция S&amp;P понижи очакванията си за България заради дефицитите на Радев"><span lang="en">S&amp;P lowers its expectations for Bulgaria over Radev&#39;s deficits</span><span lang="bg">Агенция S&amp;P понижи очакванията си за България заради дефицитите на Радев</span></a></li>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559231/%D0%B3%D0%B5%D1%80%D0%B1-%D1%81-%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D0%B8-%D1%81%D0%BB%D0%B5%D0%B4-%D0%BF%D1%80%D0%BE%D0%BC%D1%8F%D0%BD%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BF%D0%B5%D1%80%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%82%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4-%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-%D0%BE%D1%82-sp/" target="_blank" rel="noopener" title="ГЕРБ с реакции след промяната на перспективата пред кредитния рейтинг на България от S&amp;P"><span lang="en">GERB reacts after S&amp;P&#39;s change of outlook on Bulgaria&#39;s credit rating</span><span lang="bg">ГЕРБ с реакции след промяната на перспективата пред кредитния рейтинг на България от S&amp;P</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/burzi-novini/2026/11/14/4979937_bulgariia_veche_e_niakude_nanikude_rosen_plevneliev/?ref=rss" target="_blank" rel="noopener" title="&#34;България вече е някъде наникъде&#34;: Росен Плевнелиев иска оставката на кабинета"><span lang="en">&#34;Bulgaria is now somewhere nowhere&#34;: Rosen Plevneliev demands the cabinet&#39;s resignation</span><span lang="bg">&#34;България вече е някъде наникъде&#34;: Росен Плевнелиев иска оставката на кабинета</span></a></li>
+      
+      <li><span class="outlet">Дневник</span>
+        <a href="https://www.dnevnik.bg/burzi-novini/2026/11/14/4979979_gerb_prizovava_kabineta_da_ne_vuvlicha_bulgariia_v/?ref=rss" target="_blank" rel="noopener" title="ГЕРБ призовава кабинета да не въвлича България в криза и да разчете сигналите на S&amp;P"><span lang="en">GERB urges the cabinet not to drag Bulgaria into crisis and to heed S&amp;P&#39;s signals</span><span lang="bg">ГЕРБ призовава кабинета да не въвлича България в криза и да разчете сигналите на S&amp;P</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="b03">
+  <div class="story-meta">
+    <span class="num">03</span>
+    <span class="chip"><span lang="en">Politics</span><span lang="bg">Политика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">2 <span lang="en">outlets</span><span lang="bg">медии</span></span>
+  </div>
+  <h3><span lang="en">Investigators begin selecting their representative for the new Supreme Judicial Council</span><span lang="bg">Следователите започват избора на свой представител в новия Висш съдебен съвет</span></h3>
+  <p class="summary"><span lang="en">Investigators met on 14 November to hear the two candidates for their seat on the Supreme Judicial Council (VSS). The candidates are Petko Petkov of the National Investigation Service and Boyko Atanasov of the Sofia City Prosecutor&#39;s Office investigation department. The 453 eligible investigators will vote on 21 November. The step follows the prosecutors&#39; election on 25 October and the judges&#39; election on 8 November, and Parliament is due to elect its members on 19 November.</span><span lang="bg">На 14 ноември следователите се събраха, за да изслушат двамата кандидати за свой представител във Висшия съдебен съвет (ВСС). Те са Петко Петков от Националната следствена служба и Бойко Атанасов от следствения отдел на Софийската градска прокуратура. Гласуването за 453-ма следователи с право на глас е на 21 ноември. Стъпката следва избора на прокурорите на 25 октомври и на съдиите на 8 ноември, а Народното събрание ще избира свои членове на 19 ноември.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Two candidates compete for the single investigators&#39; seat on the VSS: Petko Petkov and Boyko Atanasov.</span><span lang="bg">Двама кандидати се състезават за единственото място на следователите във ВСС: Петко Петков и Бойко Атанасов.</span></li><li><span lang="en">453 investigators have the right to vote; the ballot is on 21 November.</span><span lang="bg">Право на глас имат 453-ма следователи, а гласуването е на 21 ноември.</span></li><li><span lang="en">Prosecutors chose Plamen Petkov, Ivaylo Iliev, Ivaylo Angelov and Krasimira Filipova on 25 October.</span><span lang="bg">На 25 октомври прокурорите избраха Пламен Петков, Ивайло Илиев, Ивайло Ангелов и Красимира Филипова.</span></li><li><span lang="en">Judges elected six representatives on 8 November.</span><span lang="bg">На 8 ноември съдиите излъчиха шестима свои представители.</span></li><li><span lang="en">Parliament will pick 11 members from 20 candidates on 19 November.</span><span lang="bg">На 19 ноември парламентът ще избира 11 членове измежду 20 кандидати.</span></li>
+  </ul>
+  
+  <details class="compare" open>
+    <summary><span lang="en">How the outlets covered it</span><span lang="bg">Как медиите го отразиха</span></summary>
+    <p class="overview"><span lang="en">Only Nova&#39;s full text is available, while bTV is visible by headline alone, so the comparison is limited. Both frame the story as a stage in the VSS election process.</span><span lang="bg">Наличен е само пълният текст на Нова, а bTV е видим единствено по заглавие, затова сравнението е ограничено. И двата медии представят темата като етап от избора на нов ВСС.</span></p>
+    
+    <div class="diff">
+      <span class="aspect a-framing"><span lang="en">Framing</span><span lang="bg">Рамкиране</span></span>
+      <span class="who">Нова · bTV Новините</span>
+      <p><span lang="en">Nova&#39;s headline uses a sequence metaphor (&#39;investigators&#39; turn&#39;), placing the event within the wider multi-stage election. bTV&#39;s headline stresses the procedural event, a &#39;first meeting&#39; of investigators to choose their representative.</span><span lang="bg">Заглавието на Нова поставя събитието в последователността на избора с израза „на ход са следователите“. Заглавието на bTV акцентира върху процедурата – „първо заседание“ на следователите за избор на представител.</span></p>
+    </div>
+    
+    <div class="diff">
+      <span class="aspect a-emphasis"><span lang="en">Emphasis</span><span lang="bg">Акцент</span></span>
+      <span class="who">Нова</span>
+      <p><span lang="en">Nova&#39;s body adds candidate quotes, with Atanasov calling for an end to the hiring of VSS members&#39; relatives and Petkov stressing better communication with colleagues, plus the timeline of earlier prosecutor and judge votes. bTV&#39;s content cannot be compared, as only its headline is available.</span><span lang="bg">Текстът на Нова добавя цитати от кандидатите – Атанасов настоява да спре назначаването на роднини на членове на ВСС, а Петков говори за по-добра комуникация с колегите – и хронологията на предишните избори на прокурори и съдии. Съдържанието на bTV не може да се сравни, тъй като е налично само заглавието.</span></p>
+    </div>
+    
+  </details>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Нова</span>
+        <a href="https://nova.bg/news/view/2026/11/14/559208/%D0%B8%D0%B7%D0%B1%D0%BE%D1%80%D1%8A%D1%82-%D0%B7%D0%B0-%D0%BD%D0%BE%D0%B2-%D0%B2%D1%81%D1%81-%D0%BD%D0%B0-%D1%85%D0%BE%D0%B4-%D1%81%D0%B0-%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B8%D1%82%D0%B5/" target="_blank" rel="noopener" title="Изборът за нов ВСС - на ход са следователите"><span lang="en">Election of new VSS: investigators&#39; turn</span><span lang="bg">Изборът за нов ВСС - на ход са следователите</span></a></li>
+      
+      <li><span class="outlet">bTV Новините</span>
+        <a href="https://btvnovinite.bg/bulgaria/obshtoto-sabranie-na-sledovatelite-za-izbor-na-chlenove-na-novija-sastav-na-vss-ot-profesionalnata-kvota-shte-se-sastoi-dnes.html" target="_blank" rel="noopener" title="Новият ВСС: Първо заседание на следователите за избор на представителя им"><span lang="en">New VSS: First investigators&#39; meeting to choose their representative</span><span lang="bg">Новият ВСС: Първо заседание на следователите за избор на представителя им</span></a></li>
+      
+    </ul>
+  </div>
+</article><article class="story" id="b04">
+  <div class="story-meta">
+    <span class="num">04</span>
+    <span class="chip"><span lang="en">Economy</span><span lang="bg">Икономика</span></span>
+    <span class="imp" title="importance 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+    <span class="count">1 <span lang="en">outlet</span><span lang="bg">медия</span></span>
+  </div>
+  <h3><span lang="en">Bulgargaz chief says it cannot indefinitely cover Toplofikatsia Sofia&#39;s unpaid bills</span><span lang="bg">Шефът на „Булгаргаз“: Не можем безкрайно да компенсираме неплащането на „Топлофикация София“</span></h3>
+  <p class="summary"><span lang="en">Georgi Tatarski, executive director of Bulgargaz, said in an interview with Capital that the state gas trader cannot go on compensating for non-payment by Toplofikatsia Sofia. According to the article&#39;s excerpt, the heating company&#39;s debts to Bulgargaz alone exceed 970 million (the currency is cut off in the text available). Tatarski has led Bulgargaz since July, replacing Veselin Sinabov, and is to stay until a competition is held or for at most six months. Capital&#39;s weekly energy roundup separately reports record losses of 426 million leva for Toplofikatsia Sofia.</span><span lang="bg">Изпълнителният директор на „Булгаргаз“ Георги Татарски заяви в интервю за „Капитал“, че дружеството не може безкрайно да компенсира неплащането от страна на „Топлофикация София“. Според наличния откъс задълженията на топлофикационното дружество само към „Булгаргаз“ надхвърлят 970 млн. (валутата не се вижда в откъса). Татарски оглавява „Булгаргаз“ от юли, след като поема поста от Веселин Синабов, и ще остане до провеждането на конкурс или най-много шест месеца. Седмичният обзор на „Капитал“ за енергетиката отделно съобщава за рекордни загуби на „Топлофикация София“ от 426 млн. лв.</span></p>
+  <ul class="facts">
+    <li><span lang="en">Toplofikatsia Sofia&#39;s debts to Bulgargaz alone exceed 970 million (currency truncated in the excerpt).</span><span lang="bg">Задълженията на „Топлофикация София“ само към „Булгаргаз“ надхвърлят 970 млн. (валутата е отрязана в откъса).</span></li><li><span lang="en">Georgi Tatarski has been Bulgargaz executive director since July, succeeding Veselin Sinabov.</span><span lang="bg">Георги Татарски е изпълнителен директор на „Булгаргаз“ от юли, като наследява Веселин Синабов.</span></li><li><span lang="en">Tatarski will stay until a competition is held or for a maximum of six months.</span><span lang="bg">Татарски ще остане до провеждането на конкурс или най-много шест месеца.</span></li><li><span lang="en">Capital&#39;s weekly roundup cites record losses of 426 million leva for Toplofikatsia Sofia.</span><span lang="bg">Седмичният обзор на „Капитал“ посочва рекордни загуби от 426 млн. лв. за „Топлофикация София“.</span></li>
+  </ul>
+  
+  <div class="sources">
+    <div class="sources-label"><span lang="en">Sources</span><span lang="bg">Източници</span></div>
+    <ul>
+      
+      <li><span class="outlet">Капитал</span>
+        <a href="https://www.capital.bg/biznes/energetika/2026/11/13/4978773_blic_georgi_tatarski_ne_mojem_bezkraino_da/?ref=rss" target="_blank" rel="noopener" title="Блиц | Георги Татарски: Не можем безкрайно да компенсираме неплащането на &#34;Топлофикация София&#34;"><span lang="en">Blitz | Georgi Tatarski: We cannot compensate for Toplofikatsia Sofia&#39;s non-payment indefinitely</span><span lang="bg">Блиц | Георги Татарски: Не можем безкрайно да компенсираме неплащането на „Топлофикация София“</span></a></li>
+      
+      <li><span class="outlet">Капитал</span>
+        <a href="https://www.capital.bg/biznes/energetika/2026/11/14/4979355_sedmichni_novini_za_energetika_toplofikaciia-sofiia_s/?ref=rss" target="_blank" rel="noopener" title="Седмични новини за енергетика: Топлофикация-София с рекордни загуби от 426 млн. лв.; 2 млрд. евро компенсации за тока"><span lang="en">Weekly energy news: Toplofikatsia Sofia with record losses of BGN 426 million; €2 billion in electricity compensation</span><span lang="bg">Седмични новини за енергетика: Топлофикация-София с рекордни загуби от 426 млн. лв.; 2 млрд. евро компенсации за тока</span></a></li>
+      
+    </ul>
+  </div>
+</article>
+
+  <h2 class="section" id="sources"><span lang="en">Outlets scanned</span><span lang="bg">Проверени медии</span></h2>
+  <table class="outlets">
+    <tr><th><span lang="en">outlet</span><span lang="bg">медия</span></th><th><span lang="en">Region</span><span lang="bg">Регион</span></th><th><span lang="en">Ownership</span><span lang="bg">Собственост</span></th><th><span lang="en">Articles</span><span lang="bg">Статии</span></th></tr>
+    
+    <tr><td>CNN</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">80</td></tr>
+    
+    <tr><td>Fox News</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">40</td></tr>
+    
+    <tr><td>BBC</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">32</td></tr>
+    
+    <tr><td>DW</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">26</td></tr>
+    
+    <tr><td>Reuters</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">60</td></tr>
+    
+    <tr><td>AP</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">60</td></tr>
+    
+    <tr><td>Al Jazeera</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">state-funded</span><span lang="bg">държавно финансирана</span></td><td class="n ">25</td></tr>
+    
+    <tr><td>The Guardian</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">27</td></tr>
+    
+    <tr><td>France 24</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">23</td></tr>
+    
+    <tr><td>Euronews</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">19</td></tr>
+    
+    <tr><td>Politico Europe</td><td><span lang="en">World</span><span lang="bg">Свят</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">10</td></tr>
+    
+    <tr><td>Капитал</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">20</td></tr>
+    
+    <tr><td>Нова</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">33</td></tr>
+    
+    <tr><td>bTV Новините</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">40</td></tr>
+    
+    <tr><td>Дневник</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">30</td></tr>
+    
+    <tr><td>Mediapool</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">commercial</span><span lang="bg">търговска</span></td><td class="n ">10</td></tr>
+    
+    <tr><td>БНТ</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">57</td></tr>
+    
+    <tr><td>БНР</td><td><span lang="en">Bulgaria</span><span lang="bg">България</span></td>
+      <td><span lang="en">public</span><span lang="bg">обществена</span></td><td class="n ">18</td></tr>
+    
+  </table>
+
+  <footer><span lang="en">Articles from the last 24 hours are collected from public RSS feeds and sitemaps, grouped into stories by meaning, ranked by how many outlets cover them, and analysed by Claude. Summaries can contain mistakes — follow the links for the original reporting.</span><span lang="bg">Статиите от последните 24 часа се събират от публични RSS канали и карти на сайтовете, групират се в истории по смисъл, подреждат се според броя медии, които ги отразяват, и се анализират от Claude. Резюметата може да съдържат грешки — следвайте връзките към оригиналните публикации.</span><br><span lang="en">Generated</span><span lang="bg">Генериран</span> 2026-11-14T14:36+02:00</footer>
+</div>
+<script>
+  // Optional: remember the chosen language. The switch itself needs no script.
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    if (saved === "bg" || saved === "en") document.getElementById("lang-" + saved).checked = true;
+    document.documentElement.lang = document.getElementById("lang-bg").checked ? "bg" : "en";
+    document.querySelectorAll(".lang input").forEach(function (r) {
+      r.addEventListener("change", function () {
+        document.documentElement.lang = r.value;
+        try { localStorage.setItem("lang", r.value); } catch (e) {}
+      });
+    });
+  })();
+</script>
+</body>
+</html>
